@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio – Grinda Korto</title>
+    <meta name="description" content="Portfolio de Grinda Korto – Étudiant BTS SN option SLAM, développeur web & logiciel." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" data-animate>
+      <div class="container header-inner">
+        <a href="#hero" class="brand" aria-label="Retour à l'accueil">GK</a>
+        <nav class="nav" aria-label="Navigation principale">
+          <button class="nav-toggle" aria-expanded="false" aria-label="Ouvrir le menu">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </button>
+          <ul class="nav-list">
+            <li><a href="#hero">Accueil</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#parcours">Parcours</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#stage">Stage</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#veille">Veille</a></li>
+            <li><a href="#tools">Logiciels</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section id="hero" class="section hero">
+        <div class="container hero-grid">
+          <div class="hero-copy" data-animate>
+            <p class="eyebrow">Bienvenue</p>
+            <h1><span class="accent">Grinda Korto</span></h1>
+            <p class="subtitle">Étudiant en BTS SN option SLAM – Développeur Web & Logiciel</p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+              <a href="#contact" class="btn btn-ghost">Me contacter</a>
+            </div>
+          <div class="hero-socials">
+            <a class="instagram" href="mailto:kortogrind@gmail.com" rel="noreferrer noopener" aria-label="Email">
+              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+            </a>
+            <a class="linkedin" href="https://www.linkedin.com/in/korto-grinda-4b6a6433a/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
+              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="2.5" y="2.5" width="19" height="19" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                <line x1="7" y1="10.5" x2="7" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="7.0" cy="7.5" r="1.3" fill="currentColor"/>
+                <path d="M11 17v-4.2c0-1.6 1.3-2.8 2.8-2.8h0c1.6 0 2.7 1.2 2.7 2.8V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              </svg>
+            </a>
+            <a class="github" href="https://github.com/kokoKRK" target="_blank" rel="noreferrer noopener" aria-label="GitHub">
+              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.5c-5.2 0-9.5 4.3-9.5 9.5 0 4.2 2.7 7.7 6.5 9 .5.1.7-.2.7-.5v-2c-2.6.6-3.1-1.1-3.1-1.1-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.5 1.1 3.1.8.1-.7.4-1.1.7-1.4-2.1-.3-4.2-1.1-4.2-4.9 0-1.1.4-2 1-2.8-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1.1.8-.2 1.6-.3 2.5-.3s1.7.1 2.5.3c2-1.4 2.8-1.1 2.8-1.1.5 1.4.2 2.4.1 2.7.6.8 1 1.7 1 2.8 0 3.8-2.1 4.6-4.2 4.9.4.3.7.9.7 1.8v2.6c0 .3.2.6.7.5 3.8-1.3 6.5-4.9 6.5-9.1 0-5.2-4.3-9.5-9.5-9.5Z" fill="currentColor"/>
+              </svg>
+            </a>
+          </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true" data-animate>
+            <!-- Decorative SVG blob/avatar -->
+            <svg viewBox="0 0 400 400" class="blob">
+              <defs>
+                <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="var(--accent)" />
+                  <stop offset="100%" stop-color="var(--accent-2)" />
+                </linearGradient>
+              </defs>
+              <path fill="url(#grad)" d="M308.5,270.5Q267,341,184,329.5Q101,318,77,234Q53,150,132.5,101.5Q212,53,288,101.5Q364,150,308.5,270.5Z" />
+              <circle cx="200" cy="200" r="72" fill="white" opacity="0.9" />
+              <text x="200" y="208" text-anchor="middle" font-size="28" fill="var(--text)">GK</text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- À propos -->
+      <section id="about" class="section">
+        <div class="container two-col">
+          <div class="col" data-animate>
+            <h2>À propos</h2>
+            <p>
+              Je suis étudiant en BTS Socle Numérique option SLAM, passionné par le
+              développement web et logiciel. J'aime explorer l'intelligence artificielle,
+              la création musicale et la gestion de projets innovants.
+            </p>
+            <p>
+              En dehors de l'informatique, je fais du DJing (rap, house, shatta) et
+              de la musculation.
+            </p>
+          </div>
+          <div class="col about-avatar" data-animate>
+            <figure class="avatar-wrap">
+              <img src="img_korto.jpg" alt="Photo de profil de Grinda Korto" loading="lazy" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Parcours -->
+      <section id="parcours" class="section alt">
+        <div class="container">
+          <h2 data-animate>Parcours</h2>
+          <ul class="timeline" data-animate>
+            <li>
+              <div class="dot"></div>
+              <div class="content">
+                <h3>BAC général – Spécialités Mathématiques & NSI</h3>
+                <p>2023</p>
+              </div>
+            </li>
+            <li>
+              <div class="dot"></div>
+              <div class="content">
+                <h3>BTS Socle Numérique 1ère année – Option SLAM</h3>
+                <p>2023-2024</p>
+              </div>
+            </li>
+            <li>
+              <div class="dot"></div>
+              <div class="content">
+                <h3>BTS Socle Numérique 2ème année – Option SLAM</h3>
+                <p>2024-2025</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- BTS -->
+      <section id="bts" class="section">
+        <div class="container">
+          <h2 data-animate>BTS Socle Numérique</h2>
+          <div class="two-col" data-animate>
+            <div class="col">
+              <h3>Option SLAM</h3>
+              <p>Solutions Logicielles et Applications Métier</p>
+              <ul>
+                <li>Analyse des besoins utilisateurs</li>
+                <li>Conception d'applications</li>
+                <li>Programmation web et logiciel</li>
+                <li>Gestion des bases de données</li>
+                <li>Sécurité informatique</li>
+                <li>Mise en production et maintenance</li>
+              </ul>
+            </div>
+            <div class="col">
+              <h3>Option SISR</h3>
+              <p>Solutions d'Infrastructure, Systèmes et Réseaux</p>
+              <ul>
+                <li>Installation et configuration de serveurs</li>
+                <li>Gestion des réseaux informatiques</li>
+                <li>Sécurisation des infrastructures</li>
+                <li>Maintenance et support technique</li>
+                <li>Virtualisation et cloud computing</li>
+                <li>Supervision et monitoring</li>
+              </ul>
+            </div>
+          </div>
+          <div class="bts-info" data-animate>
+            <p>Formation en alternance de cours théoriques, projets encadrés et réalisations professionnelles, incluant l'épreuve E5 (situation professionnelle).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tableau de synthèse E4 -->
+      <section id="tableau-e4" class="section alt">
+        <div class="container">
+          <h2 data-animate>Tableau de synthèse - Épreuve E4</h2>
+          
+          <!-- Légende des compétences -->
+          <div class="competence-legend" data-animate>
+            <h3>Légende des compétences :</h3>
+            <div class="legend-grid">
+              <div class="legend-item">
+                <span class="legend-code">G1</span>
+                <span class="legend-text">Gérer le patrimoine informatique ou les demandes d'assistance</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-code">R2</span>
+                <span class="legend-text">Répondre aux incidents et aux demandes d'assistance</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-code">D3</span>
+                <span class="legend-text">Développer la présence en ligne de l'organisation</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-code">T4</span>
+                <span class="legend-text">Travailler en mode projet</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-code">M5</span>
+                <span class="legend-text">Mettre à disposition des utilisateurs un service</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-code">O6</span>
+                <span class="legend-text">Organiser son développement professionnel</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="table-wrapper" data-animate>
+            <table class="table-synthesis">
+              <thead>
+                <tr>
+                  <th class="col-realisations">Réalisations professionnelles<br><small>(intitulé et liste des documents associés)</small></th>
+                  <th class="col-periode">Période<br><small>(JJ/MM/AA au JJ/MM/AA)</small></th>
+                  <th class="competence-header">G1</th>
+                  <th class="competence-header">R2</th>
+                  <th class="competence-header">D3</th>
+                  <th class="competence-header">T4</th>
+                  <th class="competence-header">M5</th>
+                  <th class="competence-header">O6</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Réalisations en cours de formation en première année -->
+                <tr class="section-header">
+                  <td colspan="8" class="section-title">Réalisations en cours de formation en première année</td>
+                </tr>
+                <tr>
+                  <td>Hotel Neptune</td>
+                  <td>15/10/2024</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Scraping League of Legends</td>
+                  <td>30/11/2024</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Machine Rube Goldberg</td>
+                  <td>08/01/2025</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Fast Flash</td>
+                  <td>08/01/2025</td>
+                  <td></td>
+                  <td></td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>VizHome</td>
+                  <td>02/02/2025</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                
+                <!-- Réalisations en cours de formation en seconde année -->
+                <tr class="section-header">
+                  <td colspan="8" class="section-title">Réalisations en cours de formation en seconde année</td>
+                </tr>
+                <tr>
+                  <td>Workshop 2025/26</td>
+                  <td>10/09/2025</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Prends Ma Photo (Stage)</td>
+                  <td>15/01/2025</td>
+                  <td></td>
+                  <td></td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Portfolio personnel</td>
+                  <td>02/02/2025</td>
+                  <td></td>
+                  <td></td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td></td>
+                  <td class="check">✓</td>
+                </tr>
+                
+                <!-- Réalisations en milieu professionnel en cours de première année -->
+                <tr class="section-header">
+                  <td colspan="8" class="section-title">Réalisations en milieu professionnel en cours de première année</td>
+                </tr>
+                <tr>
+                  <td>Recherche de la concurrence</td>
+                  <td>30/04/2025</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="check">✓</td>
+                </tr>
+                <tr>
+                  <td>Création d'un site vitrine avec formulaire et sécurisation et mise en ligne du site</td>
+                  <td>22/05/2025</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                </tr>
+                
+                <!-- Réalisations en milieu professionnel en cours de seconde année -->
+                <tr class="section-header">
+                  <td colspan="8" class="section-title">Réalisations en milieu professionnel en cours de seconde année</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projets -->
+      <section id="projects" class="section">
+        <div class="container">
+          <h2 data-animate>Projets</h2>
+          <h3 data-animate>1ère année</h3>
+          <div class="grid cards projects-grid" data-animate>
+            <article class="card project">
+              <a href="project-hotel-neptune.html" aria-label="Voir le projet Hotel Neptune">
+                <div class="thumb" role="img" aria-label="Hotel Neptune" style="background-image:url('imgHotelNeptunePortfolio.png'); background-size:cover; background-position:center;"></div>
+                <div class="card-body">
+                  <h3>Hotel Neptune</h3>
+                  <p>Projet scolaire web/app.</p>
+                </div>
+              </a>
+            </article>
+            <article class="card project">
+              <a href="project-scraping-lol.html" aria-label="Voir le projet Scraping League of Legends">
+                <div class="thumb" role="img" aria-label="Scraping League of Legends"></div>
+                <div class="card-body">
+                  <h3>Scraping League of Legends</h3>
+                  <p>Récupération données champions + analyse via graphiques.</p>
+                </div>
+              </a>
+            </article>
+            <article class="card project">
+              <a href="project-rube-goldberg.html" aria-label="Voir le projet Machine Rube Goldberg">
+                <div class="thumb" role="img" aria-label="Machine Rube Goldberg"></div>
+                <div class="card-body">
+                  <h3>Publicité Machine Rube Goldberg (jungle)</h3>
+                  <p>Projet créatif en équipe, vidéo 3 min.</p>
+                </div>
+              </a>
+            </article>
+            <article class="card project">
+              <a href="project-prends-ma-photo.html" aria-label="Voir le projet Prends Ma Photo">
+                <div class="thumb" role="img" aria-label="Prends Ma Photo – 2025" style="background-image:url('imgPrendsMaPhotoPortfolio.png'); background-size:cover; background-position:center;"></div>
+                <div class="card-body">
+                  <h3>Stage – Prends Ma Photo (2025)</h3>
+                  <p>Création site vitrine complet (design, SEO, formulaires, mise en ligne o2switch).</p>
+                </div>
+              </a>
+            </article>
+            <article class="card project">
+              <a href="project-fast-flash.html" aria-label="Voir le projet Fast Flash">
+                <div class="thumb" role="img" aria-label="Fast Flash" style="background-image:url('imgFastFlashPortfolio.png'); background-size:cover; background-position:center;"></div>
+                <div class="card-body">
+                  <h3>Fast Flash</h3>
+                  <p>Marque de cocktails premium, site interactif (choix bouteille, % alcool).</p>
+                </div>
+              </a>
+            </article>
+            <article class="card project">
+              <a href="project-vizhome.html" aria-label="Voir le projet VizHome">
+                <div class="thumb" role="img" aria-label="VizHome" style="background-image:url('imgVizhomePortfolio.png'); background-size:cover; background-position:center;"></div>
+                <div class="card-body">
+                  <h3>VizHome</h3>
+                  <p>App IA pour générer maisons de rêve sur photos.</p>
+                </div>
+              </a>
+            </article>
+          </div>
+          <h3 data-animate>2nde année</h3>
+          <div class="grid cards projects-grid" data-animate>
+            <article class="card project">
+              <a href="project-workshop-2025.html" aria-label="Voir le projet Workshop 2025/26">
+                <div class="thumb" role="img" aria-label="Workshop 2025/26" style="background-image:url('workShop2/imgWorkShop2/loginVraiSite.png'); background-size:cover; background-position:center;"></div>
+                <div class="card-body">
+                  <h3>Workshop 2025/26</h3>
+                  <p>Semaine intensive: cadrage, conception, réalisation et présentation en équipe.</p>
+                </div>
+              </a>
+            </article>
+            <article class="card project">
+              <a href="#" aria-label="Voir le projet Exemple 2">
+                <div class="thumb" role="img" aria-label="Exemple Projet 2nde année 2"></div>
+                <div class="card-body">
+                  <h3>Exemple – API REST sécurisée</h3>
+                  <p>API Node/PHP avec JWT, tests et CI de base.</p>
+                </div>
+              </a>
+            </article>
+            <article class="card project">
+              <a href="#" aria-label="Voir le projet Exemple 3">
+                <div class="thumb" role="img" aria-label="Exemple Projet 2nde année 3"></div>
+                <div class="card-body">
+                  <h3>Exemple – Dashboard data</h3>
+                  <p>Visualisation de données temps réel avec charts.</p>
+                </div>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Logiciels & Technologies -->
+      <section id="tools" class="section alt">
+        <div class="container">
+          <h2 data-animate>Logiciels & Technologies</h2>
+          <div class="grid cards" data-animate>
+            <article class="card tool">
+              <div class="icon" aria-hidden="true">
+                <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="VS Code">
+                  <title>VS Code</title>
+                  <defs>
+                    <linearGradient id="vscode-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#0078d4"/>
+                      <stop offset="100%" stop-color="#005a9e"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#vscode-grad)"/>
+                  <path fill="white" d="M32 12l-6 4v16l6 4 2-1V13l-2-1z" opacity="0.9"/>
+                  <path fill="white" d="M20 18l-4 4 4 4 2-2-2-2 2-2-2-2z" opacity="0.8"/>
+                  <circle cx="16" cy="24" r="1" fill="#00d7ff" opacity="0.8"/>
+                  <circle cx="28" cy="20" r="0.8" fill="#00d7ff" opacity="0.6"/>
+                  <circle cx="28" cy="28" r="0.8" fill="#00d7ff" opacity="0.6"/>
+                </svg>
+              </div>
+              <h3>VS Code</h3>
+              <p>Éditeur principal avec extensions dev.</p>
+            </article>
+            <article class="card tool">
+              <div class="icon" aria-hidden="true">
+                <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="PHPStorm">
+                  <title>PHPStorm</title>
+                  <defs>
+                    <linearGradient id="phpstorm-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#000000"/>
+                      <stop offset="100%" stop-color="#4a5568"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#phpstorm-grad)"/>
+                  <path fill="#00d7ff" d="M16 18c2 0 3 1 3 3s-1 3-3 3v-6zM20 24v-8h4l4 6-4 6-4-4z"/>
+                  <circle cx="32" cy="16" r="2" fill="#00d7ff" opacity="0.8"/>
+                  <circle cx="28" cy="32" r="1.5" fill="#00d7ff" opacity="0.6"/>
+                </svg>
+              </div>
+              <h3>PHPStorm</h3>
+              <p>IDE JetBrains pour PHP.</p>
+            </article>
+            <article class="card tool">
+              <div class="icon" aria-hidden="true">
+                <svg class="svg-icon anim-git-flow" viewBox="0 0 48 48" aria-label="Git & GitHub Desktop">
+                  <title>Git & GitHub Desktop</title>
+                  <defs>
+                    <linearGradient id="git-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#f03c2e"/>
+                      <stop offset="50%" stop-color="#24292e"/>
+                      <stop offset="100%" stop-color="#6f42c1"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="12" cy="24" r="4" fill="url(#git-grad)" class="git-node-1"/>
+                  <circle cx="36" cy="12" r="4" fill="url(#git-grad)" class="git-node-2"/>
+                  <circle cx="36" cy="36" r="4" fill="url(#git-grad)" class="git-node-3"/>
+                  <path d="M16 24h16M36 16v16" stroke="url(#git-grad)" stroke-width="3" stroke-linecap="round" class="git-branch"/>
+                  <circle cx="24" cy="24" r="2" fill="#00d7ff" class="git-merge"/>
+                  <path d="M20 20l8 8M28 20l-8 8" stroke="#00d7ff" stroke-width="1.5" opacity="0.7" class="git-cross"/>
+                </svg>
+              </div>
+              <h3>Git & GitHub Desktop</h3>
+              <p>Branches, PRs, issues, workflows.</p>
+            </article>
+            <article class="card tool">
+              <div class="icon" aria-hidden="true">
+                <svg class="svg-icon anim-bounce" viewBox="0 0 48 48" aria-label="Docker">
+                  <title>Docker</title>
+                  <rect x="10" y="22" width="6" height="6" fill="currentColor"/>
+                  <rect x="18" y="22" width="6" height="6" fill="currentColor"/>
+                  <rect x="26" y="22" width="6" height="6" fill="currentColor"/>
+                  <rect x="18" y="14" width="6" height="6" fill="currentColor"/>
+                  <path d="M8 30h32c-2 6-8 8-16 8s-14-2-16-8z" fill="currentColor" opacity=".3"/>
+                </svg>
+              </div>
+              <h3>Docker</h3>
+              <p>Conteneurs pour tests et déploiements.</p>
+            </article>
+            <article class="card tool">
+              <div class="icon" aria-hidden="true">
+                <svg class="svg-icon anim-vmware-layers" viewBox="0 0 48 48" aria-label="VMware">
+                  <title>VMware</title>
+                  <defs>
+                    <linearGradient id="vmware-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#607bd8"/>
+                      <stop offset="100%" stop-color="#4a90e2"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- Virtual layers -->
+                  <rect x="8" y="8" width="16" height="16" rx="3" fill="url(#vmware-grad)" class="vm-layer-1" opacity="0.9"/>
+                  <rect x="12" y="12" width="16" height="16" rx="3" fill="url(#vmware-grad)" class="vm-layer-2" opacity="0.7"/>
+                  <rect x="16" y="16" width="16" height="16" rx="3" fill="url(#vmware-grad)" class="vm-layer-3" opacity="0.5"/>
+                  <!-- Connection lines -->
+                  <path d="M24 16h8M32 20v8M32 28h-8" stroke="#00d7ff" stroke-width="2" class="vm-connections"/>
+                  <!-- VM indicators -->
+                  <circle cx="16" cy="16" r="2" fill="#00ff88" class="vm-status-1"/>
+                  <circle cx="20" cy="20" r="2" fill="#00ff88" class="vm-status-2"/>
+                  <circle cx="24" cy="24" r="2" fill="#00ff88" class="vm-status-3"/>
+                </svg>
+              </div>
+              <h3>VMware</h3>
+              <p>Machines virtuelles et snapshots.</p>
+            </article>
+            <article class="card tool">
+              <div class="icon" aria-hidden="true">
+                <svg class="svg-icon anim-server-pulse" viewBox="0 0 48 48" aria-label="o2switch">
+                  <title>o2switch</title>
+                  <defs>
+                    <linearGradient id="o2switch-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ff6b35"/>
+                      <stop offset="100%" stop-color="#f7931e"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- Server rack -->
+                  <rect x="10" y="8" width="28" height="32" rx="4" fill="url(#o2switch-grad)" class="server-rack"/>
+                  <!-- Server slots -->
+                  <rect x="12" y="12" width="24" height="4" rx="1" fill="white" opacity="0.9" class="server-slot-1"/>
+                  <rect x="12" y="18" width="24" height="4" rx="1" fill="white" opacity="0.8" class="server-slot-2"/>
+                  <rect x="12" y="24" width="24" height="4" rx="1" fill="white" opacity="0.7" class="server-slot-3"/>
+                  <rect x="12" y="30" width="24" height="4" rx="1" fill="white" opacity="0.6" class="server-slot-4"/>
+                  <!-- Status lights -->
+                  <circle cx="32" cy="14" r="1.5" fill="#00ff88" class="status-light-1"/>
+                  <circle cx="32" cy="20" r="1.5" fill="#00ff88" class="status-light-2"/>
+                  <circle cx="32" cy="26" r="1.5" fill="#00d7ff" class="status-light-3"/>
+                  <circle cx="32" cy="32" r="1.5" fill="#ffd700" class="status-light-4"/>
+                  <!-- Data flow -->
+                  <path d="M6 24h4M38 24h4" stroke="#00d7ff" stroke-width="2" class="data-flow"/>
+                </svg>
+              </div>
+              <h3>o2switch</h3>
+              <p>Hébergement mutualisé, DNS, déploiement.</p>
+            </article>
+            <article class="card tool">
+              <div class="icon" aria-hidden="true">
+                <svg class="svg-icon anim-cursor-ai" viewBox="0 0 48 48" aria-label="Cursor">
+                  <title>Cursor</title>
+                  <defs>
+                    <linearGradient id="cursor-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#000000"/>
+                      <stop offset="50%" stop-color="#4a5568"/>
+                      <stop offset="100%" stop-color="#2d3748"/>
+                    </linearGradient>
+                    <filter id="glow">
+                      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                      <feMerge> 
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  <!-- Cursor arrow -->
+                  <path d="M12 8l20 15-8 2-2 8L12 8z" fill="url(#cursor-grad)" class="cursor-arrow"/>
+                  <!-- AI brain/neural network -->
+                  <circle cx="32" cy="16" r="3" fill="#00d7ff" class="ai-node-1" filter="url(#glow)"/>
+                  <circle cx="28" cy="12" r="1.5" fill="#00d7ff" class="ai-node-2" opacity="0.8"/>
+                  <circle cx="36" cy="12" r="1.5" fill="#00d7ff" class="ai-node-3" opacity="0.8"/>
+                  <circle cx="30" cy="20" r="1.5" fill="#00d7ff" class="ai-node-4" opacity="0.8"/>
+                  <circle cx="34" cy="20" r="1.5" fill="#00d7ff" class="ai-node-5" opacity="0.8"/>
+                  <!-- Neural connections -->
+                  <path d="M30 14l2 2M34 14l-2 2M30 18l2-2M34 18l-2-2" stroke="#00d7ff" stroke-width="1" opacity="0.6" class="ai-connections"/>
+                  <!-- Sparkles -->
+                  <path d="M38 8l2 2-2 2-2-2 2-2zM26 6l1 1-1 1-1-1 1-1z" fill="#ffd700" class="ai-sparkles"/>
+                </svg>
+              </div>
+              <h3>Cursor</h3>
+              <p>Éditeur IA pour développement assisté.</p>
+            </article>
+            <article class="card tool">
+              <div class="icon" aria-hidden="true">
+                <svg class="svg-icon anim-notion-pages" viewBox="0 0 48 48" aria-label="Notion">
+                  <title>Notion</title>
+                  <defs>
+                    <linearGradient id="notion-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#000000"/>
+                      <stop offset="100%" stop-color="#37352f"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- Main page -->
+                  <rect x="8" y="6" width="24" height="32" rx="3" fill="url(#notion-grad)" class="notion-page-1"/>
+                  <!-- Stacked pages -->
+                  <rect x="10" y="8" width="24" height="32" rx="3" fill="url(#notion-grad)" class="notion-page-2" opacity="0.8"/>
+                  <rect x="12" y="10" width="24" height="32" rx="3" fill="url(#notion-grad)" class="notion-page-3" opacity="0.6"/>
+                  <!-- Content lines -->
+                  <rect x="16" y="16" width="16" height="2" rx="1" fill="white" opacity="0.9" class="notion-line-1"/>
+                  <rect x="16" y="20" width="12" height="2" rx="1" fill="white" opacity="0.7" class="notion-line-2"/>
+                  <rect x="16" y="24" width="14" height="2" rx="1" fill="white" opacity="0.8" class="notion-line-3"/>
+                  <rect x="16" y="28" width="10" height="2" rx="1" fill="white" opacity="0.6" class="notion-line-4"/>
+                  <!-- Notion logo accent -->
+                  <path d="M20 12l8 4-8 4z" fill="#ff6b6b" class="notion-accent"/>
+                </svg>
+              </div>
+              <h3>Notion</h3>
+              <p>Documentation et organisation projets.</p>
+            </article>
+            <article class="card tool">
+              <div class="icon" aria-hidden="true">
+                <svg class="svg-icon anim-rss-waves" viewBox="0 0 48 48" aria-label="Feedly / RSS">
+                  <title>Feedly / RSS</title>
+                  <defs>
+                    <linearGradient id="rss-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ff6600"/>
+                      <stop offset="100%" stop-color="#ff9900"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- RSS source -->
+                  <circle cx="12" cy="36" r="4" fill="url(#rss-grad)" class="rss-source"/>
+                  <!-- RSS waves -->
+                  <path d="M12 28c6 0 12 6 12 12" stroke="url(#rss-grad)" stroke-width="3" fill="none" class="rss-wave-1"/>
+                  <path d="M12 20c10 0 20 10 20 20" stroke="url(#rss-grad)" stroke-width="3" fill="none" class="rss-wave-2"/>
+                  <path d="M12 12c14 0 26 12 26 26" stroke="url(#rss-grad)" stroke-width="3" fill="none" class="rss-wave-3"/>
+                  <!-- Data particles -->
+                  <circle cx="20" cy="32" r="1.5" fill="#00d7ff" class="data-particle-1"/>
+                  <circle cx="26" cy="28" r="1.5" fill="#00d7ff" class="data-particle-2"/>
+                  <circle cx="32" cy="24" r="1.5" fill="#00d7ff" class="data-particle-3"/>
+                  <circle cx="36" cy="20" r="1.5" fill="#00d7ff" class="data-particle-4"/>
+                  <!-- Feed icon -->
+                  <rect x="8" y="8" width="8" height="8" rx="2" fill="url(#rss-grad)" class="feed-icon"/>
+                  <rect x="10" y="10" width="4" height="1" fill="white"/>
+                  <rect x="10" y="12" width="3" height="1" fill="white"/>
+                  <rect x="10" y="14" width="2" height="1" fill="white"/>
+                </svg>
+              </div>
+              <h3>Feedly / RSS</h3>
+              <p>Veille automatisée par flux.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stage -->
+      <section id="stage" class="section">
+        <div class="container">
+          <h2 data-animate>Stage</h2>
+          <div class="two-col" data-animate>
+            <div class="col">
+              <h3>Prends Ma Photo – Stage 2025</h3>
+              <p>Site vitrine complet: design, intégration, formulaires, SEO et mise en ligne sur o2switch.</p>
+              <p><a class="btn btn-ghost" href="project-prends-ma-photo.html">Détails du projet</a></p>
+            </div>
+            <div class="col">
+              <ul class="timeline">
+                <li><div class="dot"></div><div class="content"><h4>Analyse des besoins</h4><p>Ateliers, cadrage des fonctionnalités et arborescence.</p></div></li>
+                <li><div class="dot"></div><div class="content"><h4>Développement</h4><p>Maquettes, pages, formulaires, hébergement.</p></div></li>
+                <li><div class="dot"></div><div class="content"><h4>Résultats</h4><p>Site en production, performances et SEO de base.</p></div></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- E5 -->
+      <section id="e5" class="section alt">
+        <div class="container">
+          <h2 data-animate>E5</h2>
+          <p data-animate>Présentation de l'épreuve E5: contexte, missions réalisées, livrables et compétences évaluées.</p>
+          
+          <div class="e5-projects" data-animate>
+            <div class="e5-project">
+              <h3>Projet E5 - 1</h3>
+              <div class="two-col">
+                <div class="col">
+                  <p>Présentation du premier projet majeur de l'épreuve E5.</p>
+                  <ul>
+                    <li>Contexte et missions</li>
+                    <li>Livrables produits</li>
+                    <li>Compétences évaluées</li>
+                  </ul>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <div class="card-body">
+                      <h3>Ressources</h3>
+                      <p>Documents et liens du projet 1.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="e5-project">
+              <h3>Projet E5 - 2</h3>
+              <div class="two-col">
+                <div class="col">
+                  <p>Présentation du second projet majeur de l'épreuve E5.</p>
+                  <ul>
+                    <li>Contexte et missions</li>
+                    <li>Livrables produits</li>
+                    <li>Compétences évaluées</li>
+                  </ul>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <div class="card-body">
+                      <h3>Ressources</h3>
+                      <p>Documents et liens du projet 2.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Compétences -->
+      <section id="skills" class="section alt">
+        <div class="container">
+          <h2 data-animate>Compétences en fin de 2nde année</h2>
+          <div class="skills-list" data-animate>
+            <div class="skill-category">
+              <h3>Développement Web</h3>
+              <ul class="skill-items">
+                <li class="skill-item">
+                  <span class="skill-name">HTML / CSS</span>
+                  <span class="skill-level mastered">Maîtrisé</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">JavaScript</span>
+                  <span class="skill-level comfortable">À l'aise</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">PHP</span>
+                  <span class="skill-level working">En travail</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="skill-category">
+              <h3>Bases de données</h3>
+              <ul class="skill-items">
+                <li class="skill-item">
+                  <span class="skill-name">SQL (MySQL, PostgreSQL)</span>
+                  <span class="skill-level comfortable">À l'aise</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Modélisation BDD</span>
+                  <span class="skill-level comfortable">À l'aise</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="skill-category">
+              <h3>Programmation</h3>
+              <ul class="skill-items">
+                <li class="skill-item">
+                  <span class="skill-name">Python</span>
+                  <span class="skill-level comfortable">À l'aise</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">C++</span>
+                  <span class="skill-level working">En travail</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="skill-category">
+              <h3>Outils & Technologies</h3>
+              <ul class="skill-items">
+                <li class="skill-item">
+                  <span class="skill-name">Git & GitHub</span>
+                  <span class="skill-level mastered">Maîtrisé</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Docker</span>
+                  <span class="skill-level comfortable">À l'aise</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">VMware</span>
+                  <span class="skill-level comfortable">À l'aise</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">SEO & Hébergement</span>
+                  <span class="skill-level comfortable">À l'aise</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="skill-category">
+              <h3>Intelligence Artificielle</h3>
+              <ul class="skill-items">
+                <li class="skill-item">
+                  <span class="skill-name">Outils IA</span>
+                  <span class="skill-level mastered">Maîtrisé</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Vibes Coding</span>
+                  <span class="skill-level mastered">Maîtrisé</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Machine Learning</span>
+                  <span class="skill-level working">En travail</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="skill-category">
+              <h3>Frameworks</h3>
+              <ul class="skill-items">
+                <li class="skill-item">
+                  <span class="skill-name">Symfony</span>
+                  <span class="skill-level comfortable">À l'aise</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Vue.js</span>
+                  <span class="skill-level working">En travail</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Workflow</span>
+                  <span class="skill-level working">En travail</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Veille -->
+      <section id="veille" class="section">
+        <div class="container">
+          <h2 data-animate>Veille technologique</h2>
+          <div class="faq" data-animate>
+            <details class="faq-item" open>
+              <summary>Qu'est ce que la veille technologique ?</summary>
+              <div class="answer">
+                <p>La veille technologique est un processus continu de recherche, de sélection et d'analyse d'informations liées aux technologies, aux outils et aux pratiques d'un domaine. Elle permet d'anticiper les évolutions, d'identifier des opportunités et de rester à jour.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Quel est le but d'une veille technologique ?</summary>
+              <div class="answer">
+                <p>Le but est de prendre des décisions éclairées, d'améliorer ses compétences, de détecter des tendances et d'innover plus rapidement. Elle sert aussi à réduire les risques (obsolescence, mauvais choix techniques) et à gagner en compétitivité.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Quels sont les outils de ma veille ?</summary>
+              <div class="answer">
+                <ul>
+                  <li>Flux RSS avec Feedly et Google Alerts</li>
+                  <li>Curations: newsletters (Dense Discovery, TLDR, Benedict's), YouTube tech</li>
+                  <li>Plateformes: GitHub Trending/Stars, Product Hunt, Hacker News</li>
+                  <li>Recherche académique: arXiv, Google Scholar</li>
+                  <li>Communautés: Reddit (r/MachineLearning, r/webdev), X/Twitter listes</li>
+                  <li>Organisation: Notion/Obsidian pour synthèses et liens</li>
+                </ul>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Quel a été le sujet de ma veille technologique ?</summary>
+              <div class="answer">
+                <p>IA dans la musique: génération musicale, outils d'assistance à la composition, séparation de pistes, mastering automatique et impacts sur les workflows des artistes.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Quelles sont les différentes thématiques abordées ?</summary>
+              <div class="answer">
+                <ul>
+                  <li>Modèles génératifs audio (diffusion, transformer)</li>
+                  <li>Audio-to-MIDI et transcription polyphonique</li>
+                  <li>Outils d'édition intelligente (stem separation, time-stretch de qualité)</li>
+                  <li>Licences, éthique et droits d'auteur avec l'IA</li>
+                  <li>Workflows DJ/production: intégration IA dans DAW et live</li>
+                  <li>Marché et tendances (plugins, services SaaS, open source)</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+          <div class="grid cards veille-grid" data-animate>
+            <article class="card tool veille">
+              <a href="veille-musique.html" aria-label="Voir la veille: IA dans la musique">
+              <div class="icon" aria-hidden="true">
+                <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="IA Musique">
+                  <defs>
+                    <linearGradient id="v-musique" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#08b6d4"/>
+                      <stop offset="100%" stop-color="#22c55e"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="24" cy="24" r="16" fill="url(#v-musique)" opacity="0.9"/>
+                  <path d="M20 16v14a4 4 0 1 0 2 3.46V22h8v6a4 4 0 1 0 2 3.46V16h-12z" fill="white"/>
+                </svg>
+              </div>
+              <h3>IA dans la musique</h3>
+              <p>Génération musicale, outils d'assistance, éthique et droits d'auteur.</p>
+              </a>
+            </article>
+            <article class="card tool veille">
+              <a href="veille-generation.html" aria-label="Voir la veille: IA dans la génération">
+              <div class="icon" aria-hidden="true">
+                <svg class="svg-icon anim-gen" viewBox="0 0 48 48" aria-label="IA Génération">
+                  <defs>
+                    <linearGradient id="v-gen" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#08b6d4"/>
+                      <stop offset="100%" stop-color="#22c55e"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="10" y="10" width="28" height="28" rx="6" class="gen-bg" fill="url(#v-gen)"/>
+                  <path d="M18 24h12M24 18v12" class="gen-plus"/>
+                </svg>
+              </div>
+              <h3>IA dans la génération</h3>
+              <p>Texte, image, audio, vidéo: modèles, usages et limites actuelles.</p>
+              </a>
+            </article>
+            <article class="card tool veille">
+              <a href="veille-metiers.html" aria-label="Voir la veille: L’IA remplace les métiers ?">
+              <div class="icon" aria-hidden="true">
+                <svg class="svg-icon anim-wiggle" viewBox="0 0 48 48" aria-label="IA & Métiers">
+                  <defs>
+                    <linearGradient id="v-metiers" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#08b6d4"/>
+                      <stop offset="100%" stop-color="#22c55e"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M8 20h32v16a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V20z" fill="url(#v-metiers)"/>
+                  <path d="M16 20v-2a8 8 0 0 1 16 0v2" fill="url(#v-metiers)"/>
+                  <circle cx="24" cy="26" r="4" fill="white"/>
+                </svg>
+              </div>
+              <h3>L’IA remplace les métiers ?</h3>
+              <p>Automatisation, complémentarité homme-IA et impacts sur l’emploi.</p>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <div class="container two-col">
+          <div class="col" data-animate>
+            <h2>Contact</h2>
+            <p>N’hésitez pas à me contacter pour une collaboration, un stage, ou un projet.</p>
+            <div class="hero-socials">
+              <a class="instagram" href="mailto:kortogrind@gmail.com" rel="noreferrer noopener" aria-label="Email">
+                <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+              </a>
+              <a class="linkedin" href="https://www.linkedin.com/in/korto-grinda-4b6a6433a/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
+                <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="2.5" y="2.5" width="19" height="19" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <line x1="7" y1="10.5" x2="7" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="7.0" cy="7.5" r="1.3" fill="currentColor"/>
+                  <path d="M11 17v-4.2c0-1.6 1.3-2.8 2.8-2.8h0c1.6 0 2.7 1.2 2.7 2.8V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                </svg>
+              </a>
+              <a class="github" href="https://github.com/kokoKRK" target="_blank" rel="noreferrer noopener" aria-label="GitHub">
+                <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2.5c-5.2 0-9.5 4.3-9.5 9.5 0 4.2 2.7 7.7 6.5 9 .5.1.7-.2.7-.5v-2c-2.6.6-3.1-1.1-3.1-1.1-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.5 1.1 3.1.8.1-.7.4-1.1.7-1.4-2.1-.3-4.2-1.1-4.2-4.9 0-1.1.4-2 1-2.8-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1.1.8-.2 1.6-.3 2.5-.3s1.7.1 2.5.3c2-1.4 2.8-1.1 2.8-1.1.5 1.4.2 2.4.1 2.7.6.8 1 1.7 1 2.8 0 3.8-2.1 4.6-4.2 4.9.4.3.7.9.7 1.8v2.6c0 .3.2.6.7.5 3.8-1.3 6.5-4.9 6.5-9.1 0-5.2-4.3-9.5-9.5-9.5Z" fill="currentColor"/>
+                </svg>
+              </a>
+            </div>
+            <div class="contact-actions">
+              <button id="back-to-top" class="back-to-top" aria-label="Revenir en haut">
+                <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 5l-7 7m7-7l7 7M12 5v14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="col" data-animate>
+            <form id="contact-form" class="card form" novalidate>
+              <div class="field">
+                <label for="name">Nom</label>
+                <input id="name" name="name" type="text" placeholder="Votre nom" required />
+                <small class="error" aria-live="polite"></small>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" value="kortogrind@gmail.com" placeholder="votre@email.com" required />
+                <small class="error" aria-live="polite"></small>
+              </div>
+              <div class="field">
+                <label for="reason">Objet</label>
+                <select id="reason" name="reason">
+                  <option value="alternance" selected>Demande d'alternance</option>
+                  <option value="stage">Demande de stage</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+                <small class="error" aria-live="polite"></small>
+              </div>
+              <button class="btn btn-primary" type="submit">Envoyer</button>
+              <p class="form-note">Ce formulaire est une démo locale. Aucun envoi réel.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Grinda Korto. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    
+
+    <div id="toast" role="status" aria-live="polite" class="toast" hidden></div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+
