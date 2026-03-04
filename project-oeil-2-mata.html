@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projet - Oeil 2 Mata</title>
+    <meta name="description" content="Détails du projet personnel Oeil 2 Mata : portfolio artiste, galerie dynamique, filtres et espace admin." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#hero" class="brand" aria-label="Retour à l'accueil">GK</a>
+        <nav class="nav" aria-label="Navigation">
+          <a class="btn btn-ghost" href="index.html#projects">← Retour aux projets</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="project-detail">
+        <div class="container">
+          <h1>Oeil 2 Mata</h1>
+          <p class="subtitle">
+            Projet personnel de portfolio artistique (peinture et cinema), avec galerie interactive,
+            pages detaillees, espace admin et gestion de donnees JSON.
+          </p>
+
+          <div class="card" style="margin-bottom: 20px; overflow: hidden;">
+            <img src="siteMamanExpo/imgSiteMaman/grandTableauPanthere.jpg" alt="Apercu du projet Oeil 2 Mata" style="width:100%; height:auto; display:block;">
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
+            <article class="card">
+              <h2>Contexte & objectifs</h2>
+              <p>
+                Ce projet perso est developpe pour creer une presence en ligne complete pour une
+                artiste (galerie d'oeuvres, section cinema, presentation et contact). Le but est de
+                proposer un site visuel, simple a administrer et evolutif.
+              </p>
+              <ul>
+                <li>Mettre en valeur les oeuvres avec un rendu moderne et immersif.</li>
+                <li>Permettre la recherche et le filtrage des tableaux.</li>
+                <li>Ajouter une partie cinema en complement de la galerie.</li>
+                <li>Faciliter les ajouts d'oeuvres via un espace admin.</li>
+                <li>Structurer les donnees pour simplifier les evolutions.</li>
+              </ul>
+            </article>
+            <aside class="card">
+              <h2>Stack & architecture</h2>
+              <ul>
+                <li>Front: <strong>HTML, CSS, JavaScript</strong></li>
+                <li>Donnees: <code>data/oeuvres.json</code>, <code>data/films.json</code></li>
+                <li>Pages: accueil, galerie, oeuvre, cinema, a-propos, contact, admin</li>
+                <li>Scripts: chargement dynamique via <code>fetch</code></li>
+                <li>Stockage local: <code>localStorage</code> et <code>sessionStorage</code></li>
+                <li>Projet en cours: fonctionnalites encore en evolution</li>
+              </ul>
+            </aside>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>Fonctionnalites deja implementees</h2>
+              <ul>
+                <li>Galerie dynamique generee depuis JSON.</li>
+                <li>Recherche texte + filtres (taille et style).</li>
+                <li>Fiche detail oeuvre via URL parametree (<code>oeuvre.html?id=...</code>).</li>
+                <li>Section cinema avec affichage de films et metadonnees.</li>
+                <li>Formulaire de contact avec pre-remplissage selon le contexte.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h2>Espace admin</h2>
+              <ul>
+                <li>Connexion admin simple cote front (session navigateur).</li>
+                <li>Ajout d'oeuvres avec preview en direct.</li>
+                <li>Upload image local (Data URL) ou chemin d'image.</li>
+                <li>Sauvegarde locale des ajouts pour tester rapidement.</li>
+                <li>Export JSON pour integration dans la version finale.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>Etat actuel</h2>
+              <p>
+                Le projet est <strong>bien avance mais non termine</strong>. La base fonctionnelle est en place
+                (navigation, galerie, fiches, admin, cinema), avec encore des optimisations a faire
+                avant une mise en production definitive.
+              </p>
+            </article>
+            <article class="card">
+              <h2>Prochaines etapes</h2>
+              <ul>
+                <li>Finaliser la version production de l'admin (securisation serveur).</li>
+                <li>Ameliorer SEO et performance (compression image, metadata).</li>
+                <li>Ajouter tests de robustesse sur les donnees et les formulaires.</li>
+                <li>Preparer deploiement et workflow de mise a jour des contenus.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>Competences mobilisees</h2>
+              <ul>
+                <li>Conception front-end modulaire en HTML/CSS/JS.</li>
+                <li>Structuration et exploitation de donnees JSON.</li>
+                <li>Logique de filtres et recherche cote client.</li>
+                <li>UX de navigation entre liste et fiche detail.</li>
+                <li>Approche iterative d'un projet personnel long terme.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h2>Liens & actions</h2>
+              <div class="hero-actions" style="margin-top: 0;">
+                <a href="siteMamanExpo/index.html" class="btn btn-primary" target="_blank" rel="noreferrer noopener">Voir la maquette locale</a>
+                <a href="siteMamanExpo/galerie.html" class="btn" target="_blank" rel="noreferrer noopener">Voir la galerie</a>
+                <a href="siteMamanExpo/admin.html" class="btn btn-ghost" target="_blank" rel="noreferrer noopener">Voir l'admin</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Grinda Korto. Tous droits reserves.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
