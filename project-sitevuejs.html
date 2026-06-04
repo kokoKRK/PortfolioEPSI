@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projet - Site Vue.js</title>
+    <meta name="description" content="Details du projet Site Vue.js : navigation SPA, formulaire, appels API et composant accordéon." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#hero" class="brand" aria-label="Retour a l'accueil">GK</a>
+        <nav class="nav" aria-label="Navigation">
+          <a class="btn btn-ghost" href="index.html#projects">← Retour aux projets</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="project-detail">
+        <div class="container">
+          <h1>Site Vue.js</h1>
+          <p class="subtitle">
+            Projet web realise avec Vue 3 pour pratiquer les composants, la navigation d'une SPA,
+            les formulaires valides et les appels API cote front-end.
+          </p>
+
+          <div class="card" style="margin-bottom: 20px; overflow: hidden;">
+            <img src="assets/img/img_projets/vueJS.jpg" alt="Apercu du projet Site Vue.js" style="width:100%; max-height:420px; object-fit:cover; display:block;">
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
+            <article class="card">
+              <h2>Contexte & objectifs</h2>
+              <p>
+                L'objectif de ce projet est de consolider les bases du framework Vue.js en realisant
+                une application front interactive, orientee composants et manipulations de donnees API.
+              </p>
+              <ul>
+                <li>Construire une navigation simple entre plusieurs sections.</li>
+                <li>Creer un formulaire avec validation client.</li>
+                <li>Consommer des APIs externes et afficher les reponses.</li>
+                <li>Mettre en place un composant bonus de type accordeon.</li>
+                <li>Structurer proprement le code en composants reutilisables.</li>
+              </ul>
+            </article>
+            <aside class="card">
+              <h2>Stack & architecture</h2>
+              <ul>
+                <li>Framework: <strong>Vue 3</strong></li>
+                <li>Bundlers/outillage: Vue CLI + Vite</li>
+                <li>Langages: HTML, CSS, JavaScript</li>
+                <li>Pattern: composants + etat local (<code>ref</code>, <code>reactive</code>)</li>
+                <li>API: <code>fetch</code> vers JSONPlaceholder et Chuck Norris API</li>
+              </ul>
+            </aside>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>Fonctionnalites principales</h2>
+              <ul>
+                <li>Navigation interne entre pages (home, contact, api, bonus).</li>
+                <li>Formulaire de contact avec validations et messages d'etat.</li>
+                <li>Testeur d'API configurable (URL, methode, body JSON).</li>
+                <li>Accordeon avec tableau d'utilisateurs et blague API.</li>
+                <li>Affichage formate des reponses JSON.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h2>Competences mobilisees</h2>
+              <ul>
+                <li>Developpement front-end avec framework JavaScript moderne.</li>
+                <li>Conception de composants reutilisables.</li>
+                <li>Validation de formulaires et gestion d'erreurs.</li>
+                <li>Integration et traitement de flux API.</li>
+                <li>Organisation de projet npm (scripts dev/build/preview).</li>
+              </ul>
+            </article>
+          </div>
+
+          <article class="card" style="margin-top: 20px;">
+            <h2>Galerie du projet</h2>
+            <div class="grid cards projects-grid">
+              <div class="card project"><div class="thumb" role="img" aria-label="Vue.js interface principale" style="background-image:url('assets/img/img_projets/vueJS.jpg'); background-size:cover; background-position:center;"></div></div>
+              <div class="card project"><div class="thumb" role="img" aria-label="Vue.js API component" style="background-image:url('assets/img/img_projets/sitevuejs-api.svg'); background-size:cover; background-position:center;"></div></div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Grinda Korto. Tous droits reserves.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

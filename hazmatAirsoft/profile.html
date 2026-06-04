@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon profil — Hazmat Airsoft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">⎔</span>
+        <span class="logo-text">H<span class="logo-accent">A</span>ZM<span class="logo-accent">A</span>T <span class="logo-accent">A</span>IRSOFT</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#accueil">Accueil</a></li>
+        <li><a href="index.html#categories">Catégories</a></li>
+        <li><a href="index.html#produits">Produits</a></li>
+        <li><a href="index.html#avis">Avis</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="user-menu" id="userMenu">
+          <button class="user-menu-btn" id="userMenuBtn">
+            <span class="user-avatar" id="userAvatar">U</span>
+            <span class="user-name" id="userName">Utilisateur</span>
+          </button>
+          <div class="user-dropdown" id="userDropdown">
+            <a href="index.html">Retour au shop</a>
+            <a href="#" id="logoutBtn">Déconnexion</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PROFILE -->
+  <main class="profile-page">
+    <div class="container">
+      <div class="profile-header">
+        <div class="profile-avatar-lg" id="profileAvatarLg">U</div>
+        <div>
+          <h1 id="profileTitle">Mon profil</h1>
+          <p class="profile-email" id="profileEmail">email@example.com</p>
+          <p class="profile-provider" id="profileProvider"></p>
+        </div>
+      </div>
+
+      <div class="profile-grid">
+
+        <!-- INFOS PERSONNELLES -->
+        <section class="profile-card">
+          <h2>Informations personnelles</h2>
+          <form id="profileInfoForm">
+            <div class="form-group">
+              <label for="profileName">Nom complet</label>
+              <input type="text" id="profileName" placeholder="Votre nom">
+            </div>
+            <div class="form-group">
+              <label for="profileEmailField">Email</label>
+              <input type="email" id="profileEmailField" disabled>
+            </div>
+            <p class="profile-msg" id="infoMsg"></p>
+            <button type="submit" class="btn btn-primary" id="saveInfoBtn">Enregistrer</button>
+          </form>
+        </section>
+
+        <!-- CHANGER MOT DE PASSE -->
+        <section class="profile-card" id="passwordSection">
+          <h2>Changer le mot de passe</h2>
+          <form id="passwordForm">
+            <div class="form-group">
+              <label for="newPassword">Nouveau mot de passe</label>
+              <input type="password" id="newPassword" placeholder="Min. 6 caractères" required minlength="6">
+            </div>
+            <div class="form-group">
+              <label for="confirmNewPassword">Confirmer</label>
+              <input type="password" id="confirmNewPassword" placeholder="••••••••" required minlength="6">
+            </div>
+            <p class="profile-msg" id="passwordMsg"></p>
+            <button type="submit" class="btn btn-primary" id="savePasswordBtn">Mettre à jour</button>
+          </form>
+        </section>
+
+        <!-- MON PANIER -->
+        <section class="profile-card profile-card-wide">
+          <h2>Mon panier</h2>
+          <div id="profileCart" class="profile-cart">
+            <p class="profile-empty">Chargement...</p>
+          </div>
+          <div id="profileCartFooter" class="profile-cart-footer" style="display:none;">
+            <div class="profile-cart-total">
+              <span>Total</span>
+              <span id="profileCartTotal">0,00 €</span>
+            </div>
+            <a href="index.html" class="btn btn-primary">Commander sur le shop</a>
+          </div>
+        </section>
+
+        <!-- HISTORIQUE COMMANDES -->
+        <section class="profile-card profile-card-wide">
+          <h2>Historique des commandes</h2>
+          <div id="profileOrders" class="profile-orders">
+            <p class="profile-empty">Chargement...</p>
+          </div>
+        </section>
+
+        <!-- ZONE DANGER -->
+        <section class="profile-card profile-card-danger">
+          <h2>Zone dangereuse</h2>
+          <p>La suppression de votre compte est définitive. Toutes vos données, commandes et panier seront supprimés.</p>
+          <button class="btn btn-danger" id="deleteAccountBtn">Supprimer mon compte</button>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- DELETE CONFIRM MODAL -->
+  <div class="confirm-overlay" id="confirmOverlay"></div>
+  <div class="confirm-modal" id="confirmModal">
+    <h3>Supprimer votre compte ?</h3>
+    <p>Cette action est irréversible. Votre compte, panier et toutes vos données seront définitivement supprimés.</p>
+    <p class="confirm-warning">Tapez <strong>SUPPRIMER</strong> pour confirmer :</p>
+    <input type="text" id="confirmDeleteInput" placeholder="SUPPRIMER" autocomplete="off">
+    <div class="confirm-actions">
+      <button class="btn btn-outline" id="cancelDeleteBtn">Annuler</button>
+      <button class="btn btn-danger" id="confirmDeleteBtn" disabled>Supprimer définitivement</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="profile.js"></script>
+</body>
+</html>

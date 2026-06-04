@@ -186,4 +186,65 @@ document.getElementById('year').textContent = new Date().getFullYear();
   });
 })();
 
+// Consistent colors for identical tech tags
+(function colorizeProjectTechTags() {
+  const tags = document.querySelectorAll('.project-tech span');
+  if (!tags.length) return;
+
+  const palette = [
+    ['rgba(8,182,212,.12)', 'rgba(8,182,212,.30)', '#0e7490'],
+    ['rgba(34,197,94,.12)', 'rgba(34,197,94,.30)', '#166534'],
+    ['rgba(139,92,246,.12)', 'rgba(139,92,246,.30)', '#6d28d9'],
+    ['rgba(245,158,11,.12)', 'rgba(245,158,11,.35)', '#92400e'],
+    ['rgba(236,72,153,.12)', 'rgba(236,72,153,.30)', '#9d174d'],
+    ['rgba(59,130,246,.12)', 'rgba(59,130,246,.30)', '#1d4ed8']
+  ];
+
+  const explicitMap = {
+    html: 0,
+    css: 0,
+    javascript: 0,
+    'vue 3': 1,
+    vue: 1,
+    flutter: 2,
+    dart: 2,
+    php: 3,
+    python: 3,
+    postgresql: 4,
+    supabase: 4,
+    odoo: 5,
+    linux: 5,
+    typescript: 2,
+    'api rest': 5
+  };
+
+  const colorIndexByLabel = new Map();
+  let nextIndex = 0;
+
+  tags.forEach((tag) => {
+    const raw = tag.textContent ? tag.textContent.trim() : '';
+    const key = raw.toLowerCase();
+    if (!raw) return;
+
+    if (!colorIndexByLabel.has(key)) {
+      const mapped = explicitMap[key];
+      colorIndexByLabel.set(key, Number.isInteger(mapped) ? mapped : (nextIndex++ % palette.length));
+    }
+
+    const [bg, border, text] = palette[colorIndexByLabel.get(key)];
+    tag.style.setProperty('--tech-bg', bg);
+    tag.style.setProperty('--tech-border', border);
+    tag.style.setProperty('--tech-text', text);
+  });
+})();
+
+// Place tools section just above skills
+(function moveToolsSection() {
+  const tools = document.getElementById('tools');
+  const skills = document.getElementById('skills');
+  if (!tools || !skills) return;
+  if (tools.nextElementSibling === skills) return;
+  skills.parentNode.insertBefore(tools, skills);
+})();
+
 

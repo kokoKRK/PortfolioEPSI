@@ -24,6 +24,7 @@
             <li><a href="#parcours">Parcours</a></li>
             <li><a href="#projects">Projets</a></li>
             <li><a href="#stage">Stage</a></li>
+            <li><a href="#e5">E5</a></li>
             <li><a href="#skills">Compétences</a></li>
             <li><a href="#veille">Veille</a></li>
             <li><a href="#tools">Logiciels</a></li>
@@ -35,7 +36,7 @@
 
     <main>
       <!-- Hero -->
-      <section id="hero" class="section hero">
+      <section id="hero" class="section hero section-animated">
         <div class="container hero-grid">
           <div class="hero-copy" data-animate>
             <p class="eyebrow">Bienvenue</p>
@@ -65,6 +66,13 @@
                 <path d="M12 2.5c-5.2 0-9.5 4.3-9.5 9.5 0 4.2 2.7 7.7 6.5 9 .5.1.7-.2.7-.5v-2c-2.6.6-3.1-1.1-3.1-1.1-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.5 1.1 3.1.8.1-.7.4-1.1.7-1.4-2.1-.3-4.2-1.1-4.2-4.9 0-1.1.4-2 1-2.8-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1.1.8-.2 1.6-.3 2.5-.3s1.7.1 2.5.3c2-1.4 2.8-1.1 2.8-1.1.5 1.4.2 2.4.1 2.7.6.8 1 1.7 1 2.8 0 3.8-2.1 4.6-4.2 4.9.4.3.7.9.7 1.8v2.6c0 .3.2.6.7.5 3.8-1.3 6.5-4.9 6.5-9.1 0-5.2-4.3-9.5-9.5-9.5Z" fill="currentColor"/>
               </svg>
             </a>
+            <a class="cv" href="Korto_Grinda_CV.pdf" target="_blank" rel="noreferrer noopener" aria-label="Télécharger le CV">
+              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 2.5h7l4.5 4.5V20a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 20V4A1.5 1.5 0 0 1 7 2.5z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M14 2.5V7h4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M8.5 11h7M8.5 14h7M8.5 17h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </a>
           </div>
           </div>
           <div class="hero-visual" aria-hidden="true" data-animate>
@@ -75,10 +83,13 @@
                   <stop offset="0%" stop-color="var(--accent)" />
                   <stop offset="100%" stop-color="var(--accent-2)" />
                 </linearGradient>
+                <clipPath id="heroAvatarClip">
+                  <circle cx="200" cy="200" r="92"></circle>
+                </clipPath>
               </defs>
               <path fill="url(#grad)" d="M308.5,270.5Q267,341,184,329.5Q101,318,77,234Q53,150,132.5,101.5Q212,53,288,101.5Q364,150,308.5,270.5Z" />
-              <circle cx="200" cy="200" r="72" fill="white" opacity="0.9" />
-              <text x="200" y="208" text-anchor="middle" font-size="28" fill="var(--text)">GK</text>
+              <circle cx="200" cy="200" r="92" fill="white" opacity="0.9" />
+              <image href="img_korto.jpg" x="56" y="72" width="288" height="288" preserveAspectRatio="xMidYMid slice" clip-path="url(#heroAvatarClip)"></image>
             </svg>
           </div>
         </div>
@@ -90,18 +101,18 @@
           <div class="col" data-animate>
             <h2>À propos</h2>
             <p>
-              Je suis étudiant en BTS Socle Numérique option SLAM, passionné par le
+              Je suis étudiant en BTS Socle Numérique option SLAM, curieux et attiré par le
               développement web et logiciel. J'aime explorer l'intelligence artificielle,
               la création musicale et la gestion de projets innovants.
             </p>
             <p>
-              En dehors de l'informatique, je fais du DJing (rap, house, shatta) et
-              de la musculation.
+              En dehors de l'informatique, je fais de la musique et
+              du basketball.
             </p>
           </div>
           <div class="col about-avatar" data-animate>
             <figure class="avatar-wrap">
-              <img src="img_korto.jpg" alt="Photo de profil de Grinda Korto" loading="lazy" />
+              <img src="campus_montpellie.jpg" alt="Etablissement de formation EPSI Montpellier" loading="lazy" />
             </figure>
           </div>
         </div>
@@ -229,28 +240,8 @@
                   <td colspan="8" class="section-title">Réalisations en cours de formation en première année</td>
                 </tr>
                 <tr>
-                  <td>Hotel Neptune</td>
-                  <td>15/10/2024</td>
-                  <td class="check">✓</td>
-                  <td></td>
-                  <td class="check">✓</td>
-                  <td class="check">✓</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Scraping League of Legends</td>
-                  <td>30/11/2024</td>
-                  <td class="check">✓</td>
-                  <td></td>
-                  <td class="check">✓</td>
-                  <td class="check">✓</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
                   <td>Machine Rube Goldberg</td>
-                  <td>08/01/2025</td>
+                  <td>07/09/2024 au 12/09/2024</td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -259,33 +250,43 @@
                   <td></td>
                 </tr>
                 <tr>
-                  <td>Fast Flash</td>
-                  <td>08/01/2025</td>
-                  <td></td>
-                  <td></td>
+                  <td>Création d'un site web avec optimisation SEO (Fast Flash)</td>
+                  <td>08/11/2024 au 30/01/2025</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
                   <td class="check">✓</td>
                   <td class="check">✓</td>
                   <td></td>
-                  <td></td>
+                  <td class="check">✓</td>
                 </tr>
                 <tr>
-                  <td>VizHome</td>
-                  <td>02/02/2025</td>
+                  <td>Hôtel Neptune : site web avec BDD et gestion de comptes</td>
+                  <td>06/12/2024 au 06/01/2025</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                </tr>
+                <tr>
+                  <td>Scraping d'informations formaté en graphe avec Python</td>
+                  <td>08/03/2025 au 08/04/2025</td>
+                  <td class="check">✓</td>
                   <td class="check">✓</td>
                   <td></td>
-                  <td class="check">✓</td>
                   <td class="check">✓</td>
                   <td></td>
                   <td></td>
                 </tr>
-                
+
                 <!-- Réalisations en cours de formation en seconde année -->
                 <tr class="section-header">
                   <td colspan="8" class="section-title">Réalisations en cours de formation en seconde année</td>
                 </tr>
                 <tr>
-                  <td>Workshop 2025/26</td>
-                  <td>10/09/2025</td>
+                  <td>USB Espion</td>
+                  <td>10/09/2025 au 15/09/2025</td>
                   <td class="check">✓</td>
                   <td></td>
                   <td class="check">✓</td>
@@ -294,63 +295,166 @@
                   <td></td>
                 </tr>
                 <tr>
-                  <td>Prends Ma Photo (Stage)</td>
-                  <td>15/01/2025</td>
+                  <td>Pizzeria (application Flutter)</td>
+                  <td>27/10/2025 au 28/12/2025</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td></td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                </tr>
+                <tr>
+                  <td>Site Vue.js</td>
+                  <td>25/11/2025 au 25/12/2025</td>
                   <td></td>
                   <td></td>
                   <td class="check">✓</td>
                   <td class="check">✓</td>
                   <td></td>
+                  <td class="check">✓</td>
+                </tr>
+                <tr>
+                  <td>VizHome</td>
+                  <td>10/2024 au 04/2026</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                </tr>
+
+                <!-- Projets APP E6 -->
+                <tr class="section-header">
+                  <td colspan="8" class="section-title">Projets APP E6</td>
+                </tr>
+                <tr>
+                  <td>Situation 1 : Flutter</td>
+                  <td>01/03/2026 au 01/06/2026</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                </tr>
+                <tr>
+                  <td>Situation 2 : Backend</td>
+                  <td>01/03/2026 au 01/06/2026</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                </tr>
+
+                <!-- Projets personnels -->
+                <tr class="section-header">
+                  <td colspan="8" class="section-title">Projets personnels</td>
+                </tr>
+                <tr>
+                  <td>Hazmat Airsoft</td>
+                  <td>31/03/2026 au 15/04/2026</td>
+                  <td></td>
+                  <td></td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td>Portfolio personnel</td>
-                  <td>02/02/2025</td>
-                  <td></td>
+                  <td>Site Maman Expo Galerie d'art</td>
+                  <td>01/11/2025 au 31/04/2026</td>
                   <td></td>
                   <td class="check">✓</td>
-                  <td></td>
-                  <td></td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
                   <td class="check">✓</td>
                 </tr>
-                
+
                 <!-- Réalisations en milieu professionnel en cours de première année -->
                 <tr class="section-header">
                   <td colspan="8" class="section-title">Réalisations en milieu professionnel en cours de première année</td>
                 </tr>
                 <tr>
                   <td>Recherche de la concurrence</td>
-                  <td>30/04/2025</td>
+                  <td>28/04/2025 au 28/06/2025</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
                   <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
                   <td class="check">✓</td>
                 </tr>
                 <tr>
-                  <td>Création d'un site vitrine avec formulaire et sécurisation et mise en ligne du site</td>
-                  <td>22/05/2025</td>
-                  <td class="check">✓</td>
-                  <td></td>
+                  <td>Construction d'un site web vitrine</td>
+                  <td>22/05/2025 au 28/05/2025</td>
                   <td class="check">✓</td>
                   <td class="check">✓</td>
                   <td class="check">✓</td>
-                  <td></td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
                 </tr>
-                
+
                 <!-- Réalisations en milieu professionnel en cours de seconde année -->
                 <tr class="section-header">
                   <td colspan="8" class="section-title">Réalisations en milieu professionnel en cours de seconde année</td>
                 </tr>
+                <tr>
+                  <td>3Dmap - Migration ERP Odoo 17 vers Odoo 18</td>
+                  <td>01/01/2026 au 28/02/2026</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>3Dmap - Debug PostgreSQL</td>
+                  <td>01/01/2026 au 28/02/2026</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>3Dmap - Stabilisation serveur Linux et CloudPepper</td>
+                  <td>01/01/2026 au 28/02/2026</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td></td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                </tr>
+                <tr>
+                  <td>3Dmap - Modules Odoo/OCA et remise en ligne de l'instance</td>
+                  <td>01/01/2026 au 28/02/2026</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                  <td class="check">✓</td>
+                </tr>
               </tbody>
             </table>
           </div>
+          <p data-animate style="margin-top: 16px; text-align: center;">
+            <a class="btn btn-primary" href="6- Annexe 6-1 - Tableau de synthèse - Epreuve E4 - BTS SIO 2026.xlsx" target="_blank" rel="noreferrer noopener">Voir le tableau Excel</a>
+          </p>
         </div>
       </section>
 
       <!-- Projets -->
-      <section id="projects" class="section">
+      <section id="projects" class="section section-animated">
         <div class="container">
           <h2 data-animate>Projets</h2>
           <h3 data-animate>1ère année</h3>
@@ -361,6 +465,7 @@
                 <div class="card-body">
                   <h3>Hotel Neptune</h3>
                   <p>Projet scolaire web/app.</p>
+                  <p class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span></p>
                 </div>
               </a>
             </article>
@@ -370,6 +475,7 @@
                 <div class="card-body">
                   <h3>Scraping League of Legends</h3>
                   <p>Récupération données champions + analyse via graphiques.</p>
+                  <p class="project-tech"><span>Python</span><span>Requests</span><span>Pandas</span><span>Matplotlib</span></p>
                 </div>
               </a>
             </article>
@@ -379,6 +485,7 @@
                 <div class="card-body">
                   <h3>Publicité Machine Rube Goldberg (jungle)</h3>
                   <p>Projet créatif en équipe, vidéo 3 min.</p>
+                  <p class="project-tech"><span>Storyboard</span><span>Montage vidéo</span><span>Gestion de projet</span></p>
                 </div>
               </a>
             </article>
@@ -388,6 +495,7 @@
                 <div class="card-body">
                   <h3>Stage – Prends Ma Photo (2025)</h3>
                   <p>Création site vitrine complet (design, SEO, formulaires, mise en ligne o2switch).</p>
+                  <p class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>SEO</span></p>
                 </div>
               </a>
             </article>
@@ -397,6 +505,7 @@
                 <div class="card-body">
                   <h3>Fast Flash</h3>
                   <p>Marque de cocktails premium, site interactif (choix bouteille, % alcool).</p>
+                  <p class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span></p>
                 </div>
               </a>
             </article>
@@ -406,6 +515,7 @@
                 <div class="card-body">
                   <h3>VizHome</h3>
                   <p>App IA pour générer maisons de rêve sur photos.</p>
+                  <p class="project-tech"><span>UI/UX</span><span>IA générative</span><span>JavaScript</span></p>
                 </div>
               </a>
             </article>
@@ -413,11 +523,12 @@
           <h3 data-animate>2nde année</h3>
           <div class="grid cards projects-grid" data-animate>
             <article class="card project">
-              <a href="project-workshop-2025.html" aria-label="Voir le projet Workshop 2025/26">
-                <div class="thumb" role="img" aria-label="Workshop 2025/26" style="background-image:url('assets/img/img_projets/workshopEspion.jpg'); background-size:cover; background-position:center;"></div>
+              <a href="project-usb-espion.html" aria-label="Voir le projet USB Espion">
+                <div class="thumb" role="img" aria-label="USB Espion" style="background-image:url('assets/img/img_projets/workshopEspion.jpg'); background-size:cover; background-position:center;"></div>
                 <div class="card-body">
-                  <h3>Workshop 2025/26</h3>
-                  <p>Semaine intensive: cadrage, conception, réalisation et présentation en équipe.</p>
+                  <h3>USB Espion</h3>
+                  <p>Bad USB, collecte de données et dashboard de supervision (projet en équipe).</p>
+                  <p class="project-tech"><span>Gestion de projet</span><span>Conception</span><span>Pitch</span></p>
                 </div>
               </a>
             </article>
@@ -427,15 +538,47 @@
                 <div class="card-body">
                   <h3>Stage 2026 - 3Dmap (Odoo)</h3>
                   <p>Migration et stabilisation d'un ERP Odoo (v17 vers v18) en environnement de production.</p>
+                  <p class="project-tech"><span>Odoo</span><span>Python</span><span>PostgreSQL</span><span>Linux</span></p>
                 </div>
               </a>
             </article>
             <article class="card project">
-              <a href="project-oeil-2-mata.html" aria-label="Voir le projet Oeil 2 Mata">
-                <div class="thumb" role="img" aria-label="Projet Oeil 2 Mata" style="background-image:url('assets/img/img_projets/expoMaman.jpg'); background-size:cover; background-position:center;"></div>
+              <a href="project-oeil-2-mata.html" aria-label="Voir le projet Site Maman Expo">
+                <div class="thumb" role="img" aria-label="Projet Site Maman Expo" style="background-image:url('assets/img/img_projets/expoMaman.jpg'); background-size:cover; background-position:center;"></div>
                 <div class="card-body">
-                  <h3>Oeil 2 Mata (projet perso)</h3>
-                  <p>Portfolio artiste avec galerie dynamique, filtres, espace admin et section cinema. Projet en construction.</p>
+                  <h3>Site Maman Expo (projet perso)</h3>
+                  <p>Refonte complete d'un site d'artiste: galerie dynamique, filtres, pages dediees, espace admin et section cinema.</p>
+                  <p class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>JSON</span></p>
+                </div>
+              </a>
+            </article>
+            <article class="card project">
+              <a href="project-hazmat-airsoft.html" aria-label="Voir le projet Hazmat Airsoft">
+                <div class="thumb" role="img" aria-label="Projet Hazmat Airsoft" style="background-image:url('assets/img/img_projets/hazmatAirsoft.jpg'); background-size:cover; background-position:center;"></div>
+                <div class="card-body">
+                  <h3>Hazmat Airsoft (projet perso)</h3>
+                  <p>Boutique e-commerce front avec panier, auth Supabase, profil client et checkout Stripe via fonctions serverless.</p>
+                  <p class="project-tech"><span>JavaScript</span><span>Supabase</span><span>Stripe</span><span>TypeScript</span></p>
+                </div>
+              </a>
+            </article>
+            <article class="card project">
+              <a href="project-pizzeria.html" aria-label="Voir le projet Pizzeria Flutter">
+                <div class="thumb" role="img" aria-label="Projet Pizzeria Flutter" style="background-image:url('assets/img/img_projets/pizzeria.jpg'); background-size:cover; background-position:center;"></div>
+                <div class="card-body">
+                  <h3>Pizzeria (Flutter)</h3>
+                  <p>Application mobile Flutter avec catalogue pizzas/boissons, panier, commande et gestion de theme.</p>
+                  <p class="project-tech"><span>Flutter</span><span>Dart</span><span>Mobile UI</span></p>
+                </div>
+              </a>
+            </article>
+            <article class="card project">
+              <a href="project-sitevuejs.html" aria-label="Voir le projet Site Vue.js">
+                <div class="thumb" role="img" aria-label="Projet Site Vue.js" style="background-image:url('assets/img/img_projets/vueJS.jpg'); background-size:cover; background-position:center;"></div>
+                <div class="card-body">
+                  <h3>Site Vue.js</h3>
+                  <p>Site pedagogique en Vue 3 avec navigation SPA, formulaire, appels API dynamiques et accordeon interactif.</p>
+                  <p class="project-tech"><span>Vue 3</span><span>JavaScript</span><span>API REST</span><span>SPA</span></p>
                 </div>
               </a>
             </article>
@@ -471,22 +614,23 @@
             </article>
             <article class="card tool">
               <div class="icon" aria-hidden="true">
-                <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="PHPStorm">
-                  <title>PHPStorm</title>
+                <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="JetBrains Suite">
+                  <title>JetBrains Suite</title>
                   <defs>
-                    <linearGradient id="phpstorm-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="#000000"/>
-                      <stop offset="100%" stop-color="#4a5568"/>
+                    <linearGradient id="jetbrains-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ff0080"/>
+                      <stop offset="50%" stop-color="#7c3aed"/>
+                      <stop offset="100%" stop-color="#06b6d4"/>
                     </linearGradient>
                   </defs>
-                  <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#phpstorm-grad)"/>
-                  <path fill="#00d7ff" d="M16 18c2 0 3 1 3 3s-1 3-3 3v-6zM20 24v-8h4l4 6-4 6-4-4z"/>
-                  <circle cx="32" cy="16" r="2" fill="#00d7ff" opacity="0.8"/>
-                  <circle cx="28" cy="32" r="1.5" fill="#00d7ff" opacity="0.6"/>
+                  <rect x="8" y="8" width="32" height="32" rx="6" fill="url(#jetbrains-grad)"/>
+                  <rect x="13" y="13" width="22" height="22" rx="4" fill="#111827"/>
+                  <path d="M17 29h6.5c2.1 0 3.4-1.1 3.4-2.7 0-1.2-.7-2.1-1.9-2.4 1-.4 1.5-1.1 1.5-2.1 0-1.6-1.3-2.7-3.4-2.7H17v9.9zm2.2-5.9v-2.2h3.2c1.1 0 1.8.4 1.8 1.1s-.7 1.1-1.8 1.1h-3.2zm0 4v-2.3h3.4c1.2 0 1.9.4 1.9 1.2s-.7 1.1-1.9 1.1h-3.4z" fill="#ffffff"/>
+                  <rect x="18" y="31" width="10" height="1.6" rx="0.8" fill="#ffffff" opacity="0.9"/>
                 </svg>
               </div>
-              <h3>PHPStorm</h3>
-              <p>IDE JetBrains pour PHP.</p>
+              <h3>JetBrains (suite)</h3>
+              <p>Suite d'IDE JetBrains (PHPStorm, WebStorm, etc.).</p>
             </article>
             <article class="card tool">
               <div class="icon" aria-hidden="true">
@@ -642,48 +786,42 @@
             </article>
             <article class="card tool">
               <div class="icon" aria-hidden="true">
-                <svg class="svg-icon anim-rss-waves" viewBox="0 0 48 48" aria-label="Feedly / RSS">
-                  <title>Feedly / RSS</title>
+                <svg class="svg-icon anim-server-pulse" viewBox="0 0 48 48" aria-label="Odoo ERP">
+                  <title>Odoo ERP</title>
                   <defs>
-                    <linearGradient id="rss-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="#ff6600"/>
-                      <stop offset="100%" stop-color="#ff9900"/>
+                    <linearGradient id="odoo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#875a7b"/>
+                      <stop offset="100%" stop-color="#6b4f66"/>
                     </linearGradient>
                   </defs>
-                  <!-- RSS source -->
-                  <circle cx="12" cy="36" r="4" fill="url(#rss-grad)" class="rss-source"/>
-                  <!-- RSS waves -->
-                  <path d="M12 28c6 0 12 6 12 12" stroke="url(#rss-grad)" stroke-width="3" fill="none" class="rss-wave-1"/>
-                  <path d="M12 20c10 0 20 10 20 20" stroke="url(#rss-grad)" stroke-width="3" fill="none" class="rss-wave-2"/>
-                  <path d="M12 12c14 0 26 12 26 26" stroke="url(#rss-grad)" stroke-width="3" fill="none" class="rss-wave-3"/>
-                  <!-- Data particles -->
-                  <circle cx="20" cy="32" r="1.5" fill="#00d7ff" class="data-particle-1"/>
-                  <circle cx="26" cy="28" r="1.5" fill="#00d7ff" class="data-particle-2"/>
-                  <circle cx="32" cy="24" r="1.5" fill="#00d7ff" class="data-particle-3"/>
-                  <circle cx="36" cy="20" r="1.5" fill="#00d7ff" class="data-particle-4"/>
-                  <!-- Feed icon -->
-                  <rect x="8" y="8" width="8" height="8" rx="2" fill="url(#rss-grad)" class="feed-icon"/>
-                  <rect x="10" y="10" width="4" height="1" fill="white"/>
-                  <rect x="10" y="12" width="3" height="1" fill="white"/>
-                  <rect x="10" y="14" width="2" height="1" fill="white"/>
+                  <rect x="8" y="8" width="32" height="32" rx="8" fill="url(#odoo-grad)"/>
+                  <rect x="12" y="14" width="24" height="20" rx="4" fill="#ffffff" opacity="0.95"/>
+                  <circle cx="18" cy="24" r="4" fill="#875a7b"/>
+                  <circle cx="24" cy="20" r="4" fill="#6b4f66" opacity="0.9"/>
+                  <circle cx="30" cy="24" r="4" fill="#875a7b"/>
+                  <path d="M21.6 22.6l2.8-1.8M26.4 22.6l2.8 1.8" stroke="#6b4f66" stroke-width="1.6" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h3>Feedly / RSS</h3>
-              <p>Veille automatisée par flux.</p>
+              <h3>Odoo ERP</h3>
+              <p>Gestion ERP, modules metier et administration.</p>
             </article>
           </div>
         </div>
       </section>
 
       <!-- Stage -->
-      <section id="stage" class="section">
+      <section id="stage" class="section section-animated">
         <div class="container">
           <h2 data-animate>Stage</h2>
           <div class="two-col" data-animate>
             <div class="col">
               <h3>Prends Ma Photo – Stage 2025</h3>
               <p>Site vitrine complet: design, intégration, formulaires, SEO et mise en ligne sur o2switch.</p>
-              <p><a class="btn btn-ghost" href="project-prends-ma-photo.html">Détails du projet</a></p>
+              <p class="hero-actions" style="margin-top: 0; flex-wrap: wrap;">
+                <a class="btn btn-ghost" href="project-prends-ma-photo.html">Détails du projet</a>
+                <a class="btn btn-primary" href="stageSN1/attestation_stage_GRINDA_KORTO_SN1.pdf" target="_blank" rel="noreferrer noopener" download>Attestation de stage (1<sup>re</sup> année)</a>
+                <a class="btn btn-ghost" href="stageSN1/Rapport_Stage_SN1.pdf" target="_blank" rel="noreferrer noopener" download>Rapport de stage (1<sup>re</sup> année)</a>
+              </p>
             </div>
             <div class="col">
               <ul class="timeline">
@@ -706,7 +844,11 @@
                 <strong>Environnement :</strong> Odoo 18, PostgreSQL, Python 3.12,
                 VPS OVH (Linux), systemd, psql, modules custom 3dmap_* et OCA.
               </p>
-              <p><a class="btn btn-ghost" href="project-3dmap-odoo.html">Détails du projet</a></p>
+              <p class="hero-actions" style="margin-top: 0; flex-wrap: wrap;">
+                <a class="btn btn-ghost" href="project-3dmap-odoo.html">Détails du projet</a>
+                <a class="btn btn-primary" href="stageSN2/attestation_stage_GRINDA_KORTO_SN2.pdf" target="_blank" rel="noreferrer noopener" download>Attestation de stage (2<sup>e</sup> année)</a>
+                <a class="btn btn-ghost" href="stageSN2/Rapport_Stage_SN2.pdf" target="_blank" rel="noreferrer noopener" download>Rapport de stage (2<sup>e</sup> année)</a>
+              </p>
             </div>
             <div class="col">
               <ul class="timeline">
@@ -720,56 +862,95 @@
         </div>
       </section>
 
-      <!-- E5 -->
-      <section id="e5" class="section alt">
+      <!-- E5 – Situations professionnelles -->
+      <section id="e5" class="section alt section-animated">
         <div class="container">
-          <h2 data-animate>E5</h2>
-          <p data-animate>Présentation de l'épreuve E5: contexte, missions réalisées, livrables et compétences évaluées.</p>
-          
-          <div class="e5-projects" data-animate>
-            <div class="e5-project">
-              <h3>Projet E5 - 1</h3>
-              <div class="two-col">
-                <div class="col">
-                  <p>Présentation du premier projet majeur de l'épreuve E5.</p>
-                  <ul>
-                    <li>Contexte et missions</li>
-                    <li>Livrables produits</li>
-                    <li>Compétences évaluées</li>
-                  </ul>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <div class="card-body">
-                      <h3>Ressources</h3>
-                      <p>Documents et liens du projet 1.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <h2 data-animate>E5 – Situations professionnelles</h2>
+          <p data-animate>
+            Deux situations autour d'une solution de gestion de matchs de basketball :
+            application mobile (situation&nbsp;1) puis backend web et API REST (situation&nbsp;2).
+            Conception (MCD, UML), maquettes, réalisation et documentation complète.
+          </p>
+          <p class="e5-dossier" data-animate>
+            <a class="btn btn-ghost" href="SITUATION/13 - EPREUVE PRATIQUE E6 - PAGE DE GARDE DU DOSSIER PROFESSIONNEL - BTS SIO 2026.pdf" target="_blank" rel="noreferrer noopener">Page de garde du dossier professionnel</a>
+          </p>
 
-            <div class="e5-project">
-              <h3>Projet E5 - 2</h3>
+          <div class="e5-projects">
+            <article class="e5-project" data-animate>
+              <h3>Situation n°&nbsp;1 – Application mobile</h3>
+              <p class="e5-lead">Application mobile de gestion de matchs de basketball pour encourager la pratique sportive locale.</p>
               <div class="two-col">
                 <div class="col">
-                  <p>Présentation du second projet majeur de l'épreuve E5.</p>
+                  <p><strong>Objectifs :</strong> inscription et profil joueur, consultation des terrains, files d'attente, création d'équipes, classements par ville et par terrain, modes de jeu automatisés.</p>
+                  <p><strong>Environnement :</strong> Flutter, API REST, PostgreSQL, Supabase.</p>
                   <ul>
-                    <li>Contexte et missions</li>
-                    <li>Livrables produits</li>
-                    <li>Compétences évaluées</li>
+                    <li>Modélisation MCD et diagrammes UML</li>
+                    <li>Conception des interfaces (maquettes)</li>
+                    <li>Développement des écrans et interactions utilisateur</li>
+                    <li>Planning, tests et axes d'amélioration</li>
                   </ul>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <div class="card-body">
-                      <h3>Ressources</h3>
-                      <p>Documents et liens du projet 2.</p>
-                    </div>
+                  <p class="e5-competences-title"><strong>Compétences mobilisées (tableau E4) :</strong></p>
+                  <p class="e5-competences">
+                    <span>G1</span>
+                    <span>R2</span>
+                    <span>D3</span>
+                    <span>T4</span>
+                    <span>M5</span>
+                    <span>O6</span>
+                  </p>
+                  <div class="hero-actions e5-actions">
+                    <a class="btn btn-primary" href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_1.pdf" target="_blank" rel="noreferrer noopener" download>Rendu final (PDF)</a>
+                    <a class="btn btn-ghost" href="SITUATION/12 - EPREUVE PRATIQUE E6 - FICHES SLAM SITUATION 1.docx" download>Fiche situation</a>
                   </div>
                 </div>
+                <div class="col e5-visual">
+                  <figure class="card e5-figure">
+                    <div class="e5-figure-body">
+                      <img src="SITUATION/img_situation/EnsembleImagesMaquettes.png" alt="Maquettes des écrans de l'application mobile de gestion de matchs de basketball" loading="lazy" />
+                    </div>
+                    <figcaption>Maquettes des interfaces – situation&nbsp;1</figcaption>
+                  </figure>
+                </div>
               </div>
-            </div>
+            </article>
+
+            <article class="e5-project" data-animate>
+              <h3>Situation n°&nbsp;2 – Backend web</h3>
+              <p class="e5-lead">Backend d'une solution web de gestion de matchs de basketball : logique métier, données et statistiques.</p>
+              <div class="two-col">
+                <div class="col">
+                  <p><strong>Objectifs :</strong> gestion des matchs et des joueurs, validation des résultats, mise à jour des classements et exploitation des données (statistiques, historique).</p>
+                  <p><strong>Environnement :</strong> API REST, PostgreSQL, Supabase, liaison avec l'application mobile.</p>
+                  <ul>
+                    <li>Schéma relationnel et classes UML</li>
+                    <li>Endpoints et règles métier (matchs, joueurs, scores)</li>
+                    <li>Persistance et requêtes sur PostgreSQL</li>
+                    <li>Documentation technique et pistes d'évolution</li>
+                  </ul>
+                  <p class="e5-competences-title"><strong>Compétences mobilisées (tableau E4) :</strong></p>
+                  <p class="e5-competences">
+                    <span>G1</span>
+                    <span>R2</span>
+                    <span>D3</span>
+                    <span>T4</span>
+                    <span>M5</span>
+                    <span>O6</span>
+                  </p>
+                  <div class="hero-actions e5-actions">
+                    <a class="btn btn-primary" href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_2.pdf" target="_blank" rel="noreferrer noopener" download>Rendu final (PDF)</a>
+                    <a class="btn btn-ghost" href="SITUATION/12 - EPREUVE PRATIQUE E6 - FICHES SLAM SITUATION 2.docx" download>Fiche situation</a>
+                  </div>
+                </div>
+                <div class="col e5-visual">
+                  <figure class="card e5-figure">
+                    <div class="e5-figure-body">
+                      <img src="SITUATION/img_situation/ArchitectureApiBackend.png" alt="Schéma d'architecture : applications mobiles et web, API REST, backend et base de données" loading="lazy" />
+                    </div>
+                    <figcaption>Architecture API REST – situation&nbsp;2</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -887,7 +1068,7 @@
       </section>
 
       <!-- Veille -->
-      <section id="veille" class="section">
+      <section id="veille" class="section section-animated">
         <div class="container">
           <h2 data-animate>Veille technologique</h2>
           <div class="faq" data-animate>
@@ -919,25 +1100,30 @@
             <details class="faq-item">
               <summary>Quel a été le sujet de ma veille technologique ?</summary>
               <div class="answer">
-                <p>IA dans la musique: génération musicale, outils d'assistance à la composition, séparation de pistes, mastering automatique et impacts sur les workflows des artistes.</p>
+                <p>Trois veilles complémentaires suivies de janvier 2025 à mai 2026, avec actualités datées et sources vérifiables :</p>
+                <ul>
+                  <li><strong>IA dans la musique</strong> — Suno, Udio, procès des majors, licences et clonage vocal.</li>
+                  <li><strong>IA dans la génération</strong> — multimodalité (texte, image, vidéo), ChatGPT Images 2.0, Veo 3.1.</li>
+                  <li><strong>L'IA remplace-t-elle les métiers ?</strong> — WEF 2025, marché de l'emploi FR, évolution du métier de développeur.</li>
+                </ul>
               </div>
             </details>
             <details class="faq-item">
               <summary>Quelles sont les différentes thématiques abordées ?</summary>
               <div class="answer">
                 <ul>
-                  <li>Modèles génératifs audio (diffusion, transformer)</li>
-                  <li>Audio-to-MIDI et transcription polyphonique</li>
-                  <li>Outils d'édition intelligente (stem separation, time-stretch de qualité)</li>
-                  <li>Licences, éthique et droits d'auteur avec l'IA</li>
-                  <li>Workflows DJ/production: intégration IA dans DAW et live</li>
-                  <li>Marché et tendances (plugins, services SaaS, open source)</li>
+                  <li>Droits d'auteur, fair use et accords de licence (musique et contenus générés)</li>
+                  <li>Modèles génératifs : audio, image, vidéo, code et agents</li>
+                  <li>Sorties de produits (OpenAI, Google DeepMind) et impact sur les workflows</li>
+                  <li>Marché du travail, upskilling et compétences SLAM face à l'IA</li>
+                  <li>Éthique, fiabilité des sorties et usage responsable en entreprise</li>
+                  <li>Application concrète en projets BTS (prototypage, documentation, copilotes de code)</li>
                 </ul>
               </div>
             </details>
           </div>
           <div class="grid cards veille-grid" data-animate>
-            <article class="card tool veille">
+            <article class="card tool veille veille-card-has-doc">
               <a href="veille-musique.html" aria-label="Voir la veille: IA dans la musique">
               <div class="icon" aria-hidden="true">
                 <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="IA Musique">
@@ -952,10 +1138,13 @@
                 </svg>
               </div>
               <h3>IA dans la musique</h3>
-              <p>Génération musicale, outils d'assistance, éthique et droits d'auteur.</p>
+              <p>Suno, Udio, procès des majors, licences 2025–2026 — veille détaillée avec actualités sourcées.</p>
               </a>
+              <p class="veille-card-download">
+                <a class="btn btn-primary btn-sm" href="Veille/Veille_Technologique_1.pdf" download>Télécharger la veille (PDF)</a>
+              </p>
             </article>
-            <article class="card tool veille">
+            <article class="card tool veille veille-card-has-doc">
               <a href="veille-generation.html" aria-label="Voir la veille: IA dans la génération">
               <div class="icon" aria-hidden="true">
                 <svg class="svg-icon anim-gen" viewBox="0 0 48 48" aria-label="IA Génération">
@@ -970,10 +1159,13 @@
                 </svg>
               </div>
               <h3>IA dans la génération</h3>
-              <p>Texte, image, audio, vidéo: modèles, usages et limites actuelles.</p>
+              <p>Images 2.0, Veo 3.1, multimodalité — modèles, usages pro et limites (2025–2026).</p>
               </a>
+              <p class="veille-card-download">
+                <a class="btn btn-primary btn-sm" href="Veille/Veille_Technologique_2.pdf" download>Télécharger la veille (PDF)</a>
+              </p>
             </article>
-            <article class="card tool veille">
+            <article class="card tool veille veille-card-has-doc">
               <a href="veille-metiers.html" aria-label="Voir la veille: L’IA remplace les métiers ?">
               <div class="icon" aria-hidden="true">
                 <svg class="svg-icon anim-wiggle" viewBox="0 0 48 48" aria-label="IA & Métiers">
@@ -989,8 +1181,11 @@
                 </svg>
               </div>
               <h3>L’IA remplace les métiers ?</h3>
-              <p>Automatisation, complémentarité homme-IA et impacts sur l’emploi.</p>
+              <p>WEF 2025, marché FR, développeur augmenté — données et analyse du métier SLAM.</p>
               </a>
+              <p class="veille-card-download">
+                <a class="btn btn-primary btn-sm" href="Veille/Veille_Technologique_3.pdf" download>Télécharger la veille (PDF)</a>
+              </p>
             </article>
           </div>
         </div>
@@ -1020,6 +1215,13 @@
               <a class="github" href="https://github.com/kokoKRK" target="_blank" rel="noreferrer noopener" aria-label="GitHub">
                 <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 2.5c-5.2 0-9.5 4.3-9.5 9.5 0 4.2 2.7 7.7 6.5 9 .5.1.7-.2.7-.5v-2c-2.6.6-3.1-1.1-3.1-1.1-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.5 1.1 3.1.8.1-.7.4-1.1.7-1.4-2.1-.3-4.2-1.1-4.2-4.9 0-1.1.4-2 1-2.8-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1.1.8-.2 1.6-.3 2.5-.3s1.7.1 2.5.3c2-1.4 2.8-1.1 2.8-1.1.5 1.4.2 2.4.1 2.7.6.8 1 1.7 1 2.8 0 3.8-2.1 4.6-4.2 4.9.4.3.7.9.7 1.8v2.6c0 .3.2.6.7.5 3.8-1.3 6.5-4.9 6.5-9.1 0-5.2-4.3-9.5-9.5-9.5Z" fill="currentColor"/>
+                </svg>
+              </a>
+              <a class="cv" href="Korto_Grinda_CV.pdf" target="_blank" rel="noreferrer noopener" aria-label="Télécharger le CV">
+                <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 2.5h7l4.5 4.5V20a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 20V4A1.5 1.5 0 0 1 7 2.5z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M14 2.5V7h4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M8.5 11h7M8.5 14h7M8.5 17h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                 </svg>
               </a>
             </div>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projet - Hazmat Airsoft</title>
+    <meta name="description" content="Details du projet personnel Hazmat Airsoft : site e-commerce front, authentification Supabase et checkout Stripe." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#hero" class="brand" aria-label="Retour a l'accueil">GK</a>
+        <nav class="nav" aria-label="Navigation">
+          <a class="btn btn-ghost" href="index.html#projects">← Retour aux projets</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="project-detail">
+        <div class="container">
+          <h1>Hazmat Airsoft</h1>
+          <p class="subtitle">
+            Projet personnel de site e-commerce front autour de l'univers airsoft, avec catalogue dynamique,
+            panier, authentification utilisateur et tunnel de paiement.
+          </p>
+
+          <div class="card" style="margin-bottom: 20px; overflow: hidden;">
+            <img src="assets/img/img_projets/hazmatAirsoft.jpg" alt="Apercu du projet Hazmat Airsoft" style="width:100%; max-height:420px; object-fit:cover; display:block;">
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
+            <article class="card">
+              <h2>Contexte & objectifs</h2>
+              <p>
+                L'objectif est de concevoir une vitrine e-commerce immersive sur la thématique airsoft:
+                presentation des categories, mise en avant des produits, gestion d'un panier et conversion vers
+                un paiement en ligne. Le projet met l'accent sur l'experience utilisateur et une identite visuelle forte.
+              </p>
+              <ul>
+                <li>Construire une interface moderne orientee conversion.</li>
+                <li>Mettre en place un catalogue produit filtre par categorie.</li>
+                <li>Ajouter un panier persistant et un recapitulatif de commande.</li>
+                <li>Implementer un espace compte utilisateur (connexion / profil).</li>
+                <li>Connecter un checkout Stripe via des fonctions serverless.</li>
+              </ul>
+            </article>
+            <aside class="card">
+              <h2>Stack & architecture</h2>
+              <ul>
+                <li>Front: <strong>HTML, CSS, JavaScript</strong></li>
+                <li>Auth & data: <strong>Supabase</strong></li>
+                <li>Paiement: <strong>Stripe Checkout</strong></li>
+                <li>Backend leger: <code>supabase/functions</code> (Deno/TypeScript)</li>
+                <li>Pages: shop, profil utilisateur, modales auth/checkout</li>
+                <li>Scripts: logique produit, panier, formulaire, sessions</li>
+              </ul>
+            </aside>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>Fonctionnalites principales</h2>
+              <ul>
+                <li>Hero video + sections categories, produits, avis et contact.</li>
+                <li>Filtrage des produits et ajout au panier en temps reel.</li>
+                <li>Sidebar panier avec total et lancement du checkout.</li>
+                <li>Connexion / inscription utilisateur avec Supabase.</li>
+                <li>Page profil avec informations perso, panier et historique.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h2>Securite & fiabilite</h2>
+              <ul>
+                <li>Gestion de session et etat connecte/deconnecte.</li>
+                <li>Validation formulaire (auth, contact, checkout).</li>
+                <li>Delegation du paiement a Stripe pour les donnees sensibles.</li>
+                <li>Webhooks prevus pour confirmer le statut des commandes.</li>
+                <li>Architecture separant front et logique de paiement.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>Competences mobilisees</h2>
+              <ul>
+                <li>Integration front-end responsive avec identite visuelle marquee.</li>
+                <li>Programmation JavaScript pour interactions complexes.</li>
+                <li>Integration de services tiers (Supabase, Stripe).</li>
+                <li>Conception UX d'un parcours e-commerce complet.</li>
+                <li>Structuration d'un projet web avec fonctions serverless.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h2>Liens & actions</h2>
+              <div class="hero-actions" style="margin-top: 0;">
+                <a href="https://hazmat-airsoft-officiel.netlify.app" class="btn btn-primary" target="_blank" rel="noreferrer noopener">Voir le site en ligne</a>
+                <a href="hazmatAirsoft/profile.html" class="btn" target="_blank" rel="noreferrer noopener">Voir la page profil</a>
+              </div>
+            </article>
+          </div>
+
+          <article class="card" style="margin-top: 20px;">
+            <h2>Galerie du projet</h2>
+            <div class="grid cards projects-grid">
+              <div class="card project"><div class="thumb" role="img" aria-label="Ak47 Hazmat Airsoft" style="background-image:url('hazmatAirsoft/img/ak47.png'); background-size:cover; background-position:center;"></div></div>
+              <div class="card project"><div class="thumb" role="img" aria-label="Spas12 Hazmat Airsoft" style="background-image:url('hazmatAirsoft/img/spas12.png'); background-size:cover; background-position:center;"></div></div>
+              <div class="card project"><div class="thumb" role="img" aria-label="Shotgun M4 Hazmat Airsoft" style="background-image:url('hazmatAirsoft/img/shotgun-m4.png'); background-size:cover; background-position:center;"></div></div>
+              <div class="card project"><div class="thumb" role="img" aria-label="Sniper Bolt Hazmat Airsoft" style="background-image:url('hazmatAirsoft/img/sniper-bolt.png'); background-size:cover; background-position:center;"></div></div>
+              <div class="card project"><div class="thumb" role="img" aria-label="LR300 Hazmat Airsoft" style="background-image:url('hazmatAirsoft/img/lr300.png'); background-size:cover; background-position:center;"></div></div>
+              <div class="card project"><div class="thumb" role="img" aria-label="Python Hazmat Airsoft" style="background-image:url('hazmatAirsoft/img/python.png'); background-size:cover; background-position:center;"></div></div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Grinda Korto. Tous droits reserves.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Veille – IA dans la génération</title>
-    <meta name="description" content="Veille: IA dans la génération – synthèse, ressources et articles." />
+    <meta name="description" content="Veille technologique : IA générative multimodale (texte, image, vidéo, audio), modèles 2025-2026 et usages professionnels." />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -21,26 +21,223 @@
       <section class="section" id="veille-detail">
         <div class="container">
           <h1>IA dans la génération</h1>
-          <p class="subtitle">Texte, image, audio, vidéo: modèles, usages et limites actuelles.</p>
-          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
+          <p class="subtitle">Texte, image, vidéo et audio : évolution des modèles génératifs, multimodalité, agents et limites pour un usage professionnel responsable.</p>
+
+          <p class="hero-actions veille-download-actions" style="margin-top: 0;">
+            <a class="btn btn-primary" href="Veille/Veille_Technologique_2.pdf" download>Télécharger la veille (PDF)</a>
+            <a class="btn btn-ghost" href="Veille/Veille_Technologique_2.pdf" target="_blank" rel="noreferrer noopener">Ouvrir le PDF</a>
+          </p>
+
+          <ul class="veille-meta card" style="list-style:none; padding:16px 20px;">
+            <li><strong>Document :</strong> Veille technologique n°&nbsp;2 (PDF, ~5 pages)</li>
+            <li><strong>Période suivie :</strong> décembre 2024 – mai 2026</li>
+            <li><strong>Outils :</strong> Hugging Face, blogs OpenAI / Google DeepMind, VentureBeat, LMArena, Product Hunt</li>
+            <li><strong>Fréquence :</strong> veille bi-hebdomadaire sur les sorties de modèles</li>
+          </ul>
+
+          <article class="veille-resume card">
+            <h2>Résumé de la veille</h2>
+            <p>
+              L'IA générative est devenue <strong>multimodale et industrielle</strong> : en moins de six mois, OpenAI enchaîne
+              GPT-Image-1.5 (décembre 2025) puis ChatGPT Images 2.0 (avril 2026), tandis que Google déploie Veo 3.1 pour la vidéo
+              avec son natif et l'extension de scènes via l'API Gemini. La course OpenAI / Google pousse des cycles de mise à jour
+              très courts ; LMArena sert d'antenne pour détecter les modèles avant annonce officielle.
+            </p>
+            <p>
+              Les progrès les plus visibles concernent le <strong>texte dans l'image</strong> (infographies, manga, 4K) et la
+              <strong>vidéo courte</strong> professionnelle (storyboards, teasers). Les limites restent réelles : hallucinations,
+              coûts API, droits d'auteur et risque de désinformation. En BTS SIO, l'IA générative est un accélérateur de prototypage
+              et de documentation, jamais un substitut à la validation technique et à la responsabilité du développeur.
+            </p>
+          </article>
+
+          <article class="card" id="contexte">
+            <h2>Contexte et problématique</h2>
+            <p>
+              Depuis ChatGPT (fin 2022), l'IA générative a élargi son spectre : aujourd'hui un même écosystème peut produire
+              du <strong>code</strong>, des <strong>images photoréalistes</strong>, des <strong>vidéos avec son natif</strong>
+              et de la <strong>synthèse vocale</strong>. Les cycles de mise à jour se sont raccourcis : GPT-Image-1.5 en décembre 2025,
+              puis ChatGPT Images 2.0 en avril 2026 ; Veo 3.1 côté Google en fin 2025.
+            </p>
+            <p>
+              Ma veille analyse comment ces outils transforment la création numérique (design, prototypage, marketing, développement),
+              quelles <strong>limites techniques</strong> persistent (hallucinations, texte dans l'image, cohérence des personnages)
+              et quelles <strong>bonnes pratiques</strong> adopter en contexte scolaire et professionnel.
+            </p>
+            <p>
+              <span class="veille-tag">Multimodal</span>
+              <span class="veille-tag">GPT / Gemini</span>
+              <span class="veille-tag">Image</span>
+              <span class="veille-tag">Vidéo</span>
+              <span class="veille-tag">Agents</span>
+              <span class="veille-tag">API</span>
+            </p>
+          </article>
+
+          <article class="card" id="actualites">
+            <h2>Actualités relevées sur Internet</h2>
+            <p class="veille-order-note">Classées du plus récent au plus ancien.</p>
+
+            <div class="veille-news">
+              <div class="veille-news-item">
+                <time datetime="2026-04-21">21 avril 2026</time>
+                <h3>OpenAI déploie ChatGPT Images 2.0 (modèle gpt-image-2)</h3>
+                <p>
+                  OpenAI annonce <strong>ChatGPT Images 2.0</strong>, successeur de GPT-Image-1.5 (décembre 2025).
+                  Le modèle améliore le rendu du <strong>texte multilingue</strong> dans les visuels, les infographies,
+                  les planches manga, les plans et grilles d'images, avec résolutions jusqu'à <strong>4K</strong> en bêta API
+                  et ratios extrêmes (3:1 à 1:3). Deux modes : <em>Instant</em> (rapide, tous les utilisateurs) et
+                  <em>Thinking</em> (recherche web, vérification, jusqu'à 8 images cohérentes — offres payantes).
+                </p>
+                <p class="veille-analysis">
+                  <strong>Analyse :</strong> le texte lisible dans l'image était le principal verrou des générateurs ;
+                  sa résolution ouvre la voie à des visuels marketing et pédagogiques exploitables sans retouche manuelle massive.
+                  En SLAM, cela change la production de maquettes et de documentation illustrée.
+                </p>
+                <p>
+                  <a href="https://venturebeat.com/technology/openais-chatgpt-images-2-0-is-here-and-it-does-multilingual-text-full-infographics-slides-maps-even-manga-seemingly-flawlessly" target="_blank" rel="noreferrer noopener">VentureBeat – ChatGPT Images 2.0</a>
+                  ·
+                  <a href="https://openai.com/index/" target="_blank" rel="noreferrer noopener">OpenAI Blog</a>
+                </p>
+              </div>
+
+              <div class="veille-news-item">
+                <time datetime="2026-04-05">5 avril 2026</time>
+                <h3>Fuite puis confirmation : GPT-Image-2 testé sur LMArena</h3>
+                <p>
+                  Avant l'annonce officielle, un modèle non publié apparaît sur <strong>LMArena</strong> sous des noms de code
+                  (maskingtape-alpha, gaffer-tape-alpha…). Les testeurs soulignent une intégration naturelle du texte
+                  (notes manuscrites, bulles de BD) et une concurrence directe avec <strong>Nano Banana Pro</strong> (Google).
+                </p>
+                <p class="veille-analysis">
+                  <strong>Analyse :</strong> LMArena est devenu un indicateur avancé des sorties majeures — utile en veille
+                  pour anticiper les changements avant la documentation API.
+                </p>
+                <p><a href="https://frontierbeat.com/2026/04/05/gpt-image-2-leaked-openai-2026/" target="_blank" rel="noreferrer noopener">Frontierbeat – GPT-Image-2 leak</a></p>
+              </div>
+
+              <div class="veille-news-item">
+                <time datetime="2026-04-02">2 avril 2026</time>
+                <h3>Veo 3.1 Lite en préversion — vidéo plus accessible</h3>
+                <p>
+                  Google annonce <strong>Veo 3.1 Lite</strong> en preview (Gemini Enterprise), visant des générations plus légères
+                  tout en conservant texte→vidéo et image→vidéo — signal d'une segmentation prix/performance comme pour les LLM.
+                </p>
+                <p><a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/veo/3-1-generate" target="_blank" rel="noreferrer noopener">Google Cloud – Documentation Veo 3.1</a></p>
+              </div>
+
+              <div class="veille-news-item">
+                <time datetime="2026-02">Février 2026</time>
+                <h3>Course à l'échelle : ChatGPT au-delà de 900 millions d'utilisateurs</h3>
+                <p>
+                  OpenAI communique sur une base utilisateur massive ; les nouveautés image (Images 2.0) servent aussi
+                  à la rétention et à la monétisation (modes Thinking réservés aux abonnements payants).
+                  Google répond avec Gemini 3 et Nano Banana Pro fin 2025, déclenchant une « code red » interne rapportée
+                  chez OpenAI pour accélérer les sorties.
+                </p>
+                <p class="veille-analysis">
+                  <strong>Analyse :</strong> la guerre des modèles profite aux utilisateurs (qualité) mais augmente
+                  la fragmentation : choisir un stack (OpenAI vs Google vs open source) devient un vrai choix d'architecture.
+                </p>
+                <p><a href="https://gizmodo.com/openai-unveils-new-image-generator-to-usher-in-an-ai-slop-renaissance-2000749159" target="_blank" rel="noreferrer noopener">Gizmodo – Annonce Images 2.0</a></p>
+              </div>
+
+              <div class="veille-news-item">
+                <time datetime="2025-12">Décembre 2025</time>
+                <h3>GPT-Image-1.5 : palier intermédiaire avant Images 2.0</h3>
+                <p>
+                  OpenAI publie <strong>GPT-Image-1.5</strong> avec meilleur suivi d'instructions, éclairage et couleurs —
+                  étape visible sur la courbe d'amélioration rapide entre fin 2025 et printemps 2026.
+                </p>
+                <p class="veille-analysis">
+                  <strong>Analyse :</strong> la cadence semestrielle des modèles image impose une veille continue :
+                  un tutoriel ou un workflow figé sur une version devient obsolète en quelques mois.
+                </p>
+                <p><a href="https://venturebeat.com/technology/openais-chatgpt-images-2-0-is-here-and-it-does-multilingual-text-full-infographics-slides-maps-even-manga-seemingly-flawlessly" target="_blank" rel="noreferrer noopener">VentureBeat (rappel GPT-Image-1.5)</a></p>
+              </div>
+
+              <div class="veille-news-item">
+                <time datetime="2025-11-17">17 novembre 2025</time>
+                <h3>Google généralise Veo 3.1 (vidéo + audio natif) via l'API Gemini</h3>
+                <p>
+                  <strong>Veo 3.1</strong> et <strong>Veo 3.1 Fast</strong> passent en disponibilité générale sur Gemini API,
+                  Vertex AI et Google AI Studio. Nouveautés : audio synchronisé (dialogues, ambiances), extension de scène
+                  (clips enchaînés jusqu'à une minute+), transitions entre image de début et de fin, cohérence des personnages,
+                  résolutions 720p / 1080p / 4K selon les variantes.
+                </p>
+                <p class="veille-analysis">
+                  <strong>Analyse :</strong> la vidéo IA devient un outil de storyboard et de prévisualisation, pas seulement
+                  un effet spécial. Coût et quotas API restent des freins pour la production à grande échelle.
+                </p>
+                <p>
+                  <a href="https://developers.googleblog.com/en/introducing-veo-3-1-and-new-creative-capabilities-in-the-gemini-api/" target="_blank" rel="noreferrer noopener">Google Developers Blog – Veo 3.1</a>
+                  ·
+                  <a href="https://deepmind.google/models/veo/" target="_blank" rel="noreferrer noopener">Google DeepMind – Veo</a>
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 24px;">
             <article class="card">
-              <h2>Synthèse</h2>
-              <p>Panorama des modèles (LLM, diffusion, multimodal) et principaux cas d'usage.</p>
+              <h2>Modalités et usages</h2>
               <ul>
-                <li>Texte: assistants, agents, outils d'écriture</li>
-                <li>Image/vidéo: génération, inpainting, upscaling</li>
-                <li>Limites: hallucinations, biais, évaluation</li>
+                <li><strong>Texte / code :</strong> assistants, agents autonomes, génération de tests et documentation.</li>
+                <li><strong>Image :</strong> mockups UI, assets marketing, variation de style, inpainting.</li>
+                <li><strong>Vidéo :</strong> teasers, storyboards animés, extension de plans (Veo 3.1).</li>
+                <li><strong>Audio :</strong> voix off, doublage, effets (souvent couplé à la vidéo).</li>
+                <li><strong>Multimodal :</strong> chaînes prompt → image → vidéo → post-production.</li>
               </ul>
             </article>
-            <aside class="card">
-              <h2>Liens utiles</h2>
+            <article class="card">
+              <h2>Limites et risques</h2>
               <ul>
-                <li><a href="#" target="_blank" rel="noreferrer noopener">Repo</a></li>
-                <li><a href="#" target="_blank" rel="noreferrer noopener">Paper</a></li>
-                <li><a href="#" target="_blank" rel="noreferrer noopener">Article</a></li>
+                <li><strong>Hallucinations</strong> factuelles (texte, données dans les visuels).</li>
+                <li><strong>Biais</strong> culturels et stéréotypes dans les représentations.</li>
+                <li><strong>Coût</strong> GPU / tokens / crédits vidéo.</li>
+                <li><strong>Droits :</strong> copyright des sorties et des données d'entraînement.</li>
+                <li><strong>Désinformation :</strong> deepfakes, contenus trompeurs (signalement EU AI Act).</li>
               </ul>
-            </aside>
+            </article>
           </div>
+
+          <article class="card">
+            <h2>Application en BTS SIO (option SLAM)</h2>
+            <ul>
+              <li><strong>Prototypage :</strong> maquettes Figma assistées, visuels temporaires pour valider l'UX avant prod.</li>
+              <li><strong>Documentation :</strong> schémas, infographies et captures explicatives (Images 2.0).</li>
+              <li><strong>Développement :</strong> Copilot / Cursor pour boilerplate, toujours avec relecture, tests et revue de sécurité.</li>
+              <li><strong>Portfolio :</strong> distinguer clairement créations IA et travail manuel (transparence jury).</li>
+              <li><strong>API :</strong> intégrer Hugging Face ou Gemini API en projet — comprendre quotas, clés, RGPD.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>Synthèse personnelle</h2>
+            <p>
+              En 2026, l'IA générative n'est plus un simple « générateur d'images » : c'est une <strong>chaîne de production</strong>
+              multimodale accessible via API. La compétence d'un futur développeur SLAM n'est pas de tout générer automatiquement,
+              mais de <strong>orchestrer</strong> les bons modèles, vérifier les sorties, respecter les licences et garder la
+              responsabilité métier (accessibilité, vérité des contenus, performance). La veille sur ce sujet est indispensable
+              tant que les modèles changent plusieurs fois par an.
+            </p>
+          </article>
+
+          <p class="veille-card-download" style="margin-top: 24px; text-align: center;">
+            <a class="btn btn-primary" href="Veille/Veille_Technologique_2.pdf" download>Télécharger la veille complète (PDF, ~5 pages)</a>
+          </p>
+
+          <article class="card veille-sources">
+            <h2>Bibliographie et sources</h2>
+            <ul>
+              <li><a href="https://huggingface.co/models" target="_blank" rel="noreferrer noopener">Hugging Face – Modèles</a></li>
+              <li><a href="https://openai.com/research" target="_blank" rel="noreferrer noopener">OpenAI Research</a></li>
+              <li><a href="https://deepmind.google/discover/blog/" target="_blank" rel="noreferrer noopener">Google DeepMind Blog</a></li>
+              <li><a href="https://ai.google.dev/gemini-api/docs/video" target="_blank" rel="noreferrer noopener">Gemini API – Vidéo (Veo)</a></li>
+              <li><a href="https://arxiv.org/list/cs.CV/recent" target="_blank" rel="noreferrer noopener">arXiv – Computer Vision</a></li>
+              <li><a href="https://artificialintelligenceact.eu/" target="_blank" rel="noreferrer noopener">EU AI Act – Portail</a></li>
+            </ul>
+          </article>
         </div>
       </section>
     </main>
@@ -52,6 +249,4 @@
     </footer>
     <script src="script.js"></script>
   </body>
-  </html>
-
-
+</html>
