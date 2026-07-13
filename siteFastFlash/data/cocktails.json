@@ -1,0 +1,158 @@
+[
+    {
+        "id": 1,
+        "name": "Valentine",
+        "description": "Un cocktail remplie d'amour pour la Saint Valentin.",
+        "type": "Fruité & Romantique",
+        "ingredients": ["Vodka", "Grenadine", "Grosseille", "Framboise"],
+        "prices": {
+            "50cl": 6.5,
+            "1L": 11.0
+        },
+        "isNew": true,
+        "image_url": "Image Fast Flash/Image Fond IA/cocktail/cocktail rouge et jaune 2.png",
+        "animation": {
+            "type": "hearts",
+            "color": "#FF69B4",
+            "intensity": "medium"
+        }
+    },
+    {
+        "id": 2,
+        "name": "Winter-Ice",
+        "description": "Pour ceux qui n'ont pas froid au yeux, un cocktail plus frais que jamais.",
+        "type": "Frais & Glacial",
+        "ingredients": ["Vodka", "Menthe Glacial", "Citron", "Perrier"],
+        "prices": {
+            "50cl": 7.5,
+            "1L": 13.0
+        },
+        "isNew": true,
+        "image_url": "Image Fast Flash/Image Fond IA/cocktail/cocktail multicolore 2.png",
+        "animation": {
+            "type": "ice",
+            "color": "#A5F2F3",
+            "intensity": "medium"
+        }
+    },
+    {
+        "id": 3,
+        "name": "Kiwi-Banane",
+        "description": "Un mélange tropical unique combinant la douceur de la banane et la fraîcheur du kiwi.",
+        "type": "Frais & Fruité",
+        "ingredients": ["Vodka", "Kiwi", "Banane", "Sucre de Canne"],
+        "prices": {
+            "50cl": 6.5,
+            "1L": 11.0
+        },
+        "image_url": "Image Fast Flash/Image Fond IA/cocktail/cocktail jaune et vert 1.png"
+    },
+    {
+        "id": 4,
+        "name": "Frambi-Fruiti",
+        "description": "Une symphonie de fruits pour un cocktail gourmand et rafraîchissant.",
+        "type": "Sucré & Fruité",
+        "ingredients": ["Vodka", "Framboise", "Multiple Fruits", "Citron"],
+        "prices": {
+            "50cl": 7.0,
+            "1L": 12.0
+        },
+        "image_url": "Image Fast Flash/Image Fond IA/cocktail/cocktail rouge et jaune 1.png"
+    },
+    {
+        "id": 5,
+        "name": "Cassis-Fusion",
+        "description": "Un cocktail sophistiqué aux notes de cassis et de myrtille.",
+        "type": "Doux & Raffiné",
+        "ingredients": ["Vodka", "Cassis", "Myrtille", "Citron", "Perrier"],
+        "prices": {
+            "50cl": 7.5,
+            "1L": 13.0
+        },
+        "image_url": "Image Fast Flash/Image Fond IA/cocktail/cocktail violet 2.png"
+    },
+    {
+        "id": 6,
+        "name": "Mojito-VDK",
+        "description": "Notre version vodka du célèbre cocktail, frais et pétillant.",
+        "type": "Frais & Pétillant",
+        "ingredients": ["Vodka", "Menthe", "Citron Vert", "Perrier"],
+        "prices": {
+            "50cl": 6.0,
+            "1L": 10.0
+        },
+        "image_url": "Image Fast Flash/Image Fond IA/cocktail/cocktail vert 2.png"
+    },
+    {
+        "id": 7,
+        "name": "VDK-Pomme",
+        "description": "Un cocktail équilibré entre la douceur de la pomme et une pointe d'acidité.",
+        "type": "Doux & Acidulé",
+        "ingredients": ["Vodka", "Pomme Verte", "Citron", "Sucre"],
+        "prices": {
+            "50cl": 6.0,
+            "1L": 10.0
+        },
+        "image_url": "Image Fast Flash/Image Fond IA/cocktail/cocktail jaune 2.png"
+    },
+    {
+        "id": 8,
+        "name": "Sexy-Beach",
+        "description": "Un cocktail exotique qui vous transportera sur une plage paradisiaque.",
+        "type": "Exotique & Fruité",
+        "ingredients": ["Vodka", "Grenadine", "Fruit de la Passion", "Ananas"],
+        "prices": {
+            "50cl": 7.0,
+            "1L": 12.0
+        },
+        "image_url": "Image Fast Flash/Image Fond IA/cocktail/cocktail orange et rouge 3.png"
+    },
+    {
+        "id": 9,
+        "name": "Hollow-Purple",
+        "description": "Un cocktail mystérieux aux notes florales et fruitées.",
+        "type": "Doux & Mystérieux",
+        "ingredients": ["Vodka", "Violette", "Myrtille", "Citron", "Perrier"],
+        "prices": {
+            "50cl": 7.5,
+            "1L": 13.0
+        },
+        "image_url": "Image Fast Flash/Image Fond IA/cocktail/cocktail violet 4.png"
+    },
+    {
+        "id": 10,
+        "name": "Hot-Magma",
+        "description": "Pour les amateurs de sensations fortes, un cocktail épicé et intense.",
+        "type": "Épicé & Intense",
+        "ingredients": ["Vodka", "Piment", "Fruit du Dragon", "Gingembre"],
+        "prices": {
+            "50cl": 7.0,
+            "1L": 12.0
+        },
+        "image_url": "Image Fast Flash/Image Fond IA/cocktail/cocktail orange et rouge 2.png"
+    },
+    {
+        "id": 11,
+        "name": "Goya-Goya",
+        "description": "Une explosion de saveurs fruitées, mêlant la douceur de la Goyave à la fraîcheur du citron.",
+        "type": "Doux & Sucré",
+        "ingredients": ["Vodka", "Goyave", "Framboise", "Citron"],
+        "prices": {
+            "50cl": 7.5,
+            "1L": 13.0
+        },
+        "image_url": "Image Fast Flash/Image Fond IA/cocktail/cocktail rouge 2.png"
+    },
+    {
+        "id": 12,
+        "name": "Blue Lagoon",
+        "description": "Un cocktail rafraîchissant aux notes d'agrumes avec une belle couleur bleue lagon. Parfait pour les soirées d'été.",
+        "type": "Frais & Exotique",
+        "ingredients": ["Vodka", "Curaçao Bleu", "Citron", "Powered"],
+        "prices": {
+            "50cl": 7.0,
+            "1L": 12.0
+        },
+        "image_url": "Image Fast Flash/Image Fond IA/cocktail/cocktail bleu 1.png"
+    }
+] 

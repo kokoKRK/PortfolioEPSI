@@ -1,0 +1,15 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "email": "admin@fastflash.fr",
+            "password": "1234",
+            "name": "Admin",
+            "phone": "0772280025",
+            "address": "1 Rue de la Soif, 34000 Montpellier",
+            "subscription": "none",
+            "orders": [],
+            "created_at": "2024-01-01T00:00:00.000Z"
+        }
+    ]
+} 

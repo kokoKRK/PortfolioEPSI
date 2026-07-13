@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projet – BB-Rank (fin de BTS SIO)</title>
+    <meta name="description" content="BB-Rank : application mobile et backend de gestion de matchs de basketball à Montpellier — projet de fin de BTS SIO, situations E5/E6." />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="project-themes.css" />
+  </head>
+  <body class="page-project page-bbrank">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#hero" class="brand" aria-label="Retour à l'accueil">GK</a>
+        <nav class="nav" aria-label="Navigation">
+          <a class="btn btn-ghost" href="index.html#bts-project">← Retour au projet BTS</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="project-detail">
+        <div class="container">
+          <h1><span class="project-brand-accent">BB-Rank</span></h1>
+          <p class="subtitle">
+            Projet de fin de <strong>BTS SIO option SLAM</strong> (EPSI Montpellier, 2026) :
+            solution numérique pour organiser les matchs de basketball sur les city-stades de Montpellier.
+            Le projet est découpé en <strong>deux situations professionnelles</strong> — application mobile et backend.
+          </p>
+
+          <p class="hero-actions project-demo-top">
+            <a class="btn btn-primary" href="bb-rank/demo/index.html" target="_blank" rel="noreferrer noopener">Essayer la démo web</a>
+            <a class="btn btn-primary" href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_1.pdf" target="_blank" rel="noreferrer noopener">Situation 1 (PDF)</a>
+            <a class="btn btn-primary" href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_2.pdf" target="_blank" rel="noreferrer noopener">Situation 2 (PDF)</a>
+          </p>
+
+          <article class="card flutter-demo-card" style="margin-bottom: 20px;">
+            <h2>Démo interactive</h2>
+            <p class="flutter-demo-lead">
+              Application Flutter compilée pour le navigateur, connectée à Supabase.
+              Le chargement peut prendre quelques secondes au premier lancement.
+            </p>
+            <div class="flutter-demo-wrap">
+              <iframe src="bb-rank/demo/index.html" title="BB-Rank — démo web Flutter" loading="lazy" allow="geolocation; clipboard-write"></iframe>
+            </div>
+            <p class="hero-actions flutter-demo-actions">
+              <a class="btn btn-ghost" href="bb-rank/demo/index.html" target="_blank" rel="noreferrer noopener">Ouvrir en plein écran</a>
+            </p>
+          </article>
+
+          <div class="card" style="margin-bottom: 20px; overflow: hidden;">
+            <img src="assets/img/bbrank/maquettes.png" alt="Maquettes BB-Rank — interfaces mobile" style="width:100%; display:block;">
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
+            <article class="card">
+              <h2>Contexte</h2>
+              <p>
+                Face à la baisse de la pratique sportive chez les jeunes, la <strong>mairie de Montpellier</strong> souhaite
+                encourager le basketball sur les terrains publics (Montcalm, complexe Jean Scialo, etc.).
+                L'organisation des matchs reste informelle : files d'attente floues, attente longue, peu de visibilité
+                sur l'affluence des terrains.
+              </p>
+              <p>
+                <strong>BB-Rank</strong> répond à ce besoin en digitalisant la mise en relation des joueurs,
+                la gestion des files d'attente et le suivi des performances.
+              </p>
+            </article>
+            <aside class="card">
+              <h2>Stack technique</h2>
+              <ul>
+                <li>Mobile : <strong>Flutter</strong> / <strong>Dart</strong>, Riverpod, Go Router</li>
+                <li>Backend : <strong>Supabase</strong> (PostgreSQL, Auth, RPC)</li>
+                <li>Géolocalisation, gestion d'équipes et de matchs</li>
+                <li>Classements joueurs et statistiques</li>
+              </ul>
+            </aside>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>Situation 1 — Application mobile</h2>
+              <p>Conception et développement de l'application Flutter côté joueur.</p>
+              <ul>
+                <li>Inscription, connexion et profil joueur.</li>
+                <li>Consultation des terrains et files d'attente.</li>
+                <li>Rejoindre une file, création et gestion d'équipes.</li>
+                <li>Match en cours, validation des scores, classements ville/terrain.</li>
+                <li>Interfaces : accueil, terrain, jeu, profil.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h2>Situation 2 — Backend web</h2>
+              <p>Backend et exploitation des données pour fiabiliser les matchs et les statistiques.</p>
+              <ul>
+                <li>Gestion des matchs et validation des résultats.</li>
+                <li>Mise à jour automatique des statistiques joueurs.</li>
+                <li>Classements et exploitation des données.</li>
+                <li>Architecture API / base PostgreSQL (Supabase).</li>
+                <li>Sécurisation des échanges et cohérence des scores.</li>
+              </ul>
+            </article>
+          </div>
+
+          <article class="card" style="margin-top: 20px; overflow: hidden;">
+            <h2>Architecture backend</h2>
+            <img src="assets/img/bbrank/architecture-backend.png" alt="Schéma d'architecture API backend BB-Rank" style="width:100%; display:block; border-radius: 10px;">
+          </article>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>Compétences mobilisées</h2>
+              <ul>
+                <li>Analyse des besoins et modélisation (MCD, UML).</li>
+                <li>Développement mobile Flutter (UI, état, navigation).</li>
+                <li>Intégration Supabase (auth, données, RPC).</li>
+                <li>Conception d'API et gestion PostgreSQL.</li>
+                <li>Tests, documentation et présentation des situations E5/E6.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h2>Dossier professionnel</h2>
+              <p>Documents de situation et illustrations du projet.</p>
+              <div class="hero-actions" style="margin-top: 0; flex-wrap: wrap;">
+                <a href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_1.pdf" class="btn btn-primary" target="_blank" rel="noreferrer noopener">Situation 1</a>
+                <a href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_2.pdf" class="btn btn-primary" target="_blank" rel="noreferrer noopener">Situation 2</a>
+              </div>
+            </article>
+          </div>
+
+          <article class="card" style="margin-top: 20px;">
+            <h2>Captures — situation 2</h2>
+            <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 10px;">
+              <img src="SITUATION/img_situation/situation2/image1.png" alt="Capture BB-Rank situation 2" style="width:100%; height:160px; object-fit:cover; border-radius:10px;" loading="lazy" />
+              <img src="SITUATION/img_situation/situation2/image2.png" alt="Capture BB-Rank situation 2" style="width:100%; height:160px; object-fit:cover; border-radius:10px;" loading="lazy" />
+              <img src="SITUATION/img_situation/situation2/image3.png" alt="Capture BB-Rank situation 2" style="width:100%; height:160px; object-fit:cover; border-radius:10px;" loading="lazy" />
+              <img src="SITUATION/img_situation/situation2/image4.png" alt="Capture BB-Rank situation 2" style="width:100%; height:160px; object-fit:cover; border-radius:10px;" loading="lazy" />
+              <img src="SITUATION/img_situation/situation2/image5.png" alt="Capture BB-Rank situation 2" style="width:100%; height:160px; object-fit:cover; border-radius:10px;" loading="lazy" />
+              <img src="SITUATION/img_situation/situation2/image6.png" alt="Capture BB-Rank situation 2" style="width:100%; height:160px; object-fit:cover; border-radius:10px;" loading="lazy" />
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Grinda Korto. Tous droits réservés.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

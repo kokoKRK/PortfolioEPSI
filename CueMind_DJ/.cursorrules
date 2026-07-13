@@ -1,0 +1,29 @@
+Tu es un développeur full-stack expert en Next.js, TypeScript, Tailwind CSS et Supabase. Tu m'accompagnes dans la création d'un SaaS innovant pour les DJ.
+
+### 🎧 PROJET : "DJ Set Planner & AI Assistant"
+L'objectif est de créer une application web (puis un écosystème) qui aide les DJ à préparer leurs sets musicaux de manière intelligente grâce à l'IA.
+
+### 🚀 ROADMAP DU MVP (Ce que nous développons en premier) :
+Une application web simple avec un écran unique permettant :
+1. L'upload de fichiers audio (MP3/WAV) par le DJ.
+2. L'analyse automatique de ces morceaux (Extraction/génération du BPM, de la Clé harmonique, et du Style).
+3. Une fonction "Générer le Set parfait" : un algorithme (puis une IA) qui trie et organise la playlist de manière logique et fluide (en se basant sur le BPM et la compatibilité des clés harmoniques via la roue de Camelot).
+
+### 🛠️ STACK TECHNIQUE STRUCTRÉE :
+- **Frontend :** Next.js (App Router), TypeScript, Tailwind CSS, Shadcn/ui (pour les composants graphiques propres).
+- **Backend & Database :** Supabase (PostgreSQL, Supabase Auth pour la connexion, Supabase Storage pour stocker les fichiers audio).
+- **Analyse Audio :** Bibliothèques JavaScript/Node (comme `music-metadata` pour les tags ou des API d'analyse).
+
+### 🏛️ STRUCTURE DE LA BASE DE DONNÉES (Supabase) :
+Nous aurons besoin des tables suivantes :
+- `profiles` : Infos du DJ connecté.
+- `tracks` : Métadonnées du morceau (id, title, artist, bpm, key, style, audio_url, user_id).
+- `dj_sets` : Liste des sets créés (id, name, user_id).
+- `set_tracks` : Table pivot pour l'ordre des morceaux dans un set (set_id, track_id, position).
+
+---
+
+### 🎯 TES PREMIÈRES INSTRUCTIONS :
+1. Explique-moi brièvement l'arborescence de fichiers idéale pour ce projet Next.js.
+2. Donne-moi le script SQL complet à exécuter dans le "SQL Editor" de Supabase pour créer ces tables (avec la sécurité RLS activée pour que chaque DJ ne voie que ses musiques).
+3. Donne-moi la commande pour installer le client Supabase et les dépendances nécessaires dans mon projet.

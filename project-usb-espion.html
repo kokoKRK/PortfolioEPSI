@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projet – USB Espion</title>
+    <meta name="description" content="Détails du projet USB Espion – objectifs, livrables, organisation, technologies et résultats." />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="project-themes.css" />
+  </head>
+  <body class="page-project page-usb-espion">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#hero" class="brand" aria-label="Retour à l'accueil">GK</a>
+        <nav class="nav" aria-label="Navigation">
+          <a class="btn btn-ghost" href="index.html#projects">← Retour aux projets</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="project-detail">
+        <div class="container">
+          <h1>USB Espion – Technologie espion (Bad USB)</h1>
+          <p class="subtitle">Conception d’un dispositif de type <strong>Bad USB</strong> pour l’exfiltration rapide de données et d’un <strong>site de supervision</strong> permettant à l’opérateur d’accéder à distance aux informations collectées.</p>
+
+          <div class="card" style="margin-bottom: 20px; overflow: hidden;">
+            <img src="workShop2/imgWorkShop2/loginVraiSite.png" alt="Capture du vrai site / dashboard de supervision" style="width:100%; height:auto; display:block;" />
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
+            <article class="card">
+              <h2>Contexte & objectifs</h2>
+              <p>Thème: <strong>technologie espion</strong>. Nous avons réalisé un <strong>Bad USB</strong> capable de <strong>récupérer instantanément</strong> des données sur le PC cible et de les <strong>transmettre à un site web</strong> où l’opérateur peut consulter les informations à distance.</p>
+              <ul>
+                <li><strong>Exfiltration locale</strong>: script <strong>Python</strong> exécuté à l’insertion (collecte ciblée).</li>
+                <li><strong>Support physique</strong>: microcontrôleur <strong>ESP</strong> + <strong>carte microSD</strong>, boîtier <strong>imprimé 3D</strong>.</li>
+                <li><strong>Envoi sécurisé</strong> vers un backend et stockage côté serveur (ou buffer microSD).</li>
+                <li><strong>Tableau de bord</strong> web: visualisation des données récupérées.</li>
+              </ul>
+            </article>
+            <aside class="card">
+              <h2>Rôles & organisation</h2>
+              <ul>
+                <li><strong>Hardware/Script</strong>: préparation du Bad USB (HID/Storage) + payloads.</li>
+                <li><strong>Backend</strong>: API de réception, authentification simple, stockage.</li>
+                <li><strong>Frontend</strong>: dashboard temps quasi réel, filtres et recherche.</li>
+                <li>Suivi daily, Kanban (Notion/Trello), PRs Git, démo finale.</li>
+              </ul>
+            </aside>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>Architecture & stack</h2>
+              <ul>
+                <li><strong>Collecte</strong>: script <strong>Python</strong> (fichiers récents, infos système, utilisateur).</li>
+                <li><strong>Support</strong>: carte <strong>ESP</strong> (Wi‑Fi) avec <strong>microSD</strong>, firmware en <strong>Arduino/C++</strong>.</li>
+                <li><strong>API</strong>: Node/Express (ou Flask) via HTTPS pour ingest et authentification simple.</li>
+                <li><strong>Dashboard</strong>: HTML/CSS/JS, vues liste/aperçu, filtres, recherche.</li>
+                <li><strong>Stockage</strong>: fichiers + base légère (JSON/SQLite) selon type/taille.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h2>Fonctionnalités clés</h2>
+              <ul>
+                <li>Déclenchement auto à l’insertion: Python collecte fichiers récents + métadonnées système.</li>
+                <li>Stockage tampon sur <strong>microSD</strong> puis <strong>upload Wi‑Fi</strong> (ESP) ou direct HTTPS.</li>
+                <li>Dashboard: liste des machines, filtres (date, type), aperçu/preview des fichiers.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>Matériel & fabrication</h2>
+              <ul>
+                <li><strong>ESP</strong> (Wi‑Fi) configuré en mode périphérique d’exfiltration.</li>
+                <li><strong>Carte microSD</strong> pour journaliser et bufferiser les données.</li>
+                <li><strong>Boîtier 3D</strong>: design simple, ventilation et accès au port.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h2>Firmware (Arduino)</h2>
+              <ul>
+                <li>Gestion Wi‑Fi, lecture/écriture microSD, et envois HTTP(s).</li>
+                <li>Réessais en cas de réseau indisponible, horodatage des lots.</li>
+                <li>Paramètres réseau via constantes ou mini-config (selon version).</li>
+              </ul>
+            </article>
+          </div>
+
+          <article class="card" style="margin-top: 20px;">
+            <h2>Galerie (matériel, code & écrans)</h2>
+            <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 10px;">
+              <img src="workShop2/imgWorkShop2/FusionImprimante3D.png" alt="Boîtier imprimé 3D – assemblage/rendu" style="width:100%; height:160px; object-fit:cover; border-radius:10px; border:1px solid var(--border); background:#fff;" />
+              <img src="workShop2/imgWorkShop2/arduinoIDE.png" alt="Firmware Arduino pour ESP – Arduino IDE" style="width:100%; height:160px; object-fit:cover; border-radius:10px; border:1px solid var(--border); background:#fff;" />
+              <img src="workShop2/imgWorkShop2/scriptPython.png" alt="Script Python de collecte – aperçu" style="width:100%; height:160px; object-fit:cover; border-radius:10px; border:1px solid var(--border); background:#fff;" />
+
+              <img src="workShop2/imgWorkShop2/trello.png" alt="Organisation du projet – Board Trello" style="width:100%; height:160px; object-fit:cover; border-radius:10px; border:1px solid var(--border); background:#fff;" />
+              <img src="workShop2/imgWorkShop2/githubRepertoire.png" alt="Répertoire GitHub – structure du projet" style="width:100%; height:160px; object-fit:cover; border-radius:10px; border:1px solid var(--border); background:#fff;" />
+              <img src="workShop2/imgWorkShop2/FauxSite.png" alt="Site de visualisation – liste/aperçu des données" style="width:100%; height:160px; object-fit:cover; border-radius:10px; border:1px solid var(--border); background:#fff;" />
+
+              <img src="workShop2/imgWorkShop2/loginVraiSite.png" alt="Authentification au dashboard – écran de login" style="width:100%; height:160px; object-fit:cover; border-radius:10px; border:1px solid var(--border); background:#fff;" />
+              <img src="workShop2/imgWorkShop2/testAudio.png" alt="Tests audio – preuve de concept de capture" style="width:100%; height:160px; object-fit:cover; border-radius:10px; border:1px solid var(--border); background:#fff;" />
+              <img src="workShop2/imgWorkShop2/importationFinaleAudio.png" alt="Importation de fichiers – flux d’upload final" style="width:100%; height:160px; object-fit:cover; border-radius:10px; border:1px solid var(--border); background:#fff;" />
+            </div>
+          </article>
+
+          <!-- Logiciels & Technologies -->
+          <section class="section alt" style="margin-top: 40px;">
+            <div class="container">
+              <h2>Logiciels & Technologies utilisés</h2>
+              <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <article class="card tool">
+                  <div class="icon" aria-hidden="true">
+                    <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="Python">
+                      <title>Python</title>
+                      <defs>
+                        <linearGradient id="python-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#3776ab"/>
+                          <stop offset="100%" stop-color="#306998"/>
+                        </linearGradient>
+                      </defs>
+                      <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#python-grad)"/>
+                      <path fill="white" d="M20 16h8v4h-8v-4zm0 6h8v4h-8v-4zm0 6h6v4h-6v-4z" opacity="0.9"/>
+                    </svg>
+                  </div>
+                  <h3>Python</h3>
+                  <p>Scripts de collecte</p>
+                </article>
+                <article class="card tool">
+                  <div class="icon" aria-hidden="true">
+                    <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="Arduino">
+                      <title>Arduino</title>
+                      <defs>
+                        <linearGradient id="arduino-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#00979d"/>
+                          <stop offset="100%" stop-color="#007580"/>
+                        </linearGradient>
+                      </defs>
+                      <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#arduino-grad)"/>
+                      <path fill="white" d="M16 16h16v4H16v-4zm0 6h16v4H16v-4zm0 6h12v4H16v-4z" opacity="0.9"/>
+                    </svg>
+                  </div>
+                  <h3>Arduino/C++</h3>
+                  <p>Firmware ESP</p>
+                </article>
+                <article class="card tool">
+                  <div class="icon" aria-hidden="true">
+                    <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="3D Printer">
+                      <title>3D Printer</title>
+                      <defs>
+                        <linearGradient id="3d-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#8b5cf6"/>
+                          <stop offset="100%" stop-color="#7c3aed"/>
+                        </linearGradient>
+                      </defs>
+                      <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#3d-grad)"/>
+                      <path fill="white" d="M20 16h8v4h-8v-4zm0 6h8v4h-8v-4zm0 6h6v4h-6v-4z" opacity="0.9"/>
+                    </svg>
+                  </div>
+                  <h3>Impression 3D</h3>
+                  <p>Boîtier personnalisé</p>
+                </article>
+                <article class="card tool">
+                  <div class="icon" aria-hidden="true">
+                    <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="GitHub">
+                      <title>GitHub</title>
+                      <defs>
+                        <linearGradient id="github-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#333"/>
+                          <stop offset="100%" stop-color="#000"/>
+                        </linearGradient>
+                      </defs>
+                      <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#github-grad)"/>
+                      <path fill="white" d="M20 16h8v4h-8v-4zm0 6h8v4h-8v-4zm0 6h6v4h-6v-4z" opacity="0.9"/>
+                    </svg>
+                  </div>
+                  <h3>Git/GitHub</h3>
+                  <p>Versionnement</p>
+                </article>
+                <article class="card tool">
+                  <div class="icon" aria-hidden="true">
+                    <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="Trello">
+                      <title>Trello</title>
+                      <defs>
+                        <linearGradient id="trello-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#0079bf"/>
+                          <stop offset="100%" stop-color="#005e9a"/>
+                        </linearGradient>
+                      </defs>
+                      <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#trello-grad)"/>
+                      <path fill="white" d="M16 16h16v4H16v-4zm0 6h16v4H16v-4zm0 6h12v4H16v-4z" opacity="0.9"/>
+                    </svg>
+                  </div>
+                  <h3>Trello</h3>
+                  <p>Gestion de projet</p>
+                </article>
+                <article class="card tool">
+                  <div class="icon" aria-hidden="true">
+                    <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="Express">
+                      <title>Express</title>
+                      <defs>
+                        <linearGradient id="express-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#000"/>
+                          <stop offset="100%" stop-color="#333"/>
+                        </linearGradient>
+                      </defs>
+                      <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#express-grad)"/>
+                      <path fill="white" d="M20 16h8v4h-8v-4zm0 6h8v4h-8v-4zm0 6h6v4h-6v-4z" opacity="0.9"/>
+                    </svg>
+                  </div>
+                  <h3>Express.js</h3>
+                  <p>Backend API</p>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- Compétences -->
+          <section class="section" style="margin-top: 40px;">
+            <div class="container">
+              <h2>Compétences développées</h2>
+              <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div class="skill-category">
+                  <h3>Développement</h3>
+                  <ul class="skill-items">
+                    <li class="skill-item">
+                      <span class="skill-name">Python</span>
+                      <span class="skill-level comfortable">À l'aise</span>
+                    </li>
+                    <li class="skill-item">
+                      <span class="skill-name">Arduino/C++</span>
+                      <span class="skill-level comfortable">À l'aise</span>
+                    </li>
+                    <li class="skill-item">
+                      <span class="skill-name">Backend API</span>
+                      <span class="skill-level working">En travail</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="skill-category">
+                  <h3>Gestion de projet</h3>
+                  <ul class="skill-items">
+                    <li class="skill-item">
+                      <span class="skill-name">Travail en équipe</span>
+                      <span class="skill-level mastered">Maîtrisé</span>
+                    </li>
+                    <li class="skill-item">
+                      <span class="skill-name">Versionnement Git</span>
+                      <span class="skill-level comfortable">À l'aise</span>
+                    </li>
+                    <li class="skill-item">
+                      <span class="skill-name">Organisation Agile</span>
+                      <span class="skill-level comfortable">À l'aise</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Compétences mobilisées -->
+          <section class="section alt" style="margin-top: 40px;">
+            <div class="container">
+              <h2>Compétences mobilisées</h2>
+              <div class="card">
+                <div class="card-body">
+                  <h3>USB Espion</h3>
+                  <p><strong>Période :</strong> septembre 2025</p>
+                  <ul>
+                    <li>Développement embarqué et scripts Python</li>
+                    <li>Conception hardware (ESP, microSD, impression 3D)</li>
+                    <li>Dashboard web de supervision</li>
+                  </ul>
+                  <p>Projet collaboratif de technologie espion impliquant un Bad USB avec scripts Python, firmware Arduino, impression 3D et création d'un dashboard de supervision pour l'exfiltration de données.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <article class="card" style="margin-top: 20px;">
+            <h2>Document de cadrage</h2>
+            <p>Le PDF récapitulant le travail et les captures du projet est disponible ci-dessous.</p>
+            <div class="hero-actions" style="margin-top: 0;">
+              <a class="btn" href="workShop2/imgWorkShop2/workShop2.pdf" target="_blank" rel="noreferrer noopener">Ouvrir le PDF</a>
+            </div>
+          </article>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>Résultats & bilans</h2>
+              <ul>
+                <li>PoC fonctionnel: Python (collecte) → microSD/HTTPS (ESP) → dashboard.</li>
+                <li>Firmware Arduino stable, boîtier 3D prêt pour démonstration.</li>
+                <li>Axes d’amélioration: chiffrement E2E, durcissement USB, logs SIEM.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h2>Éthique & sécurité</h2>
+              <ul>
+                <li>Projet réalisé dans un <strong>cadre éducatif</strong> et de sensibilisation.</li>
+                <li>Tests uniquement sur des <strong>machines autorisées</strong> et données factices.</li>
+                <li>Disclosure responsable et rappels sur les <strong>bonnes pratiques</strong>.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Grinda Korto. Tous droits réservés.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+

@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand-hover: var(--brand-hover);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: #1c1f2e;
+  --foreground: #ffffff;
+  --card: #2c2c3e;
+  --card-foreground: #ffffff;
+  --popover: #2c2c3e;
+  --popover-foreground: #ffffff;
+  --primary: #e91e63;
+  --primary-foreground: #ffffff;
+  --brand-hover: #ff4081;
+  --secondary: #2c2c3e;
+  --secondary-foreground: #e0e0e0;
+  --muted: #252838;
+  --muted-foreground: #e0e0e0;
+  --accent: #e91e63;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --border: #3a3d52;
+  --input: #3a3d52;
+  --ring: #e91e63;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .brand-gradient {
+    background: radial-gradient(
+      ellipse at top right,
+      rgba(233, 30, 99, 0.15),
+      transparent 55%
+    );
+  }
+  .brand-glow {
+    box-shadow: 0 0 40px rgba(233, 30, 99, 0.12);
+  }
+}

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — Oeil 2 Mata</title>
+  <meta name="description" content="Espace administrateur pour gérer la galerie.">
+  <meta name="theme-color" content="#080808">
+  <link rel="stylesheet" href="assets/styles/styles.css">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="site-header scrolled" id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Retour à l'accueil">
+        <div class="brand-icon" aria-hidden="true">O</div>
+        <span>Oeil 2 Mata</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+        <a href="galerie.html">Galerie</a>
+        <a href="cinema.html">Cinéma</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html" aria-current="page">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section admin-page">
+    <div class="container">
+      <span class="overline" style="margin-bottom:16px">Espace privé</span>
+      <h1 style="font-family:var(--font-serif);font-size:clamp(36px,5vw,52px);font-weight:300;color:var(--text);margin-bottom:8px">Administration</h1>
+      <p class="muted" style="margin-bottom:40px">Gestion de la galerie — ajout, export et suppression d'œuvres.</p>
+
+      <div id="loginCard" class="admin-login">
+        <h3>Connexion</h3>
+        <p class="muted" style="margin-top:4px">Entrez le mot de passe pour accéder.</p>
+        <div class="login-grid">
+          <input type="text" id="adminPassword" placeholder="Mot de passe" aria-label="Mot de passe">
+          <button class="btn btn-primary" id="loginBtn">Connexion</button>
+        </div>
+        <p id="loginError" class="muted" style="color:#c47070;margin-top:10px;display:none">Mot de passe incorrect.</p>
+      </div>
+
+      <form id="adminForm" class="admin-form">
+        <h2>Ajouter une œuvre</h2>
+        <div class="grid" style="grid-template-columns:repeat(2,1fr);gap:16px">
+          <div><label for="titre">Titre</label><input type="text" id="titre" placeholder="Ex: La panthère" required></div>
+          <div><label for="id">Identifiant (auto)</label><input type="text" id="id" placeholder="ex: la-panthere"></div>
+          <div><label for="imageUrl">Image (URL)</label><input type="text" id="imageUrl" placeholder="imgSiteMaman/monFichier.jpg"></div>
+          <div><label for="imageFile">Image (fichier)</label><input type="file" id="imageFile" accept="image/*"></div>
+          <div><label for="imageHdUrl">Image HD (optionnel)</label><input type="text" id="imageHdUrl" placeholder="imgSiteMaman/monFichierHD.jpg"></div>
+          <div><label for="dimensions">Dimensions</label><input type="text" id="dimensions" placeholder="90×60 cm"></div>
+          <div><label for="technique">Technique</label><input type="text" id="technique" placeholder="Acrylique"></div>
+          <div><label for="annee">Année</label><input type="text" id="annee" placeholder="2025"></div>
+          <div>
+            <label for="categorie">Catégorie</label>
+            <select id="categorie" style="width:100%;padding:16px 20px;background:var(--surface);border:1px solid var(--border);color:var(--text);font-family:var(--font-sans);font-size:14px">
+              <option value="portraits">Portraits & Figures</option>
+              <option value="animalier">Faune & Animalier</option>
+              <option value="abstrait">Abstractions</option>
+              <option value="dessin">Dessins & Stylo</option>
+              <option value="scene">Scènes</option>
+            </select>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding-top:24px">
+            <label for="disponible" style="margin:0">Disponible</label>
+            <input type="checkbox" id="disponible" checked>
+          </div>
+          <div style="grid-column:1/-1"><label for="description">Description</label><textarea id="description" rows="4" placeholder="Brève description de l'œuvre"></textarea></div>
+        </div>
+
+        <div class="admin-actions" style="margin-top:20px">
+          <button type="button" class="btn btn-primary" id="saveBtn">Ajouter</button>
+          <button type="button" class="btn" id="exportBtn">Exporter JSON</button>
+          <button type="button" class="btn" id="clearBtn">Vider créations</button>
+        </div>
+        <p id="formStatus" class="muted" style="margin-top:12px"></p>
+
+        <div class="admin-help">
+          <span class="pill" style="margin-bottom:10px;display:inline-block">Aide</span>
+          <p class="muted" style="margin-top:8px;font-size:13px">
+            Fichier image = Data URL (localStorage). Pour la mise en ligne, cliquez « Exporter JSON » puis remplacez <code>data/oeuvres.json</code>. Images dans <code>imgSiteMaman/</code>.
+          </p>
+          <p style="margin-top:12px"><a class="btn btn-sm" href="galerie.html">Voir la galerie &rarr;</a></p>
+        </div>
+      </form>
+
+      <div id="preview" class="admin-preview">
+        <span class="pill">Aperçu</span>
+        <div class="preview-grid">
+          <div><img id="previewImg" alt="Aperçu"></div>
+          <div>
+            <h3 id="previewTitle" style="font-family:var(--font-serif);font-size:24px;font-weight:400;color:var(--text);margin:0 0 8px"></h3>
+            <p class="muted" id="previewMeta"></p>
+            <p id="previewDesc" style="margin-top:10px;color:var(--text-secondary)"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding-top:0">
+        <p>&copy; <span id="year"></span> Oeil 2 Mata. Administration.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/scripts/main.js" defer></script>
+  <script>
+    const ADMIN_KEY='Oeil2Mata2025!'
+    const loginCard=document.getElementById('loginCard')
+    const loginBtn=document.getElementById('loginBtn')
+    const loginError=document.getElementById('loginError')
+    const adminForm=document.getElementById('adminForm')
+    document.getElementById('year').textContent=new Date().getFullYear()
+
+    function slugify(s){return(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')}
+    function getCustom(){try{return JSON.parse(localStorage.getItem('customOeuvres')||'[]')}catch{return[]}}
+    function setCustom(l){localStorage.setItem('customOeuvres',JSON.stringify(l))}
+    function showForm(){loginCard.style.display='none';adminForm.classList.add('visible')}
+
+    if(sessionStorage.getItem('adminAuth')==='1')showForm()
+    loginBtn.addEventListener('click',()=>{
+      if(document.getElementById('adminPassword').value===ADMIN_KEY){sessionStorage.setItem('adminAuth','1');showForm()}
+      else loginError.style.display='block'
+    })
+
+    const titreEl=document.getElementById('titre'),idEl=document.getElementById('id')
+    const imageUrlEl=document.getElementById('imageUrl'),imageHdUrlEl=document.getElementById('imageHdUrl')
+    const imageFileEl=document.getElementById('imageFile'),dimensionsEl=document.getElementById('dimensions')
+    const techniqueEl=document.getElementById('technique'),anneeEl=document.getElementById('annee')
+    const categorieEl=document.getElementById('categorie'),dispoEl=document.getElementById('disponible')
+    const descEl=document.getElementById('description'),formStatus=document.getElementById('formStatus')
+    const preview=document.getElementById('preview'),previewImg=document.getElementById('previewImg')
+    const previewTitle=document.getElementById('previewTitle'),previewMeta=document.getElementById('previewMeta')
+    const previewDesc=document.getElementById('previewDesc')
+
+    titreEl.addEventListener('input',()=>{if(!idEl.value.trim())idEl.value=slugify(titreEl.value);renderPreview()})
+    ;[imageUrlEl,imageHdUrlEl,dimensionsEl,techniqueEl,anneeEl,descEl].forEach(el=>el.addEventListener('input',renderPreview))
+    dispoEl.addEventListener('change',renderPreview)
+
+    let imageDataUrl=''
+    imageFileEl.addEventListener('change',()=>{
+      const f=imageFileEl.files?.[0]
+      if(!f){imageDataUrl='';renderPreview();return}
+      const fr=new FileReader();fr.onload=()=>{imageDataUrl=fr.result;renderPreview()};fr.readAsDataURL(f)
+    })
+
+    function currentImage(){return imageUrlEl.value.trim()||imageDataUrl||''}
+    function renderPreview(){
+      const img=currentImage(),title=titreEl.value.trim()||'Sans titre'
+      const meta=[techniqueEl.value.trim(),dimensionsEl.value.trim(),anneeEl.value.trim()].filter(Boolean).join(' \u00b7 ')
+      const desc=descEl.value.trim()
+      if(!img&&!title&&!desc){preview.classList.remove('visible');return}
+      preview.classList.add('visible')
+      previewImg.src=img||'assets/images/placeholder-1.svg'
+      previewTitle.textContent=title;previewMeta.textContent=meta;previewDesc.textContent=desc
+    }
+
+    document.getElementById('saveBtn').addEventListener('click',()=>{
+      const titre=titreEl.value.trim();if(!titre){formStatus.textContent='Veuillez saisir un titre.';return}
+      let id=idEl.value.trim()||slugify(titre);if(!id){formStatus.textContent='Identifiant invalide.';return}
+      const image=currentImage();if(!image){formStatus.textContent='Veuillez fournir une image.';return}
+      const item={id,titre,image,imageHD:imageHdUrlEl.value.trim()||image,dimensions:dimensionsEl.value.trim(),
+        technique:techniqueEl.value.trim(),annee:parseInt(anneeEl.value.trim(),10)||'',
+        disponible:dispoEl.checked,categorie:categorieEl.value,description:descEl.value.trim()}
+      const list=getCustom()
+      if(list.some(x=>x.id===id)){let i=2;while(list.some(x=>x.id===id+'-'+i))i++;item.id=id+'-'+i}
+      list.push(item);setCustom(list)
+      formStatus.textContent='Œuvre ajoutée localement.';renderPreview()
+    })
+
+    document.getElementById('exportBtn').addEventListener('click',async()=>{
+      formStatus.textContent='Préparation...';let base=[]
+      try{const r=await fetch('data/oeuvres.json',{cache:'no-store'});base=await r.json()}catch{}
+      const merged=[...base,...getCustom()]
+      const blob=new Blob([JSON.stringify(merged,null,2)],{type:'application/json'})
+      const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='oeuvres.json'
+      document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(a.href)
+      formStatus.textContent='Fichier exporté.'
+    })
+
+    document.getElementById('clearBtn').addEventListener('click',()=>{
+      if(!confirm('Supprimer toutes les œuvres ajoutées via Admin ?'))return
+      localStorage.removeItem('customOeuvres');formStatus.textContent='Créations supprimées.';renderPreview()
+    })
+  </script>
+</body>
+</html>

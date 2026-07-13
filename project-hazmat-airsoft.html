@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projet - Hazmat Airsoft</title>
+    <meta name="description" content="Projet personnel Hazmat Airsoft : site vitrine autour de répliques airsoft inspirées du jeu Rust." />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="project-themes.css" />
+  </head>
+  <body class="page-project page-hazmat">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#hero" class="brand" aria-label="Retour à l'accueil">GK</a>
+        <nav class="nav" aria-label="Navigation">
+          <a class="btn btn-ghost" href="index.html#projects">← Retour aux projets</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="project-detail">
+        <div class="container">
+          <h1>Hazmat Airsoft</h1>
+          <p class="subtitle">
+            Site vitrine personnel dédié aux <strong>répliques airsoft inspirées du jeu Rust</strong> :
+            présentation des armes, univers visuel immersif et parcours de découverte.
+            Le projet est volontairement statique : pas de connexion utilisateur ni de catalogue dynamique,
+            faute de capacité backend disponible sur Supabase (autres projets actifs en priorité).
+          </p>
+
+          <p class="hero-actions project-demo-top">
+            <a class="btn btn-primary" href="https://hazmat-airsoft-officiel.netlify.app" target="_blank" rel="noreferrer noopener">Voir le site en ligne</a>
+            <a class="btn btn-ghost" href="hazmatAirsoft/index.html" target="_blank" rel="noreferrer noopener">Version locale</a>
+          </p>
+
+          <div class="card" style="margin-bottom: 20px; overflow: hidden;">
+            <img src="assets/img/img_projets/hazmatAirsoft.jpg" alt="Aperçu du site vitrine Hazmat Airsoft" style="width:100%; max-height:420px; object-fit:cover; display:block;">
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
+            <article class="card">
+              <h2>Contexte & objectifs</h2>
+              <p>
+                Hazmat Airsoft met en avant un catalogue de <strong>répliques airsoft calquées sur les armes du jeu Rust</strong>
+                (AK-47, Spas-12, LR-300, Python, Sniper Bolt, etc.). L'objectif est de créer une vitrine forte,
+                orientée image de marque et immersion, sans dépendre d'un backend actif.
+              </p>
+              <ul>
+                <li>Construire une identité visuelle brute, fidèle à l'univers Rust / survival.</li>
+                <li>Présenter les répliques par catégories (shotguns, grosses armes, petites armes, snipers).</li>
+                <li>Mettre en avant le réalisme et le lien direct avec le jeu (avis, descriptions, visuels).</li>
+                <li>Proposer un parcours contact pour les demandes (devis, renseignements).</li>
+                <li>Préparer une base front prête pour une future boutique (auth / panier non activés).</li>
+              </ul>
+            </article>
+            <aside class="card">
+              <h2>Stack & périmètre actuel</h2>
+              <ul>
+                <li>Front : <strong>HTML, CSS, JavaScript</strong></li>
+                <li>Contenu produits : <strong>catalogue statique</strong> (images + fiches vitrine)</li>
+                <li>Filtrage par catégorie côté client</li>
+                <li>Formulaires contact / newsletter (front uniquement)</li>
+                <li><strong>Hors périmètre actif :</strong> Supabase, comptes utilisateurs, panier, Stripe</li>
+              </ul>
+            </aside>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>Ce que le site propose</h2>
+              <ul>
+                <li>Hero vidéo et sections catégories / répliques / avis / à propos.</li>
+                <li>Galerie des répliques Rust avec filtrage par type d'arme.</li>
+                <li>Descriptions orientées jeu Rust et expérience terrain airsoft.</li>
+                <li>Section témoignages et bloc contact.</li>
+                <li>Design responsive, ambiance sombre et industrielle.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h2>Ce qui n'est pas en ligne</h2>
+              <ul>
+                <li>Pas de connexion / inscription utilisateur.</li>
+                <li>Pas d'affichage dynamique des produits depuis une base de données.</li>
+                <li>Pas de panier ni de tunnel de paiement Stripe.</li>
+                <li>Pas de page profil ni d'historique de commandes.</li>
+                <li>Backend Supabase réservé à d'autres projets pour l'instant.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>Compétences mobilisées</h2>
+              <ul>
+                <li>Intégration front-end responsive avec identité visuelle marquée.</li>
+                <li>JavaScript pour filtres, navigation et interactions UI.</li>
+                <li>Conception UX d'une vitrine produit immersive.</li>
+                <li>Structuration d'un projet web modulaire (évolution e-commerce possible).</li>
+                <li>Direction artistique alignée sur une licence / univers de jeu (Rust).</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h2>Liens</h2>
+              <div class="hero-actions" style="margin-top: 0;">
+                <a href="https://hazmat-airsoft-officiel.netlify.app" class="btn btn-primary" target="_blank" rel="noreferrer noopener">Voir le site en ligne</a>
+                <a href="hazmatAirsoft/index.html" class="btn" target="_blank" rel="noreferrer noopener">Ouvrir en local</a>
+              </div>
+            </article>
+          </div>
+
+          <article class="card" style="margin-top: 20px;">
+            <h2>Répliques inspirées de Rust</h2>
+            <div class="grid cards projects-grid">
+              <div class="card project"><div class="thumb" role="img" aria-label="AK-47 — réplique Rust" style="background-image:url('hazmatAirsoft/img/ak47.png'); background-size:cover; background-position:center;"></div></div>
+              <div class="card project"><div class="thumb" role="img" aria-label="Spas-12 — réplique Rust" style="background-image:url('hazmatAirsoft/img/spas12.png'); background-size:cover; background-position:center;"></div></div>
+              <div class="card project"><div class="thumb" role="img" aria-label="Shotgun M4 — réplique Rust" style="background-image:url('hazmatAirsoft/img/shotgun-m4.png'); background-size:cover; background-position:center;"></div></div>
+              <div class="card project"><div class="thumb" role="img" aria-label="Sniper Bolt — réplique Rust" style="background-image:url('hazmatAirsoft/img/sniper-bolt.png'); background-size:cover; background-position:center;"></div></div>
+              <div class="card project"><div class="thumb" role="img" aria-label="LR-300 — réplique Rust" style="background-image:url('hazmatAirsoft/img/lr300.png'); background-size:cover; background-position:center;"></div></div>
+              <div class="card project"><div class="thumb" role="img" aria-label="Python — réplique Rust" style="background-image:url('hazmatAirsoft/img/python.png'); background-size:cover; background-position:center;"></div></div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Grinda Korto. Tous droits réservés.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

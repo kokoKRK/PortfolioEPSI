@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stage 2026 - Migration Odoo 18 (3Dmap)</title>
+    <meta name="description" content="Détails techniques du stage 2026 chez 3Dmap : migration et stabilisation d'un ERP Odoo v17 vers v18." />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="project-themes.css" />
+  </head>
+  <body class="page-project page-3dmap">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#hero" class="brand" aria-label="Retour à l'accueil">GK</a>
+        <nav class="nav" aria-label="Navigation">
+          <a class="btn btn-ghost" href="index.html#experiences">← Retour aux expériences</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="project-detail">
+        <div class="container">
+          <h1>Stage 2026 - 3Dmap</h1>
+          <p class="subtitle">
+            Migration et stabilisation d'un ERP Odoo en production (v17 vers v18),
+            avec debug SQL bas niveau, fiabilisation Linux et remise en accessibilite publique.
+          </p>
+
+          <p class="hero-actions project-demo-top">
+            <a class="btn btn-primary" href="http://dev.3dmap.fr:8070" target="_blank" rel="noreferrer noopener">Voir l'instance Odoo</a>
+          </p>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+            <figure class="card" style="overflow: hidden; margin: 0; padding: 0;">
+              <img src="assets/img/3dmap_img.png" alt="3Dmap — cartes en relief fabriquées en France" style="width: 100%; height: auto; display: block;" loading="lazy" />
+              <figcaption style="padding: 12px 16px; font-size: 14px; color: var(--proj-muted); border-top: 1px solid var(--proj-border);">
+                <strong>3Dmap</strong> — entreprise d'accueil du stage (cartes 3D Made in France).
+              </figcaption>
+            </figure>
+            <figure class="card" style="overflow: hidden; margin: 0; padding: 0;">
+              <img src="assets/img/odoo_img.png" alt="Odoo — plateforme ERP modulaire" style="width: 100%; height: auto; display: block;" loading="lazy" />
+              <figcaption style="padding: 12px 16px; font-size: 14px; color: var(--proj-muted); border-top: 1px solid var(--proj-border);">
+                <strong>Odoo</strong> — ERP modulaire migré et stabilisé en production (v17 → v18).
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
+            <article class="card">
+              <h2>Contexte et objectifs</h2>
+              <p>
+                Dans le cadre de mon stage chez <strong>3Dmap</strong>, j'ai travaille sur la migration
+                d'une instance <strong>Odoo de production</strong> vers une version majeure.
+                L'objectif n'etait pas uniquement de migrer la base, mais surtout de
+                <strong>rendre l'ERP stable et exploitable</strong> apres la bascule.
+              </p>
+              <ul>
+                <li>Migrer la base de donnees d'Odoo 17 vers Odoo 18.</li>
+                <li>Assurer la compatibilite des modules custom et OCA.</li>
+                <li>Corriger les erreurs critiques post-migration (SQL et HTTP).</li>
+                <li>Stabiliser la configuration serveur Linux.</li>
+                <li>Rendre l'instance accessible publiquement.</li>
+              </ul>
+            </article>
+            <aside class="card">
+              <h2>Environnement technique</h2>
+              <ul>
+                <li>ERP: <strong>Odoo 17 vers Odoo 18</strong></li>
+                <li>Serveur: <strong>VPS OVH (Linux)</strong></li>
+                <li>Base de donnees: <strong>PostgreSQL</strong></li>
+                <li>Runtime: <strong>Python 3.12</strong></li>
+                <li>Service: <strong>systemd</strong></li>
+                <li>Outils: ligne de commande, <code>psql</code>, logs Odoo</li>
+                <li>Migration: logique <strong>OpenUpgrade</strong></li>
+                <li>Modules: custom <code>3dmap_*</code> + modules OCA</li>
+              </ul>
+            </aside>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>1) Migration de la base vers Odoo 18</h2>
+              <p>
+                Apres migration, la base semblait en version 18, mais l'instance ne demarrait
+                pas correctement et retournait des erreurs 500.
+              </p>
+              <ul>
+                <li>Verification SQL de l'etat du module <code>base</code>.</li>
+                <li>Analyse complete des logs: <code>/var/log/odoo/odoo18.log</code>.</li>
+                <li>Correction d'erreurs de manifest (version invalide).</li>
+                <li>Nettoyage de la configuration <code>openupgrade_framework</code>.</li>
+              </ul>
+              <pre><code>SELECT name, state, latest_version
+FROM ir_module_module
+WHERE name='base';</code></pre>
+            </article>
+            <article class="card">
+              <h2>2) Debug SQL post-migration</h2>
+              <p>
+                Odoo generait des erreurs <code>UndefinedColumn</code>, signe que le schema
+                PostgreSQL n'etait pas parfaitement aligne avec les attentes d'Odoo 18.
+              </p>
+              <ul>
+                <li>Analyse des requetes SQL produites par Odoo dans les logs.</li>
+                <li>Ajout manuel de colonnes manquantes dans la table <code>website</code>.</li>
+                <li>Disparition des erreurs <code>InFailedSqlTransaction</code>.</li>
+                <li>Retablissement progressif du backend.</li>
+              </ul>
+              <pre><code>ALTER TABLE website ADD COLUMN IF NOT EXISTS shop_gap integer;
+ALTER TABLE website ADD COLUMN IF NOT EXISTS ecommerce_access boolean;</code></pre>
+            </article>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>3) Configuration serveur et service Linux</h2>
+              <p>
+                Le service Odoo crashait a cause d'une mauvaise configuration
+                (<code>db_port</code> invalide, parametres incomplets).
+              </p>
+              <ul>
+                <li>Correction des parametres <code>db_port</code>, <code>proxy_mode</code>, <code>dbfilter</code>.</li>
+                <li>Verification du lancement via systemd.</li>
+                <li>Controle des ports d'ecoute.</li>
+              </ul>
+              <pre><code>sudo systemctl restart odoo18
+sudo systemctl status odoo18
+sudo ss -lntp | grep 8070</code></pre>
+            </article>
+            <article class="card">
+              <h2>4) Resolution des erreurs HTTP (302 / 500)</h2>
+              <p>
+                Le comportement differait entre <code>localhost</code> et le domaine public
+                avec des redirections et erreurs 500.
+              </p>
+              <ul>
+                <li>Desactivation temporaire de <code>proxy_mode=True</code> (sans Nginx).</li>
+                <li>Tests <code>curl</code> en local puis via domaine.</li>
+                <li>Analyse des headers HTTP et verification DNS/port 8070.</li>
+                <li>Instance accessible sur <strong>dev.3dmap.fr:8070</strong>.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>5) Modules custom et OCA</h2>
+              <p>
+                Plusieurs modules etaient marques <code>installed</code> en base, mais ignores
+                au demarrage (<code>not installable, skipped</code>), avec risque de vues cassees
+                et dependances incompletes.
+              </p>
+              <ul>
+                <li>Analyse croisee entre <code>ir_module_module</code>, <code>addons_path</code> et manifests.</li>
+                <li>Identification des modules critiques a traiter en priorite.</li>
+                <li>Strategie de stabilisation progressive du registry Odoo.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h2>Competences developpees</h2>
+              <ul>
+                <li>Migration d'ERP complexe entre versions majeures.</li>
+                <li>Debug SQL bas niveau sur PostgreSQL.</li>
+                <li>Analyse de logs et stack traces Python.</li>
+                <li>Administration Linux et gestion service systemd.</li>
+                <li>Diagnostic HTTP (302/500, cookies, proxy mode).</li>
+                <li>Approche methodique: fix, test, logs, correction.</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Compétences mobilisées -->
+          <section class="section alt" style="margin-top: 30px;">
+            <div class="container">
+              <h2>Compétences mobilisées</h2>
+              <div class="card">
+                <div class="card-body">
+                  <h3>Stage 2026 — 3Dmap (Odoo)</h3>
+                  <p><strong>Période :</strong> février 2026</p>
+                  <ul>
+                    <li>Migration ERP Odoo et administration PostgreSQL</li>
+                    <li>Debug SQL, logs Python et stabilisation Linux</li>
+                    <li>Remise en production d'un service métier critique</li>
+                  </ul>
+                  <p>Migration Odoo 17 vers 18, correction SQL, stabilisation Linux/systemd, développement de module sur mesure et remise en production.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <article class="card" style="margin-top: 20px;">
+            <h2>Valeur ajoutee pour le portfolio</h2>
+            <p>
+              Ce stage montre ma capacite a intervenir sur un environnement ERP de production
+              avec une approche d'ingenierie: migration, diagnostic profond, correction des
+              causes racines et remise en service d'une instance metier.
+            </p>
+            <div class="hero-actions" style="margin-top: 16px; flex-wrap: wrap;">
+              <a href="index.html#experiences" class="btn btn-primary">Retour aux expériences</a>
+              <a href="stageSN2/attestation_stage_GRINDA_KORTO_SN2.pdf" class="btn btn-ghost" target="_blank" rel="noreferrer noopener" download>Attestation</a>
+              <a href="stageSN2/Rapport_Stage_SN2.pdf" class="btn btn-ghost" target="_blank" rel="noreferrer noopener" download>Rapport</a>
+              <a href="index.html#projects" class="btn btn-ghost">Voir les autres projets</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Grinda Korto. Tous droits reserves.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

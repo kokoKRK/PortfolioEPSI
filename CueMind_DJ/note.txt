@@ -1,0 +1,19 @@
+
+ajouter une fonctionnalité page de profils spécial ou les dj peuvent créer leur propre site web grace à l'ia ( ici le site web est la page de profils )
+cette " page site web " est présenté un peu comme n portfolio :
+- Nom du DJ et photo
+- Description, style, évènement qu'il a fait etc.. avec des emplacement d'image qui pourra upload par la suite.
+- les remix et musiques qu'il a fait ( on pourra liker les remix et les musiques qui sera utile pour d'autre fonctionnalité plus tard )
+- et une page contact pour le contacter si possible 
+
+- faire en sorte que l'ia qui propose les B2B ou les transition soit en capacité de faire des transition sur certain jeu de mot ( par exemple dans les sons SPA de GIMS et Girl Like ME de Black Eyes Peas, le mot latina est répété et on peux jouait une transition dessus). elle explique la transition dans une note de transition dans la bulle de la musique proposé
+
+- link les playlist de spotify et autre
+
+- avoir la possibilité de trier par ordre ( clé, bpm etc...) comme sur sérato dans la playlist style
+
+- mettre le meme style de " logiciel dj " de la page playlist style, pour les autre page de playlist
+
+probleme : 
+
+- b2b ia, les sons qu'on doit proposer aprés doivent etre trois sons différent les un des autres et ne peuvent pas etre les memes qu'on a déja joué avant.

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projet – CueMind DJ</title>
+    <meta name="description" content="CueMind DJ — application web de préparation DJ avec IA : bibliothèque, sets, B2B assisté et playlists intelligentes." />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="project-themes.css" />
+  </head>
+  <body class="page-project page-cuemind">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#hero" class="brand" aria-label="Retour à l'accueil">GK</a>
+        <nav class="nav" aria-label="Navigation">
+          <a class="btn btn-ghost" href="index.html#current">← Retour aux projets en cours</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="project-detail">
+        <div class="container">
+          <p class="project-status-badge">En cours de développement</p>
+          <h1><span class="cuemind-brand-accent">CueMind</span> DJ</h1>
+          <p class="subtitle">
+            Application web pour DJs : bibliothèque musicale, génération de sets par IA, mode back-to-back (B2B)
+            assisté, playlists par style et préparation de transitions intelligentes.
+          </p>
+
+          <figure class="mockup-frame mockup-frame-featured project-demo-top">
+            <img src="assets/img/cuemind/maquette_visuel.png" alt="Maquette principale CueMind DJ — decks, mixer, storyboard IA et génération de sets" loading="lazy" />
+            <figcaption>Interface principale — bibliothèque, decks A/B, mixer, storyboard IA et génération de sets</figcaption>
+          </figure>
+
+          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
+            <article class="card">
+              <h2>Vision du projet</h2>
+              <p>
+                CueMind DJ aide les DJs à préparer leurs sets plus vite : import de morceaux, analyse BPM/clé/style,
+                génération de playlists et suggestions de enchaînements avec explications (jeux de mots, hooks communs, etc.).
+              </p>
+              <ul>
+                <li>Importer et organiser une bibliothèque locale (MP3/WAV).</li>
+                <li>Générer des sets via prompt IA avec filtres (BPM, style, durée).</li>
+                <li>Mode B2B : l'IA propose 3 morceaux distincts avec note de transition.</li>
+                <li>Playlists par style, tri Serato-like (clé, BPM).</li>
+                <li>Profil DJ type portfolio (roadmap) : bio, remix, contact.</li>
+              </ul>
+            </article>
+            <aside class="card">
+              <h2>Stack & architecture</h2>
+              <ul>
+                <li><strong>Next.js</strong> (App Router) + TypeScript</li>
+                <li><strong>React</strong>, Tailwind CSS, composants UI</li>
+                <li>API Routes : upload, sets, B2B, classification IA</li>
+                <li>Analyse audio & métadonnées (BPM, style, clé)</li>
+                <li>Intégrations prévues : Spotify / Deezer</li>
+              </ul>
+            </aside>
+          </div>
+
+          <article class="card" style="margin-top: 24px;">
+            <h2>Avancement actuel</h2>
+            <ul>
+              <li>Parcours import, bibliothèque, playlists par style et découverte en ligne.</li>
+              <li>Générateur de set IA avec filtres et résultats structurés.</li>
+              <li>Panel B2B avec suggestions et notes de transition contextualisées.</li>
+              <li>Prochaines étapes : profil DJ public, liens playlists externes, tri avancé type Serato.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Grinda Korto. Tous droits réservés.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

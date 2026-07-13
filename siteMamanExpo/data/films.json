@@ -1,0 +1,13 @@
+[
+  {
+    "id": "film-1",
+    "titre": "Premier film",
+    "image": "assets/images/placeholder-1.svg",
+    "annee": 2020,
+    "duree": "15 min",
+    "type": "Court métrage",
+    "description": "Description du premier film cinématographique de l'artiste.",
+    "lien": ""
+  }
+]
+

@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galerie — Oeil 2 Mata</title>
+  <meta name="description" content="Galerie complète des œuvres d'Oeil 2 Mata : peintures, dessins et créations originales.">
+  <meta name="theme-color" content="#080808">
+  <link rel="stylesheet" href="assets/styles/styles.css">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="site-header scrolled" id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Retour à l'accueil">
+        <div class="brand-icon" aria-hidden="true">O</div>
+        <span>Oeil 2 Mata</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+        <a href="galerie.html" aria-current="page">Galerie</a>
+        <a href="cinema.html">Cinéma</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="gallery-hero">
+      <div class="container">
+        <span class="overline" style="margin-bottom:16px">Collection complète</span>
+        <h1>Galerie</h1>
+        <p class="muted" style="margin-top:12px;max-width:500px">Parcourez l'ensemble des œuvres. Cliquez sur un tableau pour sa description, double-cliquez pour l'agrandir.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="gallery-filters" id="galleryFilters">
+        <div class="filter-tabs" id="filterTabs" role="tablist">
+          <button class="filter-tab active" data-cat="all" role="tab">Toutes</button>
+          <button class="filter-tab" data-cat="animalier" role="tab">Animalier</button>
+          <button class="filter-tab" data-cat="portraits" role="tab">Portraits</button>
+          <button class="filter-tab" data-cat="abstrait" role="tab">Abstrait</button>
+          <button class="filter-tab" data-cat="dessin" role="tab">Dessin</button>
+          <button class="filter-tab" data-cat="scene" role="tab">Scènes</button>
+        </div>
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Rechercher une œuvre..." aria-label="Rechercher dans la galerie">
+        </div>
+      </div>
+
+      <div class="sort-bar">
+        <span id="resultsCount" class="muted" style="font-size:12px;letter-spacing:1px"></span>
+        <select class="sort-select" id="sortSelect" aria-label="Trier les œuvres">
+          <option value="default">Tri par défaut</option>
+          <option value="az">Titre A → Z</option>
+          <option value="za">Titre Z → A</option>
+          <option value="newest">Plus récentes</option>
+          <option value="oldest">Plus anciennes</option>
+        </select>
+      </div>
+
+      <div id="gallery" class="gallery" aria-live="polite"></div>
+    </div>
+
+    <div style="height:80px"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-block">
+          <span class="footer-brand">Oeil 2 Mata</span>
+          <p>Artiste peintre et cinéaste.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="galerie.html">Galerie</a>
+          <a href="cinema.html">Cinéma</a>
+          <a href="a-propos.html">À propos</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Collections</h4>
+          <a href="galerie.html?cat=animalier">Animalier</a>
+          <a href="galerie.html?cat=portraits">Portraits</a>
+          <a href="galerie.html?cat=abstrait">Abstrait</a>
+          <a href="galerie.html?cat=dessin">Dessins</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="contact.html">Nous écrire</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Oeil 2 Mata.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut">&#8593;</button>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Fermer">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Précédent">&#8592;</button>
+    <button class="lightbox-nav lightbox-next" aria-label="Suivant">&#8594;</button>
+    <img src="" alt="">
+    <span class="lightbox-counter"></span>
+    <span class="lightbox-caption"></span>
+  </div>
+
+  <script src="assets/scripts/main.js" defer></script>
+  <script>
+    const galleryEl = document.getElementById('gallery')
+    const searchInput = document.getElementById('searchInput')
+    const resultsCount = document.getElementById('resultsCount')
+    const sortSelect = document.getElementById('sortSelect')
+    const filterTabs = document.querySelectorAll('.filter-tab')
+    let allItems = []
+    let activeCategory = 'all'
+    let currentFiltered = []
+
+    const CAT_LABELS={animalier:'Animalier',portraits:'Portraits',abstrait:'Abstrait',dessin:'Dessin',scene:'Scènes'}
+
+    function sortItems(items, sortKey){
+      const sorted = [...items]
+      switch(sortKey){
+        case 'az': sorted.sort((a,b)=>(a.titre||'').localeCompare(b.titre||'','fr')); break
+        case 'za': sorted.sort((a,b)=>(b.titre||'').localeCompare(a.titre||'','fr')); break
+        case 'newest': sorted.sort((a,b)=>(b.annee||0)-(a.annee||0)); break
+        case 'oldest': sorted.sort((a,b)=>(a.annee||0)-(b.annee||0)); break
+      }
+      return sorted
+    }
+
+    function renderItems(items){
+      currentFiltered = items
+      if(!Array.isArray(items)||items.length===0){
+        galleryEl.innerHTML='<p class="muted" style="text-align:center;padding:80px 0;font-family:var(--font-serif);font-size:20px">Aucune œuvre ne correspond à vos critères.</p>'
+        resultsCount.textContent='0 résultat'
+        return
+      }
+      galleryEl.innerHTML=items.map((item,idx)=>{
+        const href='oeuvre.html?id='+encodeURIComponent(item.id)
+        const alt=item.titre?'Œuvre: '+item.titre:'Œuvre'
+        const sold=item.disponible===false
+        const badge=sold?'<span class="badge badge-sold">Vendu</span>':'<span class="badge badge-ok">Disponible</span>'
+        const title=item.titre||'Sans titre'
+        const catLabel=CAT_LABELS[item.categorie]||''
+        return '<figure data-id="'+item.id+'" data-src="'+(item.imageHD||item.image)+'" data-title="'+title+'" data-idx="'+idx+'">'+
+          '<div class="media">'+
+            '<div class="thumb"><img src="'+item.image+'" alt="'+alt+'" loading="lazy"></div>'+
+            '<div class="desc">'+
+              (catLabel?'<span class="pill" style="align-self:flex-start;margin-bottom:4px">'+catLabel+'</span>':'')+
+              '<p style="font-family:var(--font-serif);font-size:20px;color:var(--text);margin-bottom:8px">'+title+'</p>'+
+              '<p>'+(item.description||'')+'</p>'+
+              '<p style="font-size:12px;color:var(--text-muted);margin-top:10px">'+(item.technique||'')+' &middot; '+(item.dimensions||'')+'</p>'+
+              '<p style="margin-top:14px"><a class="btn btn-sm" href="'+href+'">Voir la fiche &rarr;</a></p>'+
+            '</div>'+
+          '</div>'+
+          '<figcaption><span>'+title+'</span>'+badge+'</figcaption>'+
+        '</figure>'
+      }).join('')
+      resultsCount.textContent=items.length+' '+(items.length===1?'œuvre':'œuvres')
+
+      requestAnimationFrame(()=>{
+        galleryEl.querySelectorAll('figure').forEach((fig,i)=>{
+          setTimeout(()=>fig.classList.add('visible'),i*50)
+        })
+      })
+    }
+
+    function filterItems(){
+      const term=searchInput.value.toLowerCase().trim()
+      let filtered=allItems.filter(item=>{
+        if(activeCategory!=='all'&&item.categorie!==activeCategory)return false
+        if(term){
+          const txt=((item.titre||'')+' '+(item.description||'')+' '+(item.technique||'')).toLowerCase()
+          if(!txt.includes(term))return false
+        }
+        return true
+      })
+      filtered = sortItems(filtered, sortSelect.value)
+      renderItems(filtered)
+    }
+
+    function updateCounts(){
+      filterTabs.forEach(tab=>{
+        const cat=tab.dataset.cat
+        const count=cat==='all'?allItems.length:allItems.filter(x=>x.categorie===cat).length
+        let countEl=tab.querySelector('.count')
+        if(!countEl){countEl=document.createElement('span');countEl.className='count';tab.appendChild(countEl)}
+        countEl.textContent=count
+      })
+    }
+
+    const urlParams=new URLSearchParams(location.search)
+    const catParam=urlParams.get('cat')
+    if(catParam){
+      activeCategory=catParam
+      filterTabs.forEach(t=>{t.classList.toggle('active',t.dataset.cat===catParam)})
+    }
+
+    fetch('data/oeuvres.json').then(r=>r.json()).then(items=>{
+      let custom=[];try{custom=JSON.parse(localStorage.getItem('customOeuvres')||'[]')}catch{}
+      allItems=(Array.isArray(items)?items:[]).concat(Array.isArray(custom)?custom:[])
+      updateCounts()
+      filterItems()
+    }).catch(()=>{
+      galleryEl.innerHTML='<p class="muted" style="text-align:center;padding:80px 0">Aucune œuvre disponible.</p>'
+    })
+
+    searchInput.addEventListener('input',filterItems)
+    sortSelect.addEventListener('change',filterItems)
+
+    filterTabs.forEach(tab=>{
+      tab.addEventListener('click',()=>{
+        filterTabs.forEach(t=>t.classList.remove('active'))
+        tab.classList.add('active')
+        activeCategory=tab.dataset.cat
+        filterItems()
+      })
+    })
+
+    galleryEl.addEventListener('click',e=>{
+      if(e.target.closest('a'))return
+      const fig=e.target.closest('figure')
+      if(!fig||!galleryEl.contains(fig))return
+      fig.classList.toggle('figure-open')
+    })
+
+    galleryEl.addEventListener('dblclick',e=>{
+      const fig=e.target.closest('figure')
+      if(!fig)return
+      const idx=parseInt(fig.dataset.idx,10)
+      const lbItems=currentFiltered.map(item=>({src:item.imageHD||item.image,title:item.titre||''}))
+      if(window.openLightbox)window.openLightbox(lbItems[idx].src,lbItems[idx].title,lbItems,idx)
+    })
+
+    document.getElementById('year').textContent=new Date().getFullYear()
+  </script>
+</body>
+</html>

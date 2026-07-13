@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Veille – IA dans la musique</title>
-    <meta name="description" content="Veille: IA dans la musique – synthèse, ressources et articles." />
+    <meta name="description" content="Veille technologique détaillée : IA générative musicale, droits d'auteur, Suno, Udio et impacts sur l'industrie." />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -21,26 +21,220 @@
       <section class="section" id="veille-detail">
         <div class="container">
           <h1>IA dans la musique</h1>
-          <p class="subtitle">Génération musicale, outils d'assistance, éthique et droits d'auteur.</p>
-          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
+          <p class="subtitle">Génération musicale, modèles génératifs audio, batailles juridiques majeures et réorganisation des modèles économiques de l'industrie musicale (2025–2026).</p>
+
+          <p class="hero-actions veille-download-actions" style="margin-top: 0;">
+            <a class="btn btn-primary" href="Veille/Veille_Technologique_1.pdf" download>Télécharger la veille (PDF)</a>
+            <a class="btn btn-ghost" href="Veille/Veille_Technologique_1.pdf" target="_blank" rel="noreferrer noopener">Ouvrir le PDF</a>
+          </p>
+
+          <ul class="veille-meta card" style="list-style:none; padding:16px 20px;">
+            <li><strong>Document :</strong> Veille technologique n°&nbsp;1 (PDF)</li>
+            <li><strong>Période suivie :</strong> janvier 2025 – mai 2026</li>
+            <li><strong>Outils :</strong> Feedly, Google Alerts, Music Business Worldwide, arXiv, newsletters tech</li>
+            <li><strong>Fréquence :</strong> veille hebdomadaire + synthèse mensuelle</li>
+          </ul>
+
+          <article class="veille-resume card">
+            <h2>Résumé de la veille</h2>
+            <p>
+              Entre 2024 et 2026, l'IA musicale est passée du statut de « outil expérimental » à un marché de plusieurs centaines
+              de millions de dollars (Suno, Udio), tout en déclenchant la plus grande vague de contentieux sur le droit d'auteur
+              depuis le peer-to-peer. Les majors ne cherchent pas tant à interdire l'IA qu'à imposer des <strong>licences payantes</strong>
+              (accords Warner–Suno, UMG–Udio) et à traquer l'entraînement illicite (procès Anthropic à 3&nbsp;Md$, plaintes Suno en Europe).
+            </p>
+            <p>
+              Techniquement, les modèles gagnent en personnalisation (clonage vocal, v5.5) ; juridiquement, un jugement sur le
+              <strong>fair use</strong> attendu à l'été 2026 pourrait fixer les règles du jeu pour toute l'industrie créative.
+              Pour un futur développeur, l'enjeu est de concevoir des services respectueux des droits : traçabilité des données,
+              consentement des auteurs et transparence vis-à-vis des utilisateurs.
+            </p>
+          </article>
+
+          <div class="card" style="margin-bottom:0; overflow:hidden;">
+            <img src="assets/img/veille/veille-musique.svg" alt="Illustration veille IA musique" style="width:100%; max-height:320px; object-fit:cover; display:block;">
+          </div>
+
+          <article class="card" id="contexte">
+            <h2>Contexte et problématique</h2>
+            <p>
+              L'IA musicale n'est plus un gadget de démonstration : des services comme <strong>Suno</strong> et <strong>Udio</strong>
+              permettent de générer des morceaux complets à partir d'un simple prompt texte, avec voix et arrangement.
+              En parallèle, les éditeurs et majors (Universal, Sony, Warner) multiplient les procédures pour encadrer
+              l'entraînement des modèles sur des catalogues protégés.
+            </p>
+            <p>
+              Ma veille porte sur trois axes : <strong>l'état des technologies</strong> (diffusion audio, séparation de stems,
+              clonage vocal), <strong>le cadre juridique</strong> (fair use, licences, indemnisation des auteurs) et
+              <strong>l'impact sur les métiers</strong> (compositeurs, ingénieurs son, producteurs, développeurs d'outils audio).
+            </p>
+            <p>
+              <span class="veille-tag">Génération audio</span>
+              <span class="veille-tag">Droits d'auteur</span>
+              <span class="veille-tag">Suno / Udio</span>
+              <span class="veille-tag">Licences</span>
+              <span class="veille-tag">Éthique</span>
+            </p>
+          </article>
+
+          <article class="card" id="actualites">
+            <h2>Actualités relevées sur Internet</h2>
+            <p class="veille-order-note">Classées du plus récent au plus ancien.</p>
+
+            <div class="veille-news">
+              <div class="veille-news-item">
+                <time datetime="2026-04">Avril 2026</time>
+                <h3>Koda (Danemark) attaque Suno pour entraînement sans consentement</h3>
+                <p>
+                  L'organisme danois de gestion des droits <strong>Koda</strong> assigne Suno à Copenhague, estimant que
+                  des milliers d'œuvres danoises ont été utilisées sans licence ni transparence — illustration de l'extension
+                  européenne des contentieux au-delà des États-Unis.
+                </p>
+                <p><a href="https://level.law/news/ai-musics-two-speed-future-sunos-legal-storm-vs-udios-licensed-path" target="_blank" rel="noreferrer noopener">Level Law – Procès Koda / Suno</a></p>
+              </div>
+
+              <div class="veille-news-item">
+                <time datetime="2026-03">Mars 2026</time>
+                <h3>Suno lance la v5.5 : clonage vocal et personnalisation « My Taste »</h3>
+                <p>
+                  Suno déploie une nouvelle version de son modèle avec <strong>clonage de voix</strong>, modèles personnalisés
+                  entraînés sur le catalogue de l'utilisateur et un moteur de personnalisation « My Taste ».
+                  L'entreprise annonce par ailleurs environ <strong>300&nbsp;M$ de revenus récurrents annuels</strong>
+                  et 2&nbsp;millions d'abonnés payants, tout en préparant une levée Series D supérieure à 250&nbsp;M$.
+                </p>
+                <p class="veille-analysis">
+                  <strong>Analyse :</strong> la course à la personnalisation rapproche Suno des usages « producteur augmenté »,
+                  mais renforce aussi les risques d'imitation de voix et d'œuvres existantes — au cœur des litiges en cours.
+                </p>
+                <p><a href="https://www.musicbusinessworldwide.com/suno-sued-by-poseidon-wave-media-an-entity-behind-indie-duo-the-american-dollar-claiming-it-nearly-eliminated-their-licensing-revenue/" target="_blank" rel="noreferrer noopener">Music Business Worldwide – Suno (mars 2026)</a></p>
+              </div>
+
+              <div class="veille-news-item">
+                <time datetime="2026-01-28">28 janvier 2026</time>
+                <h3>Universal, Concord et ABKCO poursuivent Anthropic pour plus de 3&nbsp;milliards de dollars</h3>
+                <p>
+                  Une coalition d'éditeurs musicaux dépose une nouvelle plainte contre <strong>Anthropic</strong>, accusant
+                  l'entreprise d'avoir utilisé plus de <strong>20&nbsp;000 œuvres</strong> (paroles, partitions) pour entraîner
+                  Claude, notamment via des téléchargements massifs sur des bibliothèques pirates (LibGen, etc.).
+                  Les dommages-intérêts statutaires réclamés dépasseraient <strong>3&nbsp;milliards $</strong> — l'une des
+                  plus importantes affaires de droit d'auteur hors class action aux États-Unis.
+                </p>
+                <p class="veille-analysis">
+                  <strong>Analyse :</strong> ce dossier élargit le débat au-delà de Suno/Udio : tout modèle génératif
+                  (texte, code, musique) est scruté sur la <em>provenance</em> des données d'entraînement, pas seulement sur la sortie générée.
+                </p>
+                <p>
+                  <a href="https://www.musicbusinessworldwide.com/umg-concord-and-abkco-sue-anthropic-for-3bn-in-what-could-be-single-largest-non-class-action-copyright-case-in-us-history/" target="_blank" rel="noreferrer noopener">Music Business Worldwide</a>
+                  ·
+                  <a href="https://www.billboard.com/pro/universal-music-sues-anthropic-ai-lawsuit-pirated-songs/" target="_blank" rel="noreferrer noopener">Billboard</a>
+                </p>
+              </div>
+
+              <div class="veille-news-item">
+                <time datetime="2025-11-25">25 novembre 2025</time>
+                <h3>Warner Music Group signe un accord de licence avec Suno</h3>
+                <p>
+                  Après des mois de procédure initiée en juin 2024 par la RIAA, <strong>Warner</strong> conclut un règlement
+                  avec Suno : partenariat de licence pour l'entraînement sur le catalogue Warner, acquisition de la plateforme
+                  <strong>Songkick</strong>, et retrait des demandes judiciaires de la major.
+                </p>
+                <p class="veille-analysis">
+                  <strong>Analyse :</strong> ce deal montre qu'un modèle « licencié » devient viable commercialement, tout en
+                  fragilisant l'argument pur « fair use » de Suno face à Sony et Universal, encore en contentieux.
+                </p>
+                <p><a href="https://www.chartlex.com/blog/business/music-industry-ai-lawsuits-tracker-2026" target="_blank" rel="noreferrer noopener">Chartlex – Suivi des procès IA musique 2026</a></p>
+              </div>
+
+              <div class="veille-news-item">
+                <time datetime="2025-10-29">29 octobre 2025</time>
+                <h3>Universal Music et Udio s'accordent sur une plateforme IA « walled garden »</h3>
+                <p>
+                  UMG et <strong>Udio</strong> enterrent l'affaire avec un accord incluant indemnisation, licence et
+                  co-lancement prévu en 2026 d'une plateforme où les créations IA ne seraient <strong>ni téléchargeables ni exportables</strong>
+                  librement — modèle fermé pour mieux contrôler la diffusion.
+                </p>
+                <p class="veille-analysis">
+                  <strong>Analyse :</strong> deux stratégies industrielles émergent : Suno qui conteste en justice tout en
+                  négociant des licences, et Udio qui bascule tôt vers un modèle autoré et encadré par les majors.
+                </p>
+                <p><a href="https://level.law/news/ai-musics-two-speed-future-sunos-legal-storm-vs-udios-licensed-path" target="_blank" rel="noreferrer noopener">Level Law – Suno vs Udio</a></p>
+              </div>
+
+              <div class="veille-news-item">
+                <time datetime="2024-06">Juin 2024 (suivi 2026)</time>
+                <h3>Procès historique RIAA contre Suno et Udio — fair use en jeu</h3>
+                <p>
+                  Les trois majors américaines attaquent Suno et Udio pour entraînement sur enregistrements protégés sans autorisation.
+                  Suno demande un jugement sur le <strong>fair use</strong> (usage transformatif) ; une audience décisive est attendue
+                  <strong>à l'été 2026</strong> au Massachusetts. Sony reste le dernier major en litige actif contre Suno.
+                </p>
+                <p class="veille-analysis">
+                  <strong>Analyse :</strong> la décision de 2026 pourrait fixer un précédent mondial pour toute l'IA générative culturelle,
+                  comparable à l'impact des premières affaires sur le peer-to-peer dans les années 2000.
+                </p>
+                <p><a href="https://www.aivortex.io/legal/ai-case-law/suno-udio-music-ai/" target="_blank" rel="noreferrer noopener">AI Vortex – Guide juridique Suno/Udio</a></p>
+              </div>
+            </div>
+          </article>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 24px;">
             <article class="card">
-              <h2>Synthèse</h2>
-              <p>Résumé de la veille: contexte, enjeux, tendances clés, et cas d'usage.</p>
+              <h2>Technologies observées</h2>
               <ul>
-                <li>Modèles: diffusion, transformeurs audio, separation stems</li>
-                <li>Outils: assistants DAW, mastering auto, audio-to-MIDI</li>
-                <li>Enjeux: licences datasets, droits d'auteur, éthique</li>
+                <li><strong>Modèles génératifs :</strong> diffusion audio, transformeurs séquence-à-séquence, génération texte→musique.</li>
+                <li><strong>Post-production IA :</strong> séparation de stems (voix, batterie, basse), mastering assisté, restauration.</li>
+                <li><strong>Audio → MIDI :</strong> transcription polyphonique pour réédition dans un DAW.</li>
+                <li><strong>Clonage vocal :</strong> personnalisation poussée (Suno v5.5, 2026).</li>
+                <li><strong>Infrastructure :</strong> cloud GPU, API, intégration dans Ableton, Logic, plugins VST.</li>
               </ul>
             </article>
-            <aside class="card">
-              <h2>Liens utiles</h2>
+            <article class="card">
+              <h2>Impacts sur les métiers</h2>
               <ul>
-                <li><a href="#" target="_blank" rel="noreferrer noopener">Article 1</a></li>
-                <li><a href="#" target="_blank" rel="noreferrer noopener">Article 2</a></li>
-                <li><a href="#" target="_blank" rel="noreferrer noopener">Vidéo</a></li>
+                <li><strong>Producteurs / beatmakers :</strong> accélération des maquettes, risque de dévalorisation des productions « stock ».</li>
+                <li><strong>Artistes interprètes :</strong> protection de l'image vocale et des droits voisins.</li>
+                <li><strong>Développeurs audio (SLAM) :</strong> besoin de pipelines licenciés, traçabilité des datasets, API conformes RGPD.</li>
+                <li><strong>Juristes / labels :</strong> explosion des contrats de licence IA et des audits de provenance.</li>
               </ul>
-            </aside>
+            </article>
           </div>
+
+          <article class="card">
+            <h2>Application en BTS SIO (option SLAM)</h2>
+            <p>
+              En tant qu'étudiant développeur, cette veille m'a sensibilisé à des enjeux directement transférables
+              à tout projet numérique traitant du contenu culturel :
+            </p>
+            <ul>
+              <li><strong>Licences et ToS :</strong> ne jamais entraîner ou scraper des données sans base légale claire.</li>
+              <li><strong>Traçabilité :</strong> documenter les sources (datasets, API, assets) comme le ferait un éditeur musical.</li>
+              <li><strong>Architecture :</strong> séparer génération, stockage et diffusion (modèle « walled garden » vs export libre).</li>
+              <li><strong>Qualité :</strong> l'IA accélère le prototypage (jingle, ambiance sonore pour un site ou une app), mais la direction artistique reste humaine.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>Synthèse personnelle</h2>
+            <p>
+              L'IA musicale est passée du stade expérimental à un marché de plusieurs centaines de millions de dollars,
+              tout en étant rattrapée par le droit d'auteur. La tendance 2025–2026 n'est pas l'interdiction pure,
+              mais la <strong>bipolarisation</strong> : plateformes licenciées (Udio + UMG, Suno + Warner) face à des contentieux
+              qui définiront les limites du fair use. Pour un futur développeur, la compétence clé est de concevoir des systèmes
+              <em>légitimes par design</em> : consentement, rémunération, transparence.
+            </p>
+          </article>
+
+          <article class="card veille-sources">
+            <h2>Bibliographie et sources</h2>
+            <ul>
+              <li><a href="https://www.chartlex.com/blog/business/music-industry-ai-lawsuits-tracker-2026" target="_blank" rel="noreferrer noopener">Chartlex – Music Industry AI Lawsuits Tracker 2026</a></li>
+              <li><a href="https://www.musicbusinessworldwide.com/" target="_blank" rel="noreferrer noopener">Music Business Worldwide</a></li>
+              <li><a href="https://www.billboard.com/pro/" target="_blank" rel="noreferrer noopener">Billboard Pro</a></li>
+              <li><a href="https://www.riaa.com/" target="_blank" rel="noreferrer noopener">RIAA</a></li>
+              <li><a href="https://arxiv.org/list/cs.SD/recent" target="_blank" rel="noreferrer noopener">arXiv – Sound (cs.SD)</a></li>
+              <li><a href="https://www.aes.org/" target="_blank" rel="noreferrer noopener">Audio Engineering Society</a></li>
+            </ul>
+          </article>
         </div>
       </section>
     </main>
@@ -52,6 +246,4 @@
     </footer>
     <script src="script.js"></script>
   </body>
-  </html>
-
-
+</html>

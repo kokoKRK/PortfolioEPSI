@@ -1,0 +1,23 @@
+# Activer le module de réécriture
+RewriteEngine On
+
+# Autoriser les requêtes OPTIONS pour CORS
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ $1 [R=200,L]
+
+# Autoriser l'accès à l'API
+<Files "auth.php">
+    Order Allow,Deny
+    Allow from all
+    
+    # Autoriser les méthodes HTTP nécessaires
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</Files>
+
+# Protection du dossier data
+<FilesMatch "^(users|orders|cocktails)\.json$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch> 

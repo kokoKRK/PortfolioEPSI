@@ -164,16 +164,19 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
     const to = 'kortogrind@gmail.com';
     let subjectPrefix = 'Contact Portfolio';
-    if (reason && reason.value === 'alternance') subjectPrefix = 'Candidature alternance — Portfolio';
-    else if (reason && reason.value === 'stage') subjectPrefix = 'Candidature stage — Portfolio';
+    if (reason && reason.value === 'emploi') subjectPrefix = 'Candidature emploi — Portfolio';
+    else if (reason && reason.value === 'alternance') subjectPrefix = 'Candidature alternance — Portfolio';
+    else if (reason && reason.value === 'freelance') subjectPrefix = 'Mission freelance — Portfolio';
 
     const subject = `${subjectPrefix} — ${name.value.trim()}`;
 
     let intro = '';
-    if (reason && reason.value === 'alternance') {
+    if (reason && reason.value === 'emploi') {
+      intro = `Bonjour,\n\nJe vous contacte au sujet d'une opportunité d'emploi.`;
+    } else if (reason && reason.value === 'alternance') {
       intro = `Bonjour,\n\nJe vous contacte pour une demande d'alternance.`;
-    } else if (reason && reason.value === 'stage') {
-      intro = `Bonjour,\n\nJe vous contacte pour une demande de stage.`;
+    } else if (reason && reason.value === 'freelance') {
+      intro = `Bonjour,\n\nJe vous contacte pour une mission freelance.`;
     } else {
       intro = `Bonjour,`;
     }
@@ -184,6 +187,94 @@ document.getElementById('year').textContent = new Date().getFullYear();
     // Try opening the user's email client with prefilled data
     window.location.href = mailto;
   });
+})();
+
+// Consistent colors for identical tech tags
+(function colorizeProjectTechTags() {
+  const tags = document.querySelectorAll('.project-tech span');
+  if (!tags.length) return;
+
+  const palette = [
+    ['rgba(8,182,212,.12)', 'rgba(8,182,212,.30)', '#0e7490'],
+    ['rgba(34,197,94,.12)', 'rgba(34,197,94,.30)', '#166534'],
+    ['rgba(139,92,246,.12)', 'rgba(139,92,246,.30)', '#6d28d9'],
+    ['rgba(245,158,11,.12)', 'rgba(245,158,11,.35)', '#92400e'],
+    ['rgba(236,72,153,.12)', 'rgba(236,72,153,.30)', '#9d174d'],
+    ['rgba(59,130,246,.12)', 'rgba(59,130,246,.30)', '#1d4ed8']
+  ];
+
+  const explicitMap = {
+    html: 0,
+    css: 0,
+    javascript: 0,
+    'vue 3': 1,
+    vue: 1,
+    flutter: 2,
+    dart: 2,
+    'next.js': 2,
+    react: 2,
+    typescript: 2,
+    ia: 3,
+    php: 3,
+    python: 3,
+    postgresql: 4,
+    supabase: 4,
+    stripe: 4,
+    odoo: 5,
+    linux: 5,
+    'api rest': 5,
+    api: 5
+  };
+
+  const colorIndexByLabel = new Map();
+  let nextIndex = 0;
+
+  tags.forEach((tag) => {
+    if (tag.closest('.project-card-theme, .section-cuemind, .section-bbrank, .featured-project')) return;
+
+    const raw = tag.textContent ? tag.textContent.trim() : '';
+    const key = raw.toLowerCase();
+    if (!raw) return;
+
+    if (!colorIndexByLabel.has(key)) {
+      const mapped = explicitMap[key];
+      colorIndexByLabel.set(key, Number.isInteger(mapped) ? mapped : (nextIndex++ % palette.length));
+    }
+
+    const [bg, border, text] = palette[colorIndexByLabel.get(key)];
+    tag.style.setProperty('--tech-bg', bg);
+    tag.style.setProperty('--tech-border', border);
+    tag.style.setProperty('--tech-text', text);
+  });
+})();
+
+// Reorder sections to match navigation
+(function reorderSections() {
+  const projects = document.getElementById('projects');
+  const btsProject = document.getElementById('bts-project');
+  const experiences = document.getElementById('experiences');
+  const skills = document.getElementById('skills');
+  const veille = document.getElementById('veille');
+  const tools = document.getElementById('tools');
+  const contact = document.getElementById('contact');
+
+  // Ordre : projets réalisés → projet BTS → expériences
+  if (projects && btsProject && btsProject.previousElementSibling !== projects) {
+    projects.parentNode.insertBefore(btsProject, projects.nextElementSibling);
+  }
+  if (projects && experiences) {
+    const anchor = btsProject || projects;
+    if (experiences.previousElementSibling !== anchor) {
+      anchor.parentNode.insertBefore(experiences, anchor.nextElementSibling);
+    }
+  }
+  if (tools && skills && veille) {
+    tools.parentNode.insertBefore(skills, tools);
+    tools.parentNode.insertBefore(veille, tools);
+  }
+  if (contact && tools) {
+    contact.parentNode.insertBefore(tools, contact);
+  }
 })();
 
 

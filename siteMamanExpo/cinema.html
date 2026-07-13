@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cinéma — Oeil 2 Mata</title>
+  <meta name="description" content="Œuvres cinématographiques d'Oeil 2 Mata : films, documentaires et créations vidéo.">
+  <meta name="theme-color" content="#080808">
+  <link rel="stylesheet" href="assets/styles/styles.css">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="site-header scrolled" id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Retour à l'accueil">
+        <div class="brand-icon" aria-hidden="true">O</div>
+        <span>Oeil 2 Mata</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+        <a href="galerie.html">Galerie</a>
+        <a href="cinema.html" aria-current="page">Cinéma</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section cinema-page">
+      <div class="container">
+        <div class="cinema-header reveal">
+          <span class="overline" style="margin-bottom:16px">Filmographie</span>
+          <h1>Cinéma</h1>
+          <div class="gold-line"></div>
+          <p class="muted" style="max-width:560px;font-size:16px;line-height:1.9">Découvrez les œuvres cinématographiques d'Oeil 2 Mata. Une exploration visuelle qui complète et enrichit le travail de peintre.</p>
+        </div>
+        <div id="films" class="gallery" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="cta-section" style="border-top:1px solid var(--border)">
+      <div class="container reveal">
+        <span class="overline" style="margin-bottom:16px">Découvrir aussi</span>
+        <h2>La peinture</h2>
+        <p class="muted">Explorez les collections de peintures et découvrez l'univers pictural d'Oeil 2 Mata.</p>
+        <div class="cta-buttons" style="margin-top:32px">
+          <a class="btn btn-primary btn-lg" href="galerie.html">Voir la galerie</a>
+          <a class="btn btn-lg" href="a-propos.html">À propos de l'artiste</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-block">
+          <span class="footer-brand">Oeil 2 Mata</span>
+          <p>Artiste peintre et cinéaste.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="galerie.html">Galerie</a>
+          <a href="cinema.html">Cinéma</a>
+          <a href="a-propos.html">À propos</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Collections</h4>
+          <a href="galerie.html?cat=animalier">Animalier</a>
+          <a href="galerie.html?cat=portraits">Portraits</a>
+          <a href="galerie.html?cat=abstrait">Abstrait</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="contact.html">Nous écrire</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Oeil 2 Mata.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut">&#8593;</button>
+
+  <script src="assets/scripts/main.js" defer></script>
+  <script>
+    const filmsEl=document.getElementById('films')
+    fetch('data/films.json').then(r=>r.json()).then(items=>{
+      if(!Array.isArray(items)||items.length===0){
+        filmsEl.innerHTML='<p class="muted" style="text-align:center;padding:80px 0;font-family:var(--font-serif);font-size:20px">Aucun film disponible pour le moment.</p>'
+        return
+      }
+      filmsEl.innerHTML=items.map(item=>{
+        const alt=item.titre?'Film: '+item.titre:'Film'
+        const title=item.titre||'Sans titre'
+        const year=item.annee?'<span class="badge badge-ok">'+item.annee+'</span>':''
+        const type=item.type?'<span class="pill">'+item.type+'</span>':''
+        return '<figure data-id="'+item.id+'">'+
+          '<div class="media">'+
+            '<div class="thumb">'+
+              (item.video
+                ?'<video controls poster="'+(item.image||'')+'" style="width:100%;height:100%;object-fit:cover"><source src="'+item.video+'" type="video/mp4"></video>'
+                :'<img src="'+(item.image||'assets/images/placeholder-1.svg')+'" alt="'+alt+'" loading="lazy">')+
+            '</div>'+
+            '<div class="desc">'+
+              '<p style="font-family:var(--font-serif);font-size:22px;color:var(--text);margin-bottom:14px">'+title+'</p>'+
+              (item.annee?'<p><strong style="color:var(--gold)">Année</strong> '+item.annee+'</p>':'')+
+              (item.duree?'<p><strong style="color:var(--gold)">Durée</strong> '+item.duree+'</p>':'')+
+              (item.type?'<p><strong style="color:var(--gold)">Type</strong> '+item.type+'</p>':'')+
+              (item.description?'<p style="margin-top:10px">'+item.description+'</p>':'')+
+              (item.lien?'<p style="margin-top:14px"><a class="btn btn-sm" href="'+item.lien+'" target="_blank" rel="noopener">Voir le film &rarr;</a></p>':'')+
+            '</div>'+
+          '</div>'+
+          '<figcaption><span>'+title+'</span><div style="display:flex;gap:8px;align-items:center">'+type+year+'</div></figcaption>'+
+        '</figure>'
+      }).join('')
+
+      requestAnimationFrame(()=>{
+        filmsEl.querySelectorAll('figure').forEach((fig,i)=>{
+          setTimeout(()=>fig.classList.add('visible'),i*100)
+        })
+      })
+    }).catch(()=>{filmsEl.innerHTML='<p class="muted" style="text-align:center;padding:80px 0">Aucun film disponible.</p>'})
+
+    filmsEl?.addEventListener('click',e=>{
+      if(e.target.closest('a')||e.target.closest('video'))return
+      const fig=e.target.closest('figure')
+      if(!fig||!filmsEl.contains(fig))return
+      fig.classList.toggle('figure-open')
+    })
+    document.getElementById('year').textContent=new Date().getFullYear()
+  </script>
+</body>
+</html>

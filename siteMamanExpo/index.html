@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oeil 2 Mata — Artiste Peintre</title>
+  <meta name="description" content="Portfolio d'art contemporain par Oeil 2 Mata. Peintures, créations et expositions — un univers entre abstraction, figuration et matière vivante.">
+  <meta property="og:title" content="Oeil 2 Mata — Artiste Peintre">
+  <meta property="og:description" content="Peintures, créations, expositions. Découvrez la galerie d'Oeil 2 Mata.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="imgSiteMaman/grandTableauPanthere.jpg">
+  <meta name="theme-color" content="#080808">
+  <link rel="preload" href="assets/styles/styles.css" as="style">
+  <link rel="preload" href="imgSiteMaman/grandTableauPanthere.jpg" as="image">
+  <link rel="stylesheet" href="assets/styles/styles.css">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <span class="loader-brand">Oeil 2 <em>Mata</em></span>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Retour à l'accueil">
+        <div class="brand-icon" aria-hidden="true">O</div>
+        <span>Oeil 2 Mata</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+        <a href="galerie.html">Galerie</a>
+        <a href="cinema.html">Cinéma</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═══ HERO FULLSCREEN ═══ -->
+    <section class="hero-fullscreen" id="heroSection">
+      <div class="hero-bg">
+        <img src="imgSiteMaman/grandTableauPanthere.jpg" alt="" aria-hidden="true">
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <span class="overline">Peinture &middot; Cinéma &middot; Création</span>
+          <h1>Un regard, des couleurs,<br>une <em>matière vivante</em></h1>
+          <p class="hero-desc">Toiles et créations originales. Un travail autour de la lumière, des textures et des émotions, entre abstraction et figuration.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary btn-lg" href="galerie.html">Explorer la galerie</a>
+            <a class="btn btn-ghost btn-lg" href="a-propos.html">Découvrir l'artiste</a>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-hint">
+        <span>Défiler</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══ STATS ═══ -->
+    <section class="stats-bar">
+      <div class="container">
+        <div class="stats-grid reveal">
+          <div class="stat">
+            <span class="stat-number" data-count="56">0</span>
+            <span class="stat-label">Œuvres</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-count="5">0</span>
+            <span class="stat-label">Collections</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-count="3">0</span>
+            <span class="stat-label">Expositions</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-count="4">0</span>
+            <span class="stat-label">Techniques</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FEATURED WORK ═══ -->
+    <section class="section highlight">
+      <div class="container">
+        <div class="grid grid-2 reveal">
+          <div>
+            <span class="pill">Pièce maîtresse</span>
+            <h2 style="margin-top:24px">La panthère</h2>
+            <p class="lead">Portrait animalier d'exception, où la matière prend vie sous vos yeux.</p>
+            <p style="margin-bottom:24px">Les moustaches sont réalisées en relief à l'aide de petits fils durs, créant une texture tactile unique. Un détail technique remarquable qui donne au portrait une présence saisissante.</p>
+            <div class="artwork-details">
+              <p><strong>Dimensions</strong> 90×60 cm</p>
+              <p><strong>Technique</strong> Acrylique et fils durs</p>
+              <p><strong>Année</strong> 2023</p>
+            </div>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="oeuvre.html?id=grand-tableau-panthere">Voir l'œuvre</a>
+              <a class="btn" href="contact.html?oeuvre=La%20panth%C3%A8re">Acquérir</a>
+            </div>
+          </div>
+          <div>
+            <img src="imgSiteMaman/grandTableauPanthere.jpg" alt="La panthère — Portrait animalier avec moustaches en relief" loading="lazy" style="border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ MARQUEE ═══ -->
+    <section class="marquee" aria-hidden="true">
+      <p class="marquee-label">Sélection d'œuvres</p>
+      <div class="marquee-track" id="marqueeTrack"></div>
+    </section>
+
+    <!-- ═══ COLLECTIONS / CATEGORIES ═══ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="overline">Collections</span>
+          <h2>Explorer par univers</h2>
+          <p>Des portraits expressifs aux abstractions vibrantes, chaque collection raconte une histoire différente.</p>
+        </div>
+        <div class="categories-grid">
+          <a href="galerie.html?cat=animalier" class="category-card reveal reveal-delay-1">
+            <img src="imgSiteMaman/grandTableauTeteLion.jpg" alt="Faune & Animalier" loading="lazy">
+            <div class="overlay">
+              <h3>Faune & Animalier</h3>
+              <p>Portraits capturant l'essence et la beauté sauvage</p>
+              <span class="cat-cta">Explorer &rarr;</span>
+            </div>
+          </a>
+          <a href="galerie.html?cat=portraits" class="category-card reveal reveal-delay-2">
+            <img src="imgSiteMaman/grandTableauAbstraitFemmeCheveux.JPG" alt="Portraits & Figures" loading="lazy">
+            <div class="overlay">
+              <h3>Portraits & Figures</h3>
+              <p>Exploration des formes humaines et de l'expression</p>
+              <span class="cat-cta">Explorer &rarr;</span>
+            </div>
+          </a>
+          <a href="galerie.html?cat=abstrait" class="category-card reveal reveal-delay-3">
+            <img src="imgSiteMaman/grandTableauAbstraitRond.JPG" alt="Abstractions" loading="lazy">
+            <div class="overlay">
+              <h3>Abstractions</h3>
+              <p>Compositions jouant avec les formes et les couleurs</p>
+              <span class="cat-cta">Explorer &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ HORIZONTAL SHOWCASE ═══ -->
+    <section class="showcase">
+      <div class="container">
+        <div class="showcase-header reveal">
+          <div>
+            <span class="overline">Sélection récente</span>
+            <h2>Dernières créations</h2>
+          </div>
+          <a class="btn" href="galerie.html">Tout voir &rarr;</a>
+        </div>
+      </div>
+      <div class="container">
+        <div class="showcase-scroll" id="showcaseScroll"></div>
+      </div>
+    </section>
+
+    <!-- ═══ QUOTE ═══ -->
+    <section class="quote-section">
+      <div class="container reveal">
+        <span class="quote-mark">&ldquo;</span>
+        <blockquote>
+          Chaque œuvre est une invitation à ressentir au-delà du visible, à travers les matières, les reliefs et les contrastes.
+          <cite>Oeil 2 Mata</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ═══ SERVICES ═══ -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2">
+          <div class="info-block reveal">
+            <span class="pill" style="margin-bottom:16px">Événements</span>
+            <h3>Expositions & Actualités</h3>
+            <p class="muted">Suivez les prochains événements, expositions collectives et personnelles. Collaborons ensemble pour mettre en lumière l'art contemporain.</p>
+            <a class="btn" href="contact.html?type=expo">Proposer une exposition</a>
+          </div>
+          <div class="info-block reveal reveal-delay-1">
+            <span class="pill" style="margin-bottom:16px">Acquisition</span>
+            <h3>Commande & Sur-mesure</h3>
+            <p class="muted">Certaines œuvres sont disponibles à l'acquisition. Des commandes personnalisées sont possibles pour des projets uniques.</p>
+            <a class="btn" href="contact.html?type=oeuvre">Demander des informations</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA FINAL ═══ -->
+    <section class="cta-section">
+      <div class="container reveal">
+        <span class="overline" style="margin-bottom:20px">Entrons en contact</span>
+        <h2>Une œuvre vous interpelle ?</h2>
+        <p class="muted">Que ce soit pour une acquisition, une exposition ou simplement pour échanger autour de l'art, n'hésitez pas.</p>
+        <div class="cta-buttons">
+          <a class="btn btn-primary btn-lg" href="contact.html">Nous écrire</a>
+          <a class="btn btn-lg" href="galerie.html">Voir toutes les œuvres</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-block">
+          <span class="footer-brand">Oeil 2 Mata</span>
+          <p>Artiste peintre et cinéaste. Un univers entre abstraction, figuration et matière vivante.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="galerie.html">Galerie</a>
+          <a href="cinema.html">Cinéma</a>
+          <a href="a-propos.html">À propos</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Collections</h4>
+          <a href="galerie.html?cat=animalier">Faune & Animalier</a>
+          <a href="galerie.html?cat=portraits">Portraits & Figures</a>
+          <a href="galerie.html?cat=abstrait">Abstractions</a>
+          <a href="galerie.html?cat=dessin">Dessins</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="contact.html?type=expo">Expositions</a>
+          <a href="contact.html?type=oeuvre">Acquisitions</a>
+          <a href="contact.html">Nous écrire</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Oeil 2 Mata. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut">&#8593;</button>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Fermer">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Précédent">&#8592;</button>
+    <button class="lightbox-nav lightbox-next" aria-label="Suivant">&#8594;</button>
+    <img src="" alt="">
+    <span class="lightbox-counter"></span>
+    <span class="lightbox-caption"></span>
+  </div>
+
+  <script src="assets/scripts/main.js" defer></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear()
+
+    const marqueeImages = [
+      {src:'imgSiteMaman/grandTableauTeteLion.jpg',title:'Tête de lion'},
+      {src:'imgSiteMaman/grandTableauAbstraitFemmeCheveux.JPG',title:'Femme aux cheveux'},
+      {src:'imgSiteMaman/grandTableauAbstraitRond.JPG',title:'Composition circulaire'},
+      {src:'imgSiteMaman/grandTableauAbstraitZebre.jpeg',title:'Zèbre abstrait'},
+      {src:'imgSiteMaman/grandTableauRealisteToucan2.jpg',title:'Le toucan'},
+      {src:'imgSiteMaman/grandTableauPortraitAfrika.jpg',title:"Portrait d'Afrique"},
+      {src:'imgSiteMaman/moyenTableauRealisteLoup.png',title:'Loup réaliste'},
+      {src:'imgSiteMaman/grandTableauAbstraitTutu.jpg',title:'Danseuse abstraite'},
+      {src:'imgSiteMaman/grandTableauMain.JPG',title:'La main'},
+      {src:'imgSiteMaman/grandTableauAbstraitIguane.JPG',title:'Iguane abstrait'},
+    ]
+    const track = document.getElementById('marqueeTrack')
+    const html = marqueeImages.map(m =>
+      '<a href="galerie.html" class="marquee-item"><img src="'+m.src+'" alt="'+m.title+'" loading="lazy"></a>'
+    ).join('')
+    track.innerHTML = html + html
+
+    // Horizontal showcase
+    fetch('data/oeuvres.json').then(r=>r.json()).then(items=>{
+      const recent = items.slice(0, 8)
+      const container = document.getElementById('showcaseScroll')
+      if(!container) return
+      container.innerHTML = recent.map(item =>
+        '<a class="showcase-card" href="oeuvre.html?id='+encodeURIComponent(item.id)+'">'+
+          '<img src="'+item.image+'" alt="'+(item.titre||'')+'" loading="lazy">'+
+          '<div class="body">'+
+            '<h3>'+(item.titre||'Sans titre')+'</h3>'+
+            '<span class="meta">'+(item.technique||'')+' · '+(item.dimensions||'')+'</span>'+
+          '</div>'+
+        '</a>'
+      ).join('')
+    })
+  </script>
+</body>
+</html>

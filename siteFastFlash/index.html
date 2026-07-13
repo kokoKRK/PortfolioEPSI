@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Balises meta SEO -->
+    <title>Fast Flash | Cocktails Premium Livrés en 15min à Montpellier</title>
+    <meta name="description" content="Découvrez Fast Flash, votre service de livraison de cocktails artisanaux premium à Montpellier. Livraison en 15 minutes, large sélection de cocktails frais et savoureux.">
+    <meta name="keywords" content="cocktails, livraison cocktails, Montpellier, cocktails artisanaux, cocktails premium, livraison rapide, Fast Flash">
+    
+    <!-- Open Graph pour les réseaux sociaux -->
+    <meta property="og:title" content="Fast Flash | Cocktails Premium Livrés en 15min à Montpellier">
+    <meta property="og:description" content="Service de livraison de cocktails artisanaux premium à Montpellier. Livraison en 15 minutes !">
+    <meta property="og:image" content="Image Fast Flash/Image Fond IA/image-ia/pixlr-image-generator-680b528c-eb31-44a1-aa8e-a39a68198be0.png">
+    <meta property="og:url" content="https://fastflash.fr">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fast Flash | Cocktails Premium Livrés">
+    <meta name="twitter:description" content="Vos cocktails artisanaux livrés en 15min à Montpellier">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fastflash.fr">
+    
+    <!-- Autres balises meta -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Fast Flash">
+    <meta name="geo.region" content="FR-34">
+    <meta name="geo.placename" content="Montpellier">
+
+    <!-- Préchargement des ressources critiques -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+    
+    <!-- Styles et polices -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar" aria-label="Navigation principale">
+            <div class="logo">
+                <h1 class="logo-text">
+                    <a href="#hero">Fast Flash</a>
+                </h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#cocktails">Nos Cocktails</a></li>
+                <li><a href="#offers">Offres</a></li>
+                <li class="user-menu">
+                    <a href="#" id="userButton">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <div class="user-dropdown">
+                        <a href="#" id="loginButton">Connexion</a>
+                        <a href="#" id="registerButton">Inscription</a>
+                        <a href="#" id="accountButton" style="display: none;">Mon Compte</a>
+                        <a href="#" id="logoutButton" style="display: none;">Déconnexion</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" id="cartButton">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cartCount">0</span>
+                    </a>
+                </li>
+            </ul>
+            <button class="mobile-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" aria-label="En-tête">
+            <h1>Fast Flash - Vos Cocktails Premium Livrés à Montpellier en 15 min</h1>
+            <p>Découvrez l'excellence des cocktails artisanaux en bouteille, livrés directement chez vous</p>
+        </section>
+
+        <section id="about" aria-label="À propos">
+            <h2>Notre Histoire</h2>
+            <div class="about-content">
+                <p>Fast Flash est né de l'imagination d'un groupe d'étudiants passionnés de Montpellier. Confrontés aux défis de la vie étudiante et animés par l'envie d'innover, nous avons créé un concept unique : des cocktails premium en bouteille, prêts à servir.</p>
+                
+                <p>Notre aventure a commencé dans nos cuisines d'étudiants, où nous avons perfectionné nos recettes pendant des mois. Aujourd'hui, nous sommes fiers de proposer une sélection de cocktails artisanaux qui allient qualité et accessibilité.</p>
+                
+                <p>Basés à Montpellier, nous comprenons parfaitement les attentes des étudiants et des jeunes actifs. Notre mission ? Rendre vos soirées plus simples et plus savoureuses, sans compromis sur la qualité.</p>
+            </div>
+        </section>
+
+        <section id="cocktails" aria-label="Nos cocktails">
+            <h2>Nos Cocktails Artisanaux</h2>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <!-- Les cocktails seront ajoutés ici dynamiquement depuis le JSON -->
+                    </div>
+                </div>
+                <button class="carousel-button prev" aria-label="Précédent">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-button next" aria-label="Suivant">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <section id="offers">
+            <h2>Offres Spéciales</h2>
+            <div class="offers-container">
+                <div class="offer-card five-card">
+                    <div class="card-content">
+                        <h3>Offre Five</h3>
+                        <div class="price">10€<span>/mois</span></div>
+                        <div class="offer-content">
+                            <p class="offer-highlight">Tous vos Flashs à 5€</p>
+                            <p class="offer-description">En illimité !</p>
+                            <button class="buy-offer-button" data-offer="five">S'abonner</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-card duo-card">
+                    <div class="card-content">
+                        <h3>Offre Duo</h3>
+                        <div class="price">15€<span>/mois</span></div>
+                        <div class="offer-content">
+                            <p class="offer-highlight">1 Flash acheté = 1 Flash offert</p>
+                            <p class="offer-description">Partagez l'expérience !</p>
+                            <button class="buy-offer-button" data-offer="duo">S'abonner</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-card group-card">
+                    <div class="card-content">
+                        <h3>Pack Groupe</h3>
+                        <div class="price">50€</div>
+                        <div class="offer-content">
+                            <p class="offer-highlight">Pack de 10 Flashs</p>
+                            <p class="offer-description">Idéal pour vos soirées !</p>
+                            <button class="buy-offer-button" data-offer="group">Acheter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content" itemscope itemtype="http://schema.org/LocalBusiness">
+            <div class="footer-info">
+                <h3 itemprop="name">Fast Flash</h3>
+                <p itemprop="description">Découvrez l'excellence des cocktails artisanaux en bouteille, livrés directement à vous pour des soirées inoubliables.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#cocktails">Nos Cocktails</a></li>
+                    <li><a href="#offers">Offres</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contactez-nous</h4>
+                <p itemprop="telephone">
+                    <i class="fas fa-phone"></i>
+                    07 72 28 00 25
+                </p>
+                <p itemprop="email">
+                    <i class="far fa-envelope"></i>
+                    fastflash.montpellier@gmail.com
+                </p>
+                <p itemprop="sameAs" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/fastflash.montpellier" target="_blank" rel="noopener">
+                        fastflash.montpellier
+                    </a>
+                </p>
+                <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span itemprop="addressLocality">Montpellier</span>,
+                    <span itemprop="postalCode">34000</span>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Fast Flash. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script src="js/auth.js"></script>
+    <script src="js/offers.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+    <div class="modal" id="cocktail-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <img src="" alt="" id="modal-image">
+                <div class="modal-title">
+                    <h3 id="modal-name"></h3>
+                    <span id="modal-type" class="cocktail-type"></span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-price">
+                    <span class="price-label">Prix :</span>
+                    <span class="price-value">8€</span>
+                </div>
+                <div class="modal-ingredients">
+                    <h4>Ingrédients</h4>
+                    <ul id="modal-ingredients-list"></ul>
+                </div>
+                <div class="modal-description">
+                    <h4>Description</h4>
+                    <p id="modal-description-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="auth-modal" id="login-modal">
+        <div class="auth-modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Connexion</h2>
+            <form class="auth-form" id="login-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mot de passe" required>
+                <button type="submit">Se connecter</button>
+            </form>
+            <p class="auth-switch">Pas encore de compte ? <a href="#" id="switch-to-register">S'inscrire</a></p>
+        </div>
+    </div>
+
+    <div class="auth-modal" id="register-modal">
+        <div class="auth-modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Inscription</h2>
+            <form class="auth-form" id="register-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mot de passe" required>
+                <input type="password" placeholder="Confirmer le mot de passe" required>
+                <button type="submit">S'inscrire</button>
+            </form>
+            <p class="auth-switch">Déjà un compte ? <a href="#" id="switch-to-login">Se connecter</a></p>
+        </div>
+    </div>
+
+    <div class="account-modal" id="account-modal">
+        <div class="account-modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Mon Compte</h2>
+            <div class="account-sections">
+                <div class="account-info">
+                    <h3>Mes Informations</h3>
+                    <form id="account-form">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="account-email" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Nom</label>
+                            <input type="text" id="account-name">
+                        </div>
+                        <div class="form-group">
+                            <label>Téléphone</label>
+                            <input type="tel" id="account-phone">
+                        </div>
+                        <div class="form-group">
+                            <label>Adresse de livraison</label>
+                            <textarea id="account-address"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Abonnement actuel</label>
+                            <div class="subscription-info">
+                                <span id="account-subscription" class="subscription-badge">Aucun</span>
+                                <a href="#offers" class="subscription-link">Voir les offres</a>
+                            </div>
+                        </div>
+                        <button type="submit">Sauvegarder</button>
+                    </form>
+                </div>
+                
+                <div class="account-orders">
+                    <h3>Mes Commandes</h3>
+                    <div class="orders-list">
+                        <!-- Les commandes seront ajoutées dynamiquement -->
+                    </div>
+                </div>
+
+                <div class="account-cart">
+                    <h3>Mon Panier</h3>
+                    <div class="cart-preview">
+                        <!-- Le contenu du panier sera ajouté dynamiquement -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-modal">
+        <div class="cart-header">
+            <h3>Votre Panier</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items">
+            <!-- Les items seront ajoutés dynamiquement ici -->
+        </div>
+        <div class="cart-total">
+            <div class="total">Total: <span>0€</span></div>
+            <button class="checkout-button">Commander</button>
+        </div>
+    </div>
+
+    <div class="checkout-modal" id="checkout-modal">
+        <div class="checkout-modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Finaliser votre commande</h2>
+            
+            <div class="checkout-sections">
+                <div class="order-summary">
+                    <h3>Récapitulatif de la commande</h3>
+                    <div class="order-items">
+                        <!-- Les items seront ajoutés dynamiquement -->
+                    </div>
+                    <div class="order-total">
+                        <span>Total :</span>
+                        <span class="total-amount">0€</span>
+                    </div>
+                </div>
+
+                <div class="delivery-info">
+                    <h3>Informations de livraison</h3>
+                    <div class="delivery-details">
+                        <!-- Les informations seront ajoutées dynamiquement -->
+                    </div>
+                </div>
+
+                <div class="payment-section">
+                    <h3>Paiement</h3>
+                    <form id="payment-form">
+                        <div class="form-group">
+                            <label>Numéro de carte</label>
+                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                        </div>
+                        <div class="card-details">
+                            <div class="form-group">
+                                <label>Date d'expiration</label>
+                                <input type="text" id="card-expiry" placeholder="MM/AA" maxlength="5" required>
+                            </div>
+                            <div class="form-group">
+                                <label>CVC</label>
+                                <input type="text" id="card-cvc" placeholder="123" maxlength="3" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="pay-button">
+                            Payer <span class="payment-amount"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
