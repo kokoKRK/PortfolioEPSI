@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projet – Prends Ma Photo</title>
+    <meta name="description" content="Détails du projet Prends Ma Photo." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#hero" class="brand" aria-label="Retour à l'accueil">GK</a>
+        <nav class="nav" aria-label="Navigation">
+          <a class="btn btn-ghost" href="index.html#projects">← Retour aux projets</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="project-detail">
+        <div class="container">
+          <h1>Prends Ma Photo</h1>
+          <p class="subtitle">Site vitrine professionnel pour location de bornes à selfie à Montpellier: identité, UX, SEO, contenus et mise en ligne.</p>
+
+          <div class="card" style="margin-bottom: 20px; overflow: hidden;">
+            <img src="prendsMaPhotoImg.png" alt="Aperçu du site Prends Ma Photo" style="width:100%; height:auto; display:block;">
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
+            <article class="card">
+              <h2>Contexte & objectifs</h2>
+              <p>Ce projet a été réalisé dans le cadre d’un <strong>stage</strong> avec l’entreprise Prends Ma Photo. L’objectif était de concevoir un site vitrine clair et performant permettant de <strong>réserver une borne</strong>, de <strong>demander un devis</strong> et de valoriser l’offre (fonds personnalisés, formules, logistique).</p>
+              <ul>
+                <li>Positionnement local (Montpellier) et <strong>mise en avant du service clé</strong>.</li>
+                <li>UX simple en <strong>2 à 3 pages</strong> maxi: accueil, contact, devis.</li>
+                <li>Mettre en valeur les <strong>fonds photo uniques</strong> par événement.</li>
+                <li>Optimiser le <strong>référencement (SEO/SEM)</strong> et la conversion (CTA clairs).</li>
+              </ul>
+            </article>
+            <aside class="card">
+              <h2>Stack & ressources</h2>
+              <ul>
+                <li>Stack: <strong>HTML, CSS, JavaScript</strong></li>
+                <li>SEO: balises meta, Open Graph, <code>sitemap.xml</code>, <code>robots.txt</code></li>
+                <li>Pages: accueil, <code>contact.html</code>, <code>devis.html</code>, <code>rgpd.html</code></li>
+                <li>Assets: <code>assets/img/</code> (bornes, exemples, fonds), <code>assets/js/</code>, <code>assets/css/</code></li>
+                <li>Code source: <a href="Site_Prends-ma-photo-Github/index.html" target="_blank" rel="noreferrer noopener">aperçu local</a></li>
+              </ul>
+            </aside>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>Fonctionnalités principales</h2>
+              <ul>
+                <li><strong>Héro visuel</strong> avec bannière et call-to-action “Réserver ma borne”.</li>
+                <li>Section <strong>Notre concept</strong>: bénéfices, formules (200 ou illimité), livraison locale.</li>
+                <li><strong>Nos bornes</strong>: présentation des modèles (Canon 2000D, process d’utilisation).</li>
+                <li><strong>Formats & Fonds</strong>: galerie d’exemples, mise en avant des thèmes personnalisés.</li>
+                <li><strong>Partenaires</strong>: rail de logos en scroll continu.</li>
+                <li><strong>Contact</strong> et <strong>Devis</strong> accessibles par CTA partout sur le site.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h2>Formulaires & devis</h2>
+              <ul>
+                <li><code>contact.html</code> et <code>contact.php</code>: collecte nom, email, message, etc.</li>
+                <li><code>devis.html</code>: informations clés (ville, type d’évènement, nb de photos 200/illimité, demandes particulières).</li>
+                <li>Prise en compte des <strong>frais de livraison</strong> et <strong>jours supplémentaires</strong> (100€/jour).</li>
+                <li>Option de <strong>calcul automatique</strong> du prix côté front selon la formule.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>SEO & contenu</h2>
+              <ul>
+                <li>Balises <strong>meta description</strong>, <strong>keywords</strong>, <strong>Open Graph</strong>.</li>
+                <li><code>sitemap.xml</code> et <code>robots.txt</code> inclus.</li>
+                <li>Recommandations: titre <strong>H1</strong> évocateur sur la page principale, mots-clés dans “Notre Concept”, <strong>liens internes</strong> vers pages explicatives.</li>
+                <li>Préchargement d’assets critiques: <code>logo.png</code>, <code>front_page.jpg</code>.</li>
+                <li>Contenu orienté <strong>recherches locales</strong> (rayon, logistique, atouts).</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h2>Performance & accessibilité</h2>
+              <ul>
+                <li>Chargement <strong>différé</strong> des scripts, structure <strong>semantique</strong>.</li>
+                <li>Images <strong>optimisées</strong> et cadrées, textes alternatifs (alt).</li>
+                <li>Respect des contrastes, <strong>focus visibles</strong> et navigation clavier.</li>
+                <li>Animations discrètes et non bloquantes.</li>
+              </ul>
+            </article>
+          </div>
+
+          <article class="card" style="margin-top: 20px;">
+            <h2>Galerie (extraits)</h2>
+            <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 10px;">
+              <img src="Site_Prends-ma-photo-Github/assets/img/drivePhotos2/IMG_3944.jpg" alt="Exemple 1" style="width:100%; height:160px; object-fit:cover; border-radius: 10px;">
+              <img src="Site_Prends-ma-photo-Github/assets/img/drivePhotos2/IMG_3945.jpg" alt="Exemple 2" style="width:100%; height:160px; object-fit:cover; border-radius: 10px;">
+              <img src="Site_Prends-ma-photo-Github/assets/img/drivePhotos2/IMG_3946.jpg" alt="Exemple 3" style="width:100%; height:160px; object-fit:cover; border-radius: 10px;">
+              <img src="Site_Prends-ma-photo-Github/assets/img/borne1.png" alt="Borne 1" style="width:100%; height:160px; object-fit:cover; border-radius: 10px;">
+              <img src="Site_Prends-ma-photo-Github/assets/img/borne2.png" alt="Borne 2" style="width:100%; height:160px; object-fit:cover; border-radius: 10px;">
+              <img src="Site_Prends-ma-photo-Github/assets/img/front_page.jpg" alt="Page d’accueil" style="width:100%; height:160px; object-fit:cover; border-radius: 10px;">
+            </div>
+          </article>
+
+          <!-- Logiciels & Technologies -->
+          <section class="section alt" style="margin-top: 40px;">
+            <div class="container">
+              <h2>Logiciels & Technologies utilisés</h2>
+              <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <article class="card tool">
+                  <div class="icon" aria-hidden="true">
+                    <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="HTML">
+                      <title>HTML</title>
+                      <defs>
+                        <linearGradient id="html-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#e34f26"/>
+                          <stop offset="100%" stop-color="#d73027"/>
+                        </linearGradient>
+                      </defs>
+                      <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#html-grad)"/>
+                      <path fill="white" d="M16 16h16v4H16v-4zm0 6h16v4H16v-4zm0 6h12v4H16v-4z" opacity="0.9"/>
+                    </svg>
+                  </div>
+                  <h3>HTML5</h3>
+                  <p>Structure sémantique</p>
+                </article>
+                <article class="card tool">
+                  <div class="icon" aria-hidden="true">
+                    <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="CSS">
+                      <title>CSS</title>
+                      <defs>
+                        <linearGradient id="css-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#1572b6"/>
+                          <stop offset="100%" stop-color="#0d5aa7"/>
+                        </linearGradient>
+                      </defs>
+                      <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#css-grad)"/>
+                      <path fill="white" d="M16 16h16v4H16v-4zm0 6h16v4H16v-4zm0 6h12v4H16v-4z" opacity="0.9"/>
+                    </svg>
+                  </div>
+                  <h3>CSS3</h3>
+                  <p>Design responsive</p>
+                </article>
+                <article class="card tool">
+                  <div class="icon" aria-hidden="true">
+                    <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="JavaScript">
+                      <title>JavaScript</title>
+                      <defs>
+                        <linearGradient id="js-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#f7df1e"/>
+                          <stop offset="100%" stop-color="#f0d000"/>
+                        </linearGradient>
+                      </defs>
+                      <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#js-grad)"/>
+                      <path fill="#000" d="M20 16h8v4h-8v-4zm0 6h8v4h-8v-4zm0 6h6v4h-6v-4z" opacity="0.8"/>
+                    </svg>
+                  </div>
+                  <h3>JavaScript</h3>
+                  <p>Interactivité</p>
+                </article>
+                <article class="card tool">
+                  <div class="icon" aria-hidden="true">
+                    <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="PHP">
+                      <title>PHP</title>
+                      <defs>
+                        <linearGradient id="php-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#777bb4"/>
+                          <stop offset="100%" stop-color="#6a6fa8"/>
+                        </linearGradient>
+                      </defs>
+                      <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#php-grad)"/>
+                      <path fill="white" d="M16 16h16v4H16v-4zm0 6h16v4H16v-4zm0 6h12v4H16v-4z" opacity="0.9"/>
+                    </svg>
+                  </div>
+                  <h3>PHP</h3>
+                  <p>Formulaires de contact</p>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- Compétences -->
+          <section class="section" style="margin-top: 40px;">
+            <div class="container">
+              <h2>Compétences développées</h2>
+              <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div class="skill-category">
+                  <h3>Développement Web</h3>
+                  <ul class="skill-items">
+                    <li class="skill-item">
+                      <span class="skill-name">HTML/CSS</span>
+                      <span class="skill-level mastered">Maîtrisé</span>
+                    </li>
+                    <li class="skill-item">
+                      <span class="skill-name">JavaScript</span>
+                      <span class="skill-level comfortable">À l'aise</span>
+                    </li>
+                    <li class="skill-item">
+                      <span class="skill-name">PHP</span>
+                      <span class="skill-level comfortable">À l'aise</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="skill-category">
+                  <h3>SEO & Marketing</h3>
+                  <ul class="skill-items">
+                    <li class="skill-item">
+                      <span class="skill-name">Référencement SEO</span>
+                      <span class="skill-level mastered">Maîtrisé</span>
+                    </li>
+                    <li class="skill-item">
+                      <span class="skill-name">Optimisation conversion</span>
+                      <span class="skill-level comfortable">À l'aise</span>
+                    </li>
+                    <li class="skill-item">
+                      <span class="skill-name">Marketing digital</span>
+                      <span class="skill-level comfortable">À l'aise</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Réalisation E4 -->
+          <section class="section alt" style="margin-top: 40px;">
+            <div class="container">
+              <h2>Réalisation E4 correspondante</h2>
+              <div class="card">
+                <div class="card-body">
+                  <h3>Prends Ma Photo (Stage) - Réalisation en cours de formation en seconde année</h3>
+                  <p><strong>Période :</strong> 15/01/2025</p>
+                  <p><strong>Compétences évaluées :</strong></p>
+                  <ul>
+                    <li><strong>D3</strong> - Développer la présence en ligne de l'organisation</li>
+                    <li><strong>T4</strong> - Travailler en mode projet</li>
+                  </ul>
+                  <p><strong>Description :</strong> Développement d'un site vitrine professionnel pour une entreprise de location de bornes à selfie, incluant SEO, formulaires de contact, devis automatiques et optimisation de la conversion.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+            <article class="card">
+              <h2>Déploiement & hébergement</h2>
+              <ul>
+                <li>Prêt pour hébergement mutualisé (<strong>hébergeur type OVH</strong>), DNS et HTTPS.</li>
+                <li>Fichiers <code>robots.txt</code> et <code>sitemap.xml</code> inclus à la racine.</li>
+                <li>Organisation des assets par dossiers (<code>assets/css</code>, <code>assets/js</code>, <code>assets/img</code>).</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h2>Liens & actions</h2>
+              <div class="hero-actions" style="margin-top: 0;">
+                <a href="Site_Prends-ma-photo-Github/index.html" class="btn btn-primary" target="_blank" rel="noreferrer noopener">Voir la maquette locale</a>
+                <a href="Site_Prends-ma-photo-Github/choix.html" class="btn" target="_blank" rel="noreferrer noopener">Réserver / Devis</a>
+                <a href="Site_Prends-ma-photo-Github/contact.html" class="btn btn-ghost" target="_blank" rel="noreferrer noopener">Contact</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Grinda Korto. Tous droits réservés.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+
