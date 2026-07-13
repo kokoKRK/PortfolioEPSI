@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /assets/
+Disallow: /components/
+
+Sitemap: https://prendsmaphoto.fr/sitemap.xml 

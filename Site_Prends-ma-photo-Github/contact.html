@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Prends ma Photo</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/include.js" defer></script>
+</head>
+<body>
+    <!-- Le header sera injecté ici -->
+    <div data-include="header"></div>
+
+    <main>
+        <section class="contact-section">
+            <div class="container">
+                <h1>Contactez-nous</h1>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h2>Nos informations</h2>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="assets/img/ico/user.png" alt="Responsable">
+                            </div>
+                            <div class="info-content">
+                                <h3>Responsable Prends ma Photo</h3>
+                                <p>Cattiaux Jimmy</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="assets/img/ico/emplacement.png" alt="Adresse">
+                            </div>
+                            <div class="info-content">
+                                <h3>Adresse</h3>
+                                <p><a href="https://www.google.com/maps/place/480+Av.+du+Major+Flandre,+34090+Montpellier/@43.6322641,3.8661533,14z/data=!4m6!3m5!1s0x12b6af18a0cd0af1:0x53c6ffb3b0bb0f7!8m2!3d43.629586!4d3.8716151!16s%2Fg%2F11c1kdkgkl?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="address-link">480, avenue du Major Flandre<br>34090 Montpellier</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="assets/img/ico/telephoner.png" alt="Téléphone">
+                            </div>
+                            <div class="info-content">
+                                <h3>Téléphone</h3>
+                                <p><a href="tel:+33659511401">06 59 51 14 01</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="assets/img/ico/enveloppe.png" alt="Email">
+                            </div>
+                            <div class="info-content">
+                                <h3>Email</h3>
+                                <p><a href="mailto:contactprendsmaphoto@gmail.com">contactprendsmaphoto@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="assets/img/ico/link.png" alt="Réseaux sociaux">
+                            </div>
+                            <div class="info-content">
+                                <h3>Réseaux sociaux</h3>
+                                <p class="social-links">
+                                    <a href="https://www.linkedin.com/in/jimmy-cattiaux-440257262/" target="_blank" class="social-link">
+                                        <img src="assets/img/ico/linkedin.png" alt="LinkedIn" class="social-icon">
+                                    </a>
+                                    <a href="https://www.instagram.com/prends_ma_photo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link">
+                                        <img src="assets/img/ico/instagram.png" alt="Instagram" class="social-icon">
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h2>Formulaire de contact</h2>
+                        <form id="contactForm" action="contact.php" method="POST">
+                            <div class="form-row">
+                                <div class="form-group half">
+                                    <label for="firstname">Prénom</label>
+                                    <input type="text" id="firstname" name="firstname" required>
+                                </div>
+                                
+                                <div class="form-group half">
+                                    <label for="lastname">Nom</label>
+                                    <input type="text" id="lastname" name="lastname" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone" pattern="[0-9 ]*" maxlength="14" placeholder="">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sujet">Sujet</label>
+                                <div class="select-wrapper">
+                                    <select id="sujet" name="sujet" required>
+                                        <option value="" disabled selected>Choisir un sujet</option>
+                                        <option value="devis">Demande sur le devis</option>
+                                        <option value="information">Demande d'informations</option>
+                                        <option value="reservation">Demande sur le format / le fond des photos</option>
+                                        <option value="reservation">Demande sur la réservation</option>
+                                        <option value="autre">Autre</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <div class="form-submit">
+                                <button type="submit" class="submit-btn">Envoyer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Le footer sera injecté ici -->
+    <div data-include="footer"></div>
+
+    <!-- Script pour le formatage du numéro de téléphone -->
+    <script>
+        // Formater le numéro de téléphone automatiquement
+        document.addEventListener('DOMContentLoaded', function() {
+            const phoneInput = document.getElementById('phone');
+            
+            phoneInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                let formattedValue = '';
+                
+                for (let i = 0; i < value.length && i < 10; i++) {
+                    if (i === 2 || i === 4 || i === 6 || i === 8) {
+                        formattedValue += ' ';
+                    }
+                    formattedValue += value[i];
+                }
+                
+                e.target.value = formattedValue;
+            });
+        });
+    </script>
+
+        
+    
+</body>
+</html>
+  

@@ -1,0 +1,88 @@
+/* header_style.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif, sans-serif;
+    color: whitesmoke;
+    font-size: 25px;
+}
+#nav_bar {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif, sans-serif;
+    color: whitesmoke;
+    font-size: 25px;
+    background-color:#050a30;
+    display: flex;
+    border-bottom: #c8930d solid 2px; 
+    position: relative;
+    margin-top: 0px;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    align-items: center;
+}
+
+.lien_nav {
+    float: left;
+    display: block;
+    color: whitesmoke;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    transition: transform 0.3s ease;
+}
+
+.lien_nav:hover {
+    color: #c8930d;
+    transform: scale(1.1);
+}
+
+.lien_nav.active {
+    color: whitesmoke;
+}
+
+.logo {
+    align-items: flex-start;
+}
+
+.left_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul span {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 25px;
+    padding: 0 10px;
+}
+.user .lien_nav{
+    font-size:18px;
+}
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.user {
+    display: flex;
+    font-size: 20px;
+    margin-right: 20px;
+}

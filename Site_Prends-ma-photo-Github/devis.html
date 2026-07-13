@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devis - Prends ma Photo</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/devis.css">
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/include.js" defer></script>
+</head>
+<body>
+    <!-- Le header sera injecté ici -->
+    <div data-include="header"></div>
+
+    <main class="devis-bg">
+        <div class="devis-bg__overlay"></div>
+        <form class="devis-form">
+            <h2 class="devis-title">Obtenez votre devis personnalisé</h2>
+            <div class="row">
+                <div class="input-group">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>
+                <div class="input-group">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" id="telephone" name="telephone" required placeholder="01 02 03 04 05">
+            </div>
+            <div class="row">
+                <div class="input-group">
+                    <label for="ville">Ville de l'évènement :</label>
+                    <input type="text" id="ville" name="ville" required placeholder="ex: Montpellier">
+                </div>
+                <div class="input-group">
+                    <label for="codePostal">Code postal :</label>
+                    <input type="text" id="codePostal" name="codePostal" required placeholder="34000" maxlength="5" pattern="[0-9]{5}">
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="duree">Durée de location pour l'évènement (en jours) :</label>
+                <input type="number" id="duree" name="duree" min="1" value="1" required>
+                <div class="info-note devis-info">
+                    <span class="info-icon">i</span>
+                    <span>Le premier jour est inclus dans le prix, chaque jour supplémentaire est facturé à +100 €</span>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="distance">Distance depuis Montpellier (en km) :</label>
+                <input type="number" id="distance" name="distance" min="0" max="60" required placeholder="ex: 15">
+                <div class="info-note devis-info">
+                    <span class="info-icon">i</span>
+                    <span>Livraison gratuite jusqu'à 30 km autour de Montpellier, maximum 60 km</span>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Nombre de photos</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="photos-200" name="nombre-photos" value="200" checked required>
+                        <label for="photos-200">200 photos</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="photos-illimite" name="nombre-photos" value="illimite" required>
+                        <label for="photos-illimite">Illimité</label>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="type">Type d'évènement :</label>
+                <input type="text" id="type" name="type" required placeholder="ex: Mariage, Anniversaire...">
+            </div>
+            <div class="input-group">
+                <label for="participants">Nombre de participants (estimation) :</label>
+                <input type="number" id="participants" name="participants" min="1" required placeholder="ex: 100">
+            </div>
+            <div class="devis-price" id="prixEstime">Prix estimé : -- €</div>
+            <div class="devis-price-info">TTC livré et installé sur place</div>
+            <button type="submit">Envoyer la demande de devis</button>
+        </form>
+    </main>
+
+    <!-- Le footer sera injecté ici -->
+    <div data-include="footer"></div>
+
+    <script>
+        // Paramètres de tarification
+        const PRIX_200 = 400;
+        const PRIX_ILLIMITE = 550;
+        const PRIX_JOUR_SUP = 100;
+        const DISTANCE_GRATUITE = 30;
+        const PRIX_KM = 2; // exemple : 2€/km au-delà de 30km
+        const DISTANCE_MAX = 60;
+
+        // Fonction pour formater le numéro de téléphone
+        function formatPhoneNumber(input) {
+            // Supprimer tous les caractères non numériques
+            let value = input.value.replace(/\D/g, '');
+            
+            // Limiter à 10 chiffres
+            value = value.substring(0, 10);
+            
+            // Formater avec des espaces
+            if (value.length > 0) {
+                if (value.length <= 2) {
+                    value = value;
+                } else if (value.length <= 4) {
+                    value = value.substring(0, 2) + ' ' + value.substring(2);
+                } else if (value.length <= 6) {
+                    value = value.substring(0, 2) + ' ' + value.substring(2, 4) + ' ' + value.substring(4);
+                } else if (value.length <= 8) {
+                    value = value.substring(0, 2) + ' ' + value.substring(2, 4) + ' ' + value.substring(4, 6) + ' ' + value.substring(6);
+                } else {
+                    value = value.substring(0, 2) + ' ' + value.substring(2, 4) + ' ' + value.substring(4, 6) + ' ' + value.substring(6, 8) + ' ' + value.substring(8);
+                }
+            }
+            
+            // Mettre à jour la valeur
+            input.value = value;
+        }
+
+        // Fonction pour formater le code postal
+        function formatCodePostal(input) {
+            // Supprimer tous les caractères non numériques
+            let value = input.value.replace(/\D/g, '');
+            
+            // Limiter à 5 chiffres
+            value = value.substring(0, 5);
+            
+            // Mettre à jour la valeur
+            input.value = value;
+        }
+
+        // Fonction pour limiter la distance
+        function limitDistance(input) {
+            let value = parseInt(input.value);
+            if (isNaN(value)) {
+                value = 0;
+            }
+            if (value > DISTANCE_MAX) {
+                value = DISTANCE_MAX;
+            }
+            if (value < 0) {
+                value = 0;
+            }
+            input.value = value;
+            // Mettre à jour le prix après le formatage
+            afficherPrix();
+        }
+
+        // Ajouter les écouteurs d'événements
+        document.addEventListener('DOMContentLoaded', function() {
+            const phoneInput = document.getElementById('telephone');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function() {
+                    formatPhoneNumber(this);
+                });
+            }
+
+            const codePostalInput = document.getElementById('codePostal');
+            if (codePostalInput) {
+                codePostalInput.addEventListener('input', function() {
+                    formatCodePostal(this);
+                });
+            }
+
+            const distanceInput = document.getElementById('distance');
+            if (distanceInput) {
+                distanceInput.addEventListener('input', function() {
+                    limitDistance(this);
+                });
+                distanceInput.addEventListener('change', function() {
+                    limitDistance(this);
+                });
+                distanceInput.addEventListener('blur', function() {
+                    limitDistance(this);
+                });
+            }
+        });
+
+        function calculerPrix() {
+            const photos = document.querySelector('input[name="nombre-photos"]:checked').value;
+            const distance = parseInt(document.getElementById('distance').value, 10);
+            const duree = parseInt(document.getElementById('duree').value, 10);
+
+            let prix = 0;
+            if (photos === '200') {
+                prix = PRIX_200;
+            } else {
+                prix = PRIX_ILLIMITE;
+            }
+
+            if (!isNaN(distance)) {
+                if (distance > DISTANCE_GRATUITE && distance <= DISTANCE_MAX) {
+                    prix += (distance - DISTANCE_GRATUITE) * PRIX_KM;
+                }
+            }
+
+            // Ajout de 100€ par jour supplémentaire (après le premier jour)
+            if (!isNaN(duree) && duree > 1) {
+                prix += (duree - 1) * PRIX_JOUR_SUP;
+            }
+
+            return prix;
+        }
+
+        function afficherPrix() {
+            const prix = calculerPrix();
+            document.getElementById('prixEstime').textContent = isNaN(prix) ? "Prix estimé : -- €" : "Prix estimé : " + prix + " €";
+        }
+
+        // Écouter les changements sur tous les boutons radio du nombre de photos
+        document.querySelectorAll('input[name="nombre-photos"]').forEach(radio => {
+            radio.addEventListener('change', afficherPrix);
+        });
+        document.getElementById('distance').addEventListener('input', afficherPrix);
+        document.getElementById('duree').addEventListener('input', afficherPrix);
+
+        // Initialisation
+        afficherPrix();
+
+        // Empêche l'envoi réel du formulaire pour la démo
+        document.querySelector('.devis-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Votre demande de devis a bien été envoyée !");
+        });
+    </script>
+</body>
+</html>

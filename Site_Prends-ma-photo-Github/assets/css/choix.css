@@ -1,0 +1,263 @@
+/* Styles spécifiques pour la page de choix */
+.page-choix {
+    padding: 0;
+}
+
+.page-choix main {
+    padding: 0 2rem;
+}
+
+.choix-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin: 2rem 0 3rem;
+    font-weight: 600;
+}
+
+.page-choix .main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    gap: 1.5rem;
+}
+
+.page-choix .wrap {
+    margin: 0;
+    transform-style: preserve-3d;
+    transform: perspective(100rem);
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+}
+
+.page-choix .container {
+    --rX: 0;
+    --rY: 0;
+    --bX: 50%;
+    --bY: 80%;
+    width: 100%;
+    height: 40rem;
+    border: 3px solid #e0e0e0;
+    border-radius: 1.6rem;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform: rotateX(calc(var(--rX) * 1deg)) rotateY(calc(var(--rY) * 1deg));
+    -webkit-transform: rotateX(calc(var(--rX) * 1deg)) rotateY(calc(var(--rY) * 1deg));
+    -moz-transform: rotateX(calc(var(--rX) * 1deg)) rotateY(calc(var(--rY) * 1deg));
+    background: linear-gradient(rgba(255, 255, 255, .1), rgba(255, 255, 255, .1)), url("https://images.unsplash.com/photo-1559113513-d5e09c78b9dd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9");
+    background-position: var(--bX) var(--bY);
+    background-size: cover;
+    box-shadow: 0 0 3rem .5rem rgba(0, 0, 0, .2);
+    transition: transform 0.03s ease-out, background-position 0.03s ease-out;
+    -webkit-transition: -webkit-transform 0.03s ease-out, background-position 0.03s ease-out;
+    -moz-transition: -moz-transform 0.03s ease-out, background-position 0.03s ease-out;
+    will-change: transform, background-position;
+    overflow: hidden;
+}
+
+/* Images spécifiques pour chaque carte */
+.wrap-contact .container {
+    background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url("../img/nous-contacter.jpg");
+    background-position: center center;
+    background-size: cover;
+    /* Désactiver le mouvement du fond pour cette carte */
+    --bX: 50% !important;
+    --bY: 50% !important;
+}
+
+.wrap-signature .container {
+    background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url("../img/singature-electronique.png");
+    background-position: center center;
+    background-size: cover;
+    /* Désactiver le mouvement du fond pour cette carte */
+    --bX: 50% !important;
+    --bY: 50% !important;
+}
+
+.page-choix .container::before,
+.page-choix .container::after {
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid #fff;
+    position: absolute;
+    z-index: 2;
+    opacity: .5;
+    transition: .3s;
+}
+
+.page-choix .container::before {
+    top: 2rem;
+    right: 2rem;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}
+
+.page-choix .container::after {
+    bottom: 2rem;
+    left: 2rem;
+    border-top-width: 0;
+    border-right-width: 0;
+}
+
+.page-choix .container--active {
+    transition: none;
+}
+
+.card-title {
+    color: rgba(255, 255, 255, 1);
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    transition: transform 0.3s ease-out;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.card-link:hover .card-title {
+    transform: translateY(-140px);
+}
+
+.card-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.4rem;
+    text-align: center;
+    opacity: 0;
+    position: absolute;
+    bottom: 30%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    line-height: 1.4;
+    padding: 0 2.5rem;
+    max-width: 75%;
+    z-index: 1;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.25s ease-out;
+}
+
+.card-link:hover .card-description {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease-out, visibility 0s;
+}
+
+.card-link .card-description {
+    transition: opacity 0.1s ease-out, visibility 0s;
+}
+
+.card-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+.page-choix .wrap:hover .container::before,
+.page-choix .wrap:hover .container::after {
+    width: calc(100% - 4rem);
+    height: calc(100% - 4rem);
+}
+
+.card-link:hover .container p {
+    transform: translateY(-90px);
+}
+
+.abs-site-link {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    color: hsla(0, 0%, 0%, .6);
+    font-size: 1.6rem;
+}
+
+.card-link {
+    flex: 1 1 49%;
+    max-width: 49%;
+    min-width: 450px;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+}
+
+/* Sélecteur Vercel désactivé pour la page choix */
+.page-choix .switcher-btn.btn-active {
+    color: inherit;
+    text-shadow: none;
+    font-weight: normal;
+}
+
+.page-choix .switcher-curr,
+.page-choix .switcher-glow {
+    display: none !important;
+}
+
+/* Responsive pour les cartes */
+@media (max-width: 992px) {
+    .page-choix .main {
+        max-width: 100%;
+        gap: 1.5rem;
+    }
+
+    .page-choix .wrap {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .page-choix .container {
+        height: 35rem;
+    }
+    
+    .card-link {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-choix .main {
+        max-width: 100%;
+        gap: 1rem;
+    }
+
+    .page-choix .container {
+        height: 30rem;
+        padding: 3rem;
+    }
+
+    .page-choix .container p {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-choix .wrap {
+        min-width: unset;
+    }
+
+    .page-choix .container {
+        height: 25rem;
+        padding: 2rem;
+    }
+
+    .page-choix .container p {
+        font-size: 1.5rem;
+    }
+    
+    .card-link {
+        min-width: unset;
+    }
+} 

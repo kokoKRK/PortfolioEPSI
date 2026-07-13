@@ -1,0 +1,110 @@
+body {
+    font-family: "Gill Sans", sans-serif;
+    background-color: #060d3e;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+.container {
+    background: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 50px;
+    border: #c8930d solid 2px;
+}
+
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color:#333;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.switch {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.switch a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.switch a:hover {
+    text-decoration: underline;
+}
+footer {
+    display: flex;
+    border-top:#fad824 solid 1px;
+    margin-top: 50px;
+}
+footer div {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+footer .logo {
+    margin-left: 20px;
+    margin-right: auto;
+    justify-content: start;
+    width: 20%;
+}
+footer .copyright {
+    margin-right: auto;
+    justify-content: start;
+    width: 40%;
+}
+footer .contact {
+    margin-left: auto;
+    margin-right: 20px;
+    justify-content: end;
+    justify-content: space-evenly;
+    width: 40%;
+}
+

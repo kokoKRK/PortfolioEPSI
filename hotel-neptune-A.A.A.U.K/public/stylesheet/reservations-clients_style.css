@@ -1,0 +1,71 @@
+body {
+    background: #050a30 ;
+    color: #f4f6fc ;
+    font-family: "Gill Sans", sans-serif;
+    padding:0px;
+    margin:0px;
+}
+h2 {
+    font-size: 35px;
+    text-align: center;
+}
+.all-reservations {
+    display: flex;
+}
+.reservation {
+    border:#c8930d solid 2px;
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+.reservation h3 {
+    text-align: center;
+    text-decoration: underline solid 2px #c8930d;
+}
+.reservation ul {
+    margin-inline: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between ;
+}
+.reservation ul li {
+    min-width: 45%;
+    font-size: 20px;
+}
+button {
+    padding: 5px 5px;
+    font-size: 16px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+button:hover {
+    background-color: #cc0000;
+}
+.modif-button {
+    padding: 10px 40px;
+    font-size: 16px;
+    background-color: #efd176;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.modif-button:hover {
+    background-color: #ebc040;
+}
+.button {
+    display: flex;
+    justify-content: space-evenly;
+}
+.error {
+    text-align: center;
+    color:red;
+}

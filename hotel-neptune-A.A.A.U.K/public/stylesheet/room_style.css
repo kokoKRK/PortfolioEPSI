@@ -1,0 +1,134 @@
+body {
+    background: #050a30 ;
+    color: #f4f6fc ;
+    font-family: "Gill Sans", sans-serif;
+    padding:0px;
+    margin:0px;
+}
+header .text h1 {
+    margin: 25px;
+    font-size: 75px;
+}
+h2 {
+    font-size: 35px;
+}
+header {
+    display: block;
+    
+}
+header div {
+    width: 100%;
+    align-content: center;
+}
+header .text {
+    text-align: center;
+
+} 
+header .image {
+    display: flex;
+    max-height: 300px;
+    overflow: hidden;
+}
+#img1 {
+    border-left: none;
+}
+header .image > img {
+    border-bottom: #c8930d solid 2px;
+    width: 33.334%; /* Ajusté pour que l'image prenne toute la largeur du conteneur */
+    height: auto;
+    border-left: #c8930d solid 2px;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+#trie {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+    font-size: 25px;
+}
+.grp{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+#trie button {
+    height:40px;
+    width:150px;
+    font-size:25px;
+    border:#D4A50D solid 1px;
+    background-color: #ebd49b;
+    border-radius: 20px;
+    text-align: center;
+    color:#c8930d;
+    font-weight: bold;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+#trie button:hover {
+    color: #c8930d;
+    transform: scale(1.1);
+}
+
+.chambres{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.chambre {
+    background-color: #c8930d;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-direction: column;
+    max-width: 28%;
+    box-shadow: #d8d9e74f 5px 5px 20px 0px;
+    border-radius: 20px;
+    border: solid #c8930d 2px;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.chambre h3 {
+    margin: 5px;
+}
+
+.chambre img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    
+}
+
+.chambre .text {
+    display: flex;
+    width: 95.4%;
+    font-size: 20px;
+    font-weight: bold;
+    color: whitesmoke;
+    background-color: #050a30;
+    border-radius: 0px 0px 19px 19px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.chambre .text p {
+    margin: 5px 0px 5px 0px;
+}
+.desc{
+    min-height: 130px;
+}
+
+.spe-txt {
+    color: #c8930d; /* Changez cette couleur selon vos besoins */
+    font-weight: bold;
+}

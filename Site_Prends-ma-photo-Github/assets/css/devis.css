@@ -1,0 +1,309 @@
+/* Styles pour le fond et l'overlay */
+.devis-bg {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: url('../img/drivePhotos2/IMG_3946.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 2rem 1rem;
+    margin-top: 90px;
+}
+
+.devis-bg__overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44,62,80,0.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Styles pour le formulaire */
+.devis-form {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2.5px solid #3498db;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(52, 152, 219, 0.10), 0 1.5px 6px rgba(44, 62, 80, 0.08);
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.devis-title {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.devis-title:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #3498db;
+    margin: 0.8rem auto 0;
+    border-radius: 2px;
+}
+
+/* Styles pour les groupes de champs */
+.devis-form .row {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.devis-form .input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-width: 0;
+    align-items: center;
+}
+
+.devis-form label {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    text-align: center;
+    width: 100%;
+}
+
+.devis-form input,
+.devis-form select {
+    padding: 0.8rem 1rem;
+    border: 1.5px solid #b2cbe4;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fff;
+    color: #2c3e50;
+    transition: all 0.2s ease;
+    outline: none;
+    text-align: center;
+    width: 100%;
+}
+
+.devis-form input:focus,
+.devis-form select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Styles pour les notes d'information */
+.devis-info {
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+    background: #eaf6ff;
+    border-radius: 8px;
+    border-left: 3px solid #3498db;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 0.8rem;
+    gap: 0.6rem;
+}
+
+.devis-info .info-icon {
+    background-color: #3498db;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    font-style: normal;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    aspect-ratio: 1;
+    line-height: 1;
+    padding: 0;
+}
+
+/* Styles pour le prix */
+.devis-price {
+    margin: 1.5rem 0 0.5rem 0;
+    font-size: 1.4rem;
+    color: #217dbb;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.8rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px solid #e6f2ff;
+}
+
+.devis-price-info {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-top: 0.3rem;
+    font-style: italic;
+}
+
+/* Styles pour le bouton */
+.devis-form button[type="submit"] {
+    margin-top: 1rem;
+    padding: 1rem 0;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.10);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.devis-form button[type="submit"]:hover {
+    background: #217dbb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.20);
+}
+
+/* Styles pour les boutons radio */
+.radio-group {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.radio-option input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+    accent-color: #3498db;
+}
+
+.radio-option label {
+    font-size: 1rem;
+    color: #2c3e50;
+    cursor: pointer;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    border: 2px solid #b2cbe4;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.radio-option input[type="radio"]:checked + label {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+    box-shadow: 0 2px 4px rgba(52, 152, 219, 0.2);
+}
+
+.radio-option label:hover {
+    border-color: #3498db;
+    transform: translateY(-1px);
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .devis-bg {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .devis-bg {
+        margin-top: 80px;
+        padding: 1rem;
+    }
+
+    .devis-form {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .devis-title {
+        font-size: 1.5rem;
+    }
+
+    .devis-form .row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .devis-price {
+        font-size: 1.2rem;
+        padding: 0.6rem;
+    }
+
+    .devis-info {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.7rem;
+    }
+
+    .devis-form input,
+    .devis-form select {
+        padding: 0.7rem 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .devis-bg {
+        margin-top: 70px;
+        padding: 0.8rem;
+    }
+
+    .devis-form {
+        padding: 1.2rem 1rem;
+    }
+
+    .devis-title {
+        font-size: 1.3rem;
+    }
+
+    .devis-form label {
+        font-size: 0.9rem;
+    }
+
+    .devis-form input,
+    .devis-form select {
+        font-size: 0.95rem;
+        padding: 0.6rem 0.7rem;
+    }
+
+    .devis-price {
+        font-size: 1.1rem;
+        padding: 0.5rem;
+    }
+
+    .devis-info {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .devis-form button[type="submit"] {
+        padding: 0.8rem 0;
+        font-size: 1rem;
+    }
+} 

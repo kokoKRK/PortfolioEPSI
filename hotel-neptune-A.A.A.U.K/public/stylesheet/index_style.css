@@ -1,0 +1,106 @@
+body {
+    background: #050a30 ;
+    color: #f4f6fc ;
+    font-family: "Gill Sans", sans-serif;
+    padding:0px;
+    margin:0px;
+}
+header .text h1 {
+    margin: 25px;
+    font-size: 75px;
+}
+h2 {
+    font-size: 35px;
+}
+header {
+    display: block;
+    
+}
+header div {
+    width: 100%;
+    align-content: center;
+}
+header .text {
+    text-align: center;
+} 
+header .text .button {
+    height:50px;
+    width:250px;
+    font-size:25px;
+    border:#D4A50D solid 1px;
+    background-color: #ebd49b;
+    border-radius: 20px;
+    text-align: center;
+    color:#c8930d;
+    margin-inline: auto;
+    font-weight: bold;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.button:hover {
+    color: #c8930d;
+    transform: scale(1.1);
+}
+
+header .text a {
+    text-decoration: none;
+}
+
+header .image {
+    display: flex;
+    max-height: 300px;
+    overflow: hidden;
+}
+#img1 {
+    border-left: none;
+}
+header .image .img {
+    border-bottom: #c8930d solid 2px;
+    width: 33.334%; /* Ajusté pour que l'image prenne toute la largeur du conteneur */
+    height: auto;
+    border-left: #c8930d solid 2px;
+    object-fit: cover;
+    object-position: bottom;
+}
+.presentation {
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.presentation div {
+    width: 50%;
+}
+.presentation .text {
+    align-content: center;
+    margin-left:5%;
+}
+.presentation .text h2 {
+    width: 50%;
+}
+.presentation .image img {
+    margin-left:5%;
+    border: #D4A50D solid 1px;
+}
+.accomodations {
+    text-align: center;
+}
+.accomodations .propositions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.accomodations .propositions .chambre {
+    min-width: 30%;
+    border:#c8930d solid 2px;
+    border-radius:5px;
+    margin-top:50px;
+}
+.accomodations .propositions .image img {
+    width:auto;
+    height:200px;
+}
+.accomodations .propositions .chambre .text {
+    display: flex;
+    justify-content: space-evenly;
+}

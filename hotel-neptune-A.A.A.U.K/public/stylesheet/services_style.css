@@ -1,0 +1,40 @@
+body {
+    background: #050a30 ;
+    color: #f4f6fc ;
+    font-family: "Gill Sans", sans-serif;
+    height: 500px;
+    padding:0px;
+    margin:0px;
+}
+header .text h1 {
+    font-size: 75px;
+}
+h2 {
+    font-size: 35px;
+}
+footer {
+    display: flex;
+    border-top:#fad824 solid 1px;
+    margin-top: 0px;
+}
+footer div {
+    display: flex;
+}
+footer .logo {
+    margin-left: 20px;
+    margin-right: auto;
+    justify-content: start;
+    width: 20%;
+}
+footer .copyright {
+    margin-right: auto;
+    justify-content: start;
+    width: 40%;
+}
+footer .contact {
+    margin-left: auto;
+    margin-right: 20px;
+    justify-content: end;
+    justify-content: space-evenly;
+    width: 40%;
+}
