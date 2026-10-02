@@ -3,118 +3,155 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Projet - Pizzeria (Flutter)</title>
-    <meta name="description" content="Details du projet Pizzeria : application Flutter avec catalogue, panier, commande et gestion du theme." />
+    <title>Projet – Pizzeria (Flutter)</title>
+    <meta name="description" content="Détails du projet Pizzeria : application Flutter avec catalogue, panier, commande et gestion du thème." />
+        <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('gk-theme');
+          var dark = saved === 'dark' || (saved !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="project-themes.css" />
   </head>
   <body class="page-project page-pizzeria">
     <header class="site-header">
       <div class="container header-inner">
-        <a href="index.html#hero" class="brand" aria-label="Retour a l'accueil">GK</a>
+        <a href="index.html#hero" class="brand" aria-label="Retour à l'accueil">GK</a>
         <nav class="nav" aria-label="Navigation">
+          <p class="deck-now">Lecture · <strong id="deck-now-label">Projet</strong></p>
+                    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Activer le mode sombre" title="Mode sombre">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M20 14.5A7.5 7.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" stroke-linejoin="round"/>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M17.2 6.8l1.6-1.6M5.2 18.8l1.6-1.6" stroke-linecap="round"/>
+            </svg>
+          </button>
           <a class="btn btn-ghost" href="index.html#projects">← Retour aux projets</a>
         </nav>
       </div>
+      <div class="deck-progress" aria-hidden="true"><span></span></div>
     </header>
 
     <main>
       <section class="section" id="project-detail">
         <div class="container">
-          <h1>Pizzeria (Flutter)</h1>
-          <p class="subtitle">
-            Application mobile developpee avec Flutter pour gerer un parcours de commande:
-            catalogue pizzas/boissons, details produit, panier, profil et validation de commande.
-          </p>
-
-          <p class="hero-actions project-demo-top">
-            <a class="btn btn-primary" href="pizzeria/demo/index.html" target="_blank" rel="noreferrer noopener">Essayer l'application</a>
-          </p>
-
-          <article class="card flutter-demo-card" style="margin-bottom: 20px;">
-            <h2>Démo interactive</h2>
-            <p class="flutter-demo-lead">
-              Version web de l'application Flutter : parcours catalogue, panier et commande directement dans le navigateur.
+          <header class="project-hero" data-stagger>
+            <p class="eyebrow project-type"><span class="cue-mark" aria-hidden="true"></span>Formation</p>
+            <h1>Pizzeria (Flutter)</h1>
+            <p class="subtitle">
+              Application mobile développée avec Flutter pour gérer un parcours de commande :
+              catalogue pizzas/boissons, détails produit, panier, profil et validation de commande.
             </p>
-            <div class="flutter-demo-wrap">
-              <iframe src="pizzeria/demo/index.html" title="Pizzeria — démo web Flutter" loading="lazy"></iframe>
+            <ul class="project-meta">
+              <li>Flutter</li>
+              <li>Dart</li>
+              <li>Provider</li>
+              <li>Material 3</li>
+            </ul>
+            <p class="project-actions">
+              <a class="btn btn-primary" href="pizzeria/demo/index.html" target="_blank" rel="noreferrer noopener">Essayer l'application</a>
+            </p>
+          </header>
+
+          <figure class="project-cover" data-animate="mask">
+            <img src="assets/img/img_projets/pizzeria.jpg" alt="Aperçu du projet Pizzeria Flutter" />
+          </figure>
+
+          <div class="project-sections" data-stagger>
+            <div class="project-grid-2">
+              <article class="project-panel">
+                <h2>Contexte & objectifs</h2>
+                <p>
+                  Ce projet vise à construire une application Flutter complète autour d'un cas concret
+                  de commande en restauration. L'objectif est de travailler la navigation, la gestion d'état
+                  et la structuration d'une application mobile multi-écrans.
+                </p>
+                <ul>
+                  <li>Concevoir une architecture claire par écrans et modèles.</li>
+                  <li>Afficher dynamiquement des produits pizzas et boissons.</li>
+                  <li>Permettre l'ajout/retrait au panier et le calcul du total.</li>
+                  <li>Simuler un parcours de commande utilisateur.</li>
+                  <li>Ajouter la gestion du thème clair/sombre.</li>
+                </ul>
+              </article>
+              <aside class="project-panel">
+                <h2>Stack technique</h2>
+                <ul>
+                  <li>Framework : <strong>Flutter (Dart)</strong></li>
+                  <li>State management : <strong>Provider</strong></li>
+                  <li>UI : Material 3 + thèmes light/dark</li>
+                  <li>Structure : <code>lib/ui</code> et <code>lib/models</code></li>
+                  <li>Assets : pizzas et menus embarqués dans l'application</li>
+                </ul>
+              </aside>
             </div>
-            <p class="hero-actions flutter-demo-actions">
-              <a class="btn btn-ghost" href="pizzeria/demo/index.html" target="_blank" rel="noreferrer noopener">Ouvrir en plein écran</a>
-            </p>
-          </article>
 
-          <div class="card" style="margin-bottom: 20px; overflow: hidden;">
-            <img src="assets/img/img_projets/pizzeria.jpg" alt="Apercu du projet Pizzeria Flutter" style="width:100%; max-height:420px; object-fit:cover; display:block;">
-          </div>
-
-          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
-            <article class="card">
-              <h2>Contexte & objectifs</h2>
-              <p>
-                Ce projet vise a construire une application Flutter complete autour d'un cas concret
-                de commande en restauration. L'objectif est de travailler la navigation, la gestion d'etat
-                et la structuration d'une application mobile multi-ecrans.
-              </p>
-              <ul>
-                <li>Concevoir une architecture claire par ecrans et modeles.</li>
-                <li>Afficher dynamiquement des produits pizzas et boissons.</li>
-                <li>Permettre l'ajout/retrait au panier et le calcul du total.</li>
-                <li>Simuler un parcours de commande utilisateur.</li>
-                <li>Ajouter la gestion du theme clair/sombre.</li>
-              </ul>
-            </article>
-            <aside class="card">
-              <h2>Stack & architecture</h2>
-              <ul>
-                <li>Framework: <strong>Flutter (Dart)</strong></li>
-                <li>State management: <strong>Provider</strong></li>
-                <li>UI: Material 3 + themes light/dark</li>
-                <li>Structure: <code>lib/ui</code> et <code>lib/models</code></li>
-                <li>Assets: pizzas et menus embarques dans l'application</li>
-              </ul>
-            </aside>
-          </div>
-
-          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
-            <article class="card">
-              <h2>Fonctionnalites principales</h2>
+            <article class="project-panel">
+              <h2>Réalisations</h2>
               <ul>
                 <li>Page d'accueil et navigation vers les sections.</li>
-                <li>Liste de pizzas et fiches de details produits.</li>
-                <li>Liste de boissons et details associes.</li>
+                <li>Liste de pizzas et fiches de détails produits.</li>
+                <li>Liste de boissons et détails associés.</li>
                 <li>Panier dynamique avec calcul du montant total.</li>
-                <li>Ecran commande et ecran profil.</li>
+                <li>Écran commande et écran profil.</li>
               </ul>
             </article>
-            <article class="card">
-              <h2>Competences mobilisees</h2>
-              <ul>
-                <li>Developpement mobile cross-platform avec Flutter.</li>
-                <li>Conception d'interface et d'experience utilisateur.</li>
-                <li>Gestion d'etat avec Provider.</li>
-                <li>Structuration d'un projet Dart modulaire.</li>
-                <li>Manipulation d'assets et logique de panier.</li>
-              </ul>
-            </article>
-          </div>
 
-          <article class="card" style="margin-top: 20px;">
-            <h2>Galerie du projet</h2>
-            <div class="grid cards projects-grid">
-              <div class="card project"><div class="thumb" role="img" aria-label="Pizza BBQ" style="background-image:url('pizzeria/assets/images/pizzas/pizza-bbq.jpg'); background-size:cover; background-position:center;"></div></div>
-              <div class="card project"><div class="thumb" role="img" aria-label="Pizza Merguez" style="background-image:url('pizzeria/assets/images/pizzas/pizza-merguez.png'); background-size:cover; background-position:center;"></div></div>
-              <div class="card project"><div class="thumb" role="img" aria-label="Pizza Vegetarienne" style="background-image:url('pizzeria/assets/images/pizzas/pizza-vegetable.jpg'); background-size:cover; background-position:center;"></div></div>
+            <article class="project-panel flutter-demo-card">
+              <h2>Démo interactive</h2>
+              <p class="flutter-demo-lead">
+                Version web de l'application Flutter : parcours catalogue, panier et commande directement dans le navigateur.
+              </p>
+              <div class="flutter-demo-wrap">
+                <iframe src="pizzeria/demo/index.html" title="Pizzeria — démo web Flutter" loading="lazy"></iframe>
+              </div>
+              <p class="hero-actions flutter-demo-actions">
+                <a class="btn btn-ghost" href="pizzeria/demo/index.html" target="_blank" rel="noreferrer noopener">Ouvrir en plein écran</a>
+              </p>
+            </article>
+
+            <article class="project-panel">
+              <h2>Galerie</h2>
+              <div class="project-gallery">
+                <img src="pizzeria/assets/images/pizzas/pizza-bbq.jpg" alt="Pizza BBQ" loading="lazy" />
+                <img src="pizzeria/assets/images/pizzas/pizza-merguez.png" alt="Pizza Merguez" loading="lazy" />
+                <img src="pizzeria/assets/images/pizzas/pizza-vegetable.jpg" alt="Pizza Végétarienne" loading="lazy" />
+              </div>
+            </article>
+
+            <div class="project-grid-2">
+              <article class="project-panel">
+                <h2>Compétences mobilisées</h2>
+                <ul>
+                  <li>Développement mobile cross-platform avec Flutter.</li>
+                  <li>Conception d'interface et d'expérience utilisateur.</li>
+                  <li>Gestion d'état avec Provider.</li>
+                  <li>Structuration d'un projet Dart modulaire.</li>
+                  <li>Manipulation d'assets et logique de panier.</li>
+                </ul>
+              </article>
+              <article class="project-panel">
+                <h2>Livrables & liens</h2>
+                <p>Démo web Flutter disponible depuis le portfolio.</p>
+                <p class="project-actions">
+                  <a href="pizzeria/demo/index.html" class="btn btn-primary" target="_blank" rel="noreferrer noopener">Essayer l'application</a>
+                </p>
+              </article>
             </div>
-          </article>
-
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container">
-        <p>© <span id="year"></span> Grinda Korto. Tous droits reserves.</p>
+        <p>© <span id="year"></span> Grinda Korto. Tous droits réservés.</p>
       </div>
     </footer>
     <script src="script.js"></script>

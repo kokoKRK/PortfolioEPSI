@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Projet – Fast Flash</title>
     <meta name="description" content="Fast Flash — projet personnel de vitrine e-commerce pour cocktails premium livrés à Montpellier." />
+        <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('gk-theme');
+          var dark = saved === 'dark' || (saved !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="project-themes.css" />
   </head>
@@ -13,58 +22,81 @@
       <div class="container header-inner">
         <a href="index.html#hero" class="brand" aria-label="Retour à l'accueil">GK</a>
         <nav class="nav" aria-label="Navigation">
+          <p class="deck-now">Lecture · <strong id="deck-now-label">Projet</strong></p>
+                    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Activer le mode sombre" title="Mode sombre">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M20 14.5A7.5 7.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" stroke-linejoin="round"/>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M17.2 6.8l1.6-1.6M5.2 18.8l1.6-1.6" stroke-linecap="round"/>
+            </svg>
+          </button>
           <a class="btn btn-ghost" href="index.html#projects">← Retour aux projets</a>
         </nav>
       </div>
+      <div class="deck-progress" aria-hidden="true"><span></span></div>
     </header>
 
     <main>
       <section class="section" id="project-detail">
         <div class="container">
-          <h1>Fast Flash</h1>
-          <p class="subtitle">
-            Projet <strong>personnel</strong> : site vitrine et e-commerce pour une marque fictive de cocktails premium
-            en bouteille, avec livraison rapide à Montpellier — catalogue dynamique, panier, offres et espace client.
-          </p>
+          <header class="project-hero" data-stagger>
+            <p class="eyebrow project-type"><span class="cue-mark" aria-hidden="true"></span>Projet personnel</p>
+            <h1>Fast Flash</h1>
+            <p class="subtitle">
+              Projet <strong>personnel</strong> : site vitrine et e-commerce pour une marque fictive de cocktails premium
+              en bouteille, avec livraison rapide à Montpellier — catalogue dynamique, panier, offres et espace client.
+            </p>
+            <ul class="project-meta">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>JSON</li>
+              <li>PHP</li>
+              <li>MySQL</li>
+              <li>SEO</li>
+            </ul>
+            <p class="project-actions">
+              <a class="btn btn-primary" href="siteFastFlash/index.html" target="_blank" rel="noreferrer noopener">Voir le site</a>
+            </p>
+          </header>
 
-          <p class="hero-actions project-demo-top">
-            <a class="btn btn-primary" href="siteFastFlash/index.html" target="_blank" rel="noreferrer noopener">Voir le site</a>
-          </p>
+          <figure class="project-cover" data-animate="mask">
+            <img src="assets/img/img_projets/fastflash.jpg" alt="Aperçu du projet Fast Flash" />
+            <figcaption>Page d'accueil Fast Flash — hero, histoire de marque et cocktails</figcaption>
+          </figure>
 
-          <div class="card" style="margin-bottom: 20px; overflow: hidden;">
-            <img src="assets/img/img_projets/fastflash.jpg" alt="Aperçu du projet Fast Flash" style="width:100%; max-height:420px; object-fit:cover; display:block;">
-          </div>
+          <div class="project-sections" data-stagger>
+            <div class="project-grid-2">
+              <article class="project-panel">
+                <h2>Contexte & objectifs</h2>
+                <p>
+                  Fast Flash est un projet personnel imaginé autour d'un concept de livraison de cocktails artisanaux
+                  en bouteille à Montpellier. L'idée : une expérience premium, rapide et accessible, pensée pour les
+                  étudiants et jeunes actifs.
+                </p>
+                <ul>
+                  <li>Créer une identité de marque cohérente (visuels IA, ton premium).</li>
+                  <li>Présenter un catalogue de cocktails avec fiches détaillées.</li>
+                  <li>Mettre en place un parcours d'achat (panier, offres, compte).</li>
+                  <li>Optimiser le référencement (meta, Open Graph, schema.org).</li>
+                </ul>
+              </article>
+              <aside class="project-panel">
+                <h2>Stack technique</h2>
+                <ul>
+                  <li>Front : <strong>HTML, CSS, JavaScript</strong></li>
+                  <li>Données catalogue : <strong>JSON</strong> (cocktails, commandes)</li>
+                  <li>API : <strong>PHP</strong> (auth JWT, utilisateurs, cocktails)</li>
+                  <li>Base : <strong>MySQL</strong> (schéma prévu)</li>
+                  <li>Modules JS : catalogue, panier, auth, offres</li>
+                </ul>
+              </aside>
+            </div>
 
-          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
-            <article class="card">
-              <h2>Contexte & objectifs</h2>
-              <p>
-                Fast Flash est un projet personnel imaginé autour d'un concept de livraison de cocktails artisanaux
-                en bouteille à Montpellier. L'idée : une expérience premium, rapide et accessible, pensée pour les
-                étudiants et jeunes actifs.
-              </p>
-              <ul>
-                <li>Créer une identité de marque cohérente (visuels IA, ton premium).</li>
-                <li>Présenter un catalogue de cocktails avec fiches détaillées.</li>
-                <li>Mettre en place un parcours d'achat (panier, offres, compte).</li>
-                <li>Optimiser le référencement (meta, Open Graph, schema.org).</li>
-              </ul>
-            </article>
-            <aside class="card">
-              <h2>Stack & architecture</h2>
-              <ul>
-                <li>Front : <strong>HTML, CSS, JavaScript</strong></li>
-                <li>Données catalogue : <strong>JSON</strong> (cocktails, commandes)</li>
-                <li>API : <strong>PHP</strong> (auth JWT, utilisateurs, cocktails)</li>
-                <li>Base : <strong>MySQL</strong> (schéma prévu)</li>
-                <li>Modules JS : catalogue, panier, auth, offres</li>
-              </ul>
-            </aside>
-          </div>
-
-          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
-            <article class="card">
-              <h2>Fonctionnalités principales</h2>
+            <article class="project-panel">
+              <h2>Réalisations</h2>
               <ul>
                 <li>Page d'accueil avec hero, histoire de marque et sections cocktails/offres.</li>
                 <li>Carrousel de cocktails chargé dynamiquement depuis JSON.</li>
@@ -74,16 +106,26 @@
                 <li>Footer structuré avec données locales (Montpellier, contact, Instagram).</li>
               </ul>
             </article>
-            <article class="card">
-              <h2>Compétences mobilisées</h2>
-              <ul>
-                <li>Intégration front responsive et animations CSS.</li>
-                <li>Manipulation DOM et logique JavaScript modulaire.</li>
-                <li>Consommation d'API REST et gestion d'état client (panier, session).</li>
-                <li>SEO technique (balises meta, Open Graph, données structurées).</li>
-                <li>Conception produit : branding, UX e-commerce et storytelling.</li>
-              </ul>
-            </article>
+
+            <div class="project-grid-2">
+              <article class="project-panel">
+                <h2>Compétences mobilisées</h2>
+                <ul>
+                  <li>Intégration front responsive et animations CSS.</li>
+                  <li>Manipulation DOM et logique JavaScript modulaire.</li>
+                  <li>Consommation d'API REST et gestion d'état client (panier, session).</li>
+                  <li>SEO technique (balises meta, Open Graph, données structurées).</li>
+                  <li>Conception produit : branding, UX e-commerce et storytelling.</li>
+                </ul>
+              </article>
+              <article class="project-panel">
+                <h2>Livrables & liens</h2>
+                <p>Site vitrine e-commerce consultable en local.</p>
+                <p class="project-actions">
+                  <a href="siteFastFlash/index.html" class="btn btn-primary" target="_blank" rel="noreferrer noopener">Voir le site</a>
+                </p>
+              </article>
+            </div>
           </div>
         </div>
       </section>

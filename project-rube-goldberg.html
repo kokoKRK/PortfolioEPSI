@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Projet – Machine Rube Goldberg</title>
     <meta name="description" content="Détails du projet Machine Rube Goldberg (jungle)." />
+        <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('gk-theme');
+          var dark = saved === 'dark' || (saved !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -12,6 +21,15 @@
       <div class="container header-inner">
         <a href="index.html#hero" class="brand" aria-label="Retour à l'accueil">GK</a>
         <nav class="nav" aria-label="Navigation">
+                    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Activer le mode sombre" title="Mode sombre">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M20 14.5A7.5 7.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" stroke-linejoin="round"/>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M17.2 6.8l1.6-1.6M5.2 18.8l1.6-1.6" stroke-linecap="round"/>
+            </svg>
+          </button>
           <a class="btn btn-ghost" href="index.html#projects">← Retour aux projets</a>
         </nav>
       </div>

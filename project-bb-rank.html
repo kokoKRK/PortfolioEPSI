@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Projet – BB-Rank (fin de BTS SIO)</title>
     <meta name="description" content="BB-Rank : application mobile et backend de gestion de matchs de basketball à Montpellier — projet de fin de BTS SIO, situations E5/E6." />
+        <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('gk-theme');
+          var dark = saved === 'dark' || (saved !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="project-themes.css" />
   </head>
@@ -13,73 +22,82 @@
       <div class="container header-inner">
         <a href="index.html#hero" class="brand" aria-label="Retour à l'accueil">GK</a>
         <nav class="nav" aria-label="Navigation">
+          <p class="deck-now">Lecture · <strong id="deck-now-label">Projet</strong></p>
+                    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Activer le mode sombre" title="Mode sombre">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M20 14.5A7.5 7.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" stroke-linejoin="round"/>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M17.2 6.8l1.6-1.6M5.2 18.8l1.6-1.6" stroke-linecap="round"/>
+            </svg>
+          </button>
           <a class="btn btn-ghost" href="index.html#bts-project">← Retour au projet BTS</a>
         </nav>
       </div>
+      <div class="deck-progress" aria-hidden="true"><span></span></div>
     </header>
 
     <main>
       <section class="section" id="project-detail">
         <div class="container">
-          <h1><span class="project-brand-accent">BB-Rank</span></h1>
-          <p class="subtitle">
-            Projet de fin de <strong>BTS SIO option SLAM</strong> (EPSI Montpellier, 2026) :
-            solution numérique pour organiser les matchs de basketball sur les city-stades de Montpellier.
-            Le projet est découpé en <strong>deux situations professionnelles</strong> — application mobile et backend.
-          </p>
-
-          <p class="hero-actions project-demo-top">
-            <a class="btn btn-primary" href="bb-rank/demo/index.html" target="_blank" rel="noreferrer noopener">Essayer la démo web</a>
-            <a class="btn btn-primary" href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_1.pdf" target="_blank" rel="noreferrer noopener">Situation 1 (PDF)</a>
-            <a class="btn btn-primary" href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_2.pdf" target="_blank" rel="noreferrer noopener">Situation 2 (PDF)</a>
-          </p>
-
-          <article class="card flutter-demo-card" style="margin-bottom: 20px;">
-            <h2>Démo interactive</h2>
-            <p class="flutter-demo-lead">
-              Application Flutter compilée pour le navigateur, connectée à Supabase.
-              Le chargement peut prendre quelques secondes au premier lancement.
+          <header class="project-hero" data-stagger>
+            <p class="eyebrow project-type"><span class="cue-mark" aria-hidden="true"></span>Projet BTS · 2026</p>
+            <h1><span class="project-brand-accent">BB-Rank</span></h1>
+            <p class="subtitle">
+              Projet de fin de <strong>BTS SIO option SLAM</strong> (EPSI Montpellier, 2026) :
+              solution numérique pour organiser les matchs de basketball sur les city-stades de Montpellier.
+              Le projet est découpé en <strong>deux situations professionnelles</strong> — application mobile et backend.
             </p>
-            <div class="flutter-demo-wrap">
-              <iframe src="bb-rank/demo/index.html" title="BB-Rank — démo web Flutter" loading="lazy" allow="geolocation; clipboard-write"></iframe>
+            <ul class="project-meta">
+              <li>Flutter</li>
+              <li>Dart</li>
+              <li>Riverpod</li>
+              <li>Go Router</li>
+              <li>Supabase</li>
+              <li>PostgreSQL</li>
+            </ul>
+            <p class="project-actions">
+              <a class="btn btn-primary" href="bb-rank/demo/index.html" target="_blank" rel="noreferrer noopener">Essayer la démo web</a>
+              <a class="btn btn-ghost" href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_1.pdf" target="_blank" rel="noreferrer noopener">Situation 1 (PDF)</a>
+              <a class="btn btn-ghost" href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_2.pdf" target="_blank" rel="noreferrer noopener">Situation 2 (PDF)</a>
+            </p>
+          </header>
+
+          <figure class="project-cover" data-animate="mask">
+            <img src="assets/img/bbrank/maquettes.png" alt="Maquettes BB-Rank — interfaces mobile" />
+            <figcaption>Maquettes BB-Rank — accueil, terrain, jeu et profil joueur</figcaption>
+          </figure>
+
+          <div class="project-sections" data-stagger>
+            <div class="project-grid-2">
+              <article class="project-panel">
+                <h2>Contexte & objectifs</h2>
+                <p>
+                  Face à la baisse de la pratique sportive chez les jeunes, la <strong>mairie de Montpellier</strong> souhaite
+                  encourager le basketball sur les terrains publics (Montcalm, complexe Jean Scialo, etc.).
+                  L'organisation des matchs reste informelle : files d'attente floues, attente longue, peu de visibilité
+                  sur l'affluence des terrains.
+                </p>
+                <p>
+                  <strong>BB-Rank</strong> répond à ce besoin en digitalisant la mise en relation des joueurs,
+                  la gestion des files d'attente et le suivi des performances.
+                </p>
+              </article>
+              <aside class="project-panel">
+                <h2>Stack technique</h2>
+                <ul>
+                  <li>Mobile : <strong>Flutter</strong> / <strong>Dart</strong>, Riverpod, Go Router</li>
+                  <li>Backend : <strong>Supabase</strong> (PostgreSQL, Auth, RPC)</li>
+                  <li>Géolocalisation, gestion d'équipes et de matchs</li>
+                  <li>Classements joueurs et statistiques</li>
+                </ul>
+              </aside>
             </div>
-            <p class="hero-actions flutter-demo-actions">
-              <a class="btn btn-ghost" href="bb-rank/demo/index.html" target="_blank" rel="noreferrer noopener">Ouvrir en plein écran</a>
-            </p>
-          </article>
 
-          <div class="card" style="margin-bottom: 20px; overflow: hidden;">
-            <img src="assets/img/bbrank/maquettes.png" alt="Maquettes BB-Rank — interfaces mobile" style="width:100%; display:block;">
-          </div>
-
-          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
-            <article class="card">
-              <h2>Contexte</h2>
-              <p>
-                Face à la baisse de la pratique sportive chez les jeunes, la <strong>mairie de Montpellier</strong> souhaite
-                encourager le basketball sur les terrains publics (Montcalm, complexe Jean Scialo, etc.).
-                L'organisation des matchs reste informelle : files d'attente floues, attente longue, peu de visibilité
-                sur l'affluence des terrains.
-              </p>
-              <p>
-                <strong>BB-Rank</strong> répond à ce besoin en digitalisant la mise en relation des joueurs,
-                la gestion des files d'attente et le suivi des performances.
-              </p>
-            </article>
-            <aside class="card">
-              <h2>Stack technique</h2>
-              <ul>
-                <li>Mobile : <strong>Flutter</strong> / <strong>Dart</strong>, Riverpod, Go Router</li>
-                <li>Backend : <strong>Supabase</strong> (PostgreSQL, Auth, RPC)</li>
-                <li>Géolocalisation, gestion d'équipes et de matchs</li>
-                <li>Classements joueurs et statistiques</li>
-              </ul>
-            </aside>
-          </div>
-
-          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
-            <article class="card">
-              <h2>Situation 1 — Application mobile</h2>
+            <article class="project-panel">
+              <h2>Réalisations</h2>
+              <h3>Situation 1 — Application mobile</h3>
               <p>Conception et développement de l'application Flutter côté joueur.</p>
               <ul>
                 <li>Inscription, connexion et profil joueur.</li>
@@ -88,9 +106,7 @@
                 <li>Match en cours, validation des scores, classements ville/terrain.</li>
                 <li>Interfaces : accueil, terrain, jeu, profil.</li>
               </ul>
-            </article>
-            <article class="card">
-              <h2>Situation 2 — Backend web</h2>
+              <h3>Situation 2 — Backend web</h3>
               <p>Backend et exploitation des données pour fiabiliser les matchs et les statistiques.</p>
               <ul>
                 <li>Gestion des matchs et validation des résultats.</li>
@@ -100,45 +116,60 @@
                 <li>Sécurisation des échanges et cohérence des scores.</li>
               </ul>
             </article>
-          </div>
 
-          <article class="card" style="margin-top: 20px; overflow: hidden;">
-            <h2>Architecture backend</h2>
-            <img src="assets/img/bbrank/architecture-backend.png" alt="Schéma d'architecture API backend BB-Rank" style="width:100%; display:block; border-radius: 10px;">
-          </article>
-
-          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
-            <article class="card">
-              <h2>Compétences mobilisées</h2>
-              <ul>
-                <li>Analyse des besoins et modélisation (MCD, UML).</li>
-                <li>Développement mobile Flutter (UI, état, navigation).</li>
-                <li>Intégration Supabase (auth, données, RPC).</li>
-                <li>Conception d'API et gestion PostgreSQL.</li>
-                <li>Tests, documentation et présentation des situations E5/E6.</li>
-              </ul>
+            <article class="project-panel flutter-demo-card">
+              <h2>Démo interactive</h2>
+              <p class="flutter-demo-lead">
+                Application Flutter compilée pour le navigateur, connectée à Supabase.
+                Le chargement peut prendre quelques secondes au premier lancement.
+              </p>
+              <div class="flutter-demo-wrap">
+                <iframe src="bb-rank/demo/index.html" title="BB-Rank — démo web Flutter" loading="lazy" allow="geolocation; clipboard-write"></iframe>
+              </div>
+              <p class="hero-actions flutter-demo-actions">
+                <a class="btn btn-ghost" href="bb-rank/demo/index.html" target="_blank" rel="noreferrer noopener">Ouvrir en plein écran</a>
+              </p>
             </article>
-            <article class="card">
-              <h2>Dossier professionnel</h2>
-              <p>Documents de situation et illustrations du projet.</p>
-              <div class="hero-actions" style="margin-top: 0; flex-wrap: wrap;">
-                <a href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_1.pdf" class="btn btn-primary" target="_blank" rel="noreferrer noopener">Situation 1</a>
-                <a href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_2.pdf" class="btn btn-primary" target="_blank" rel="noreferrer noopener">Situation 2</a>
+
+            <article class="project-panel">
+              <h2>Architecture backend</h2>
+              <img src="assets/img/bbrank/architecture-backend.png" alt="Schéma d'architecture API backend BB-Rank" loading="lazy" />
+            </article>
+
+            <article class="project-panel">
+              <h2>Captures — situation 2</h2>
+              <div class="project-gallery">
+                <img src="SITUATION/img_situation/situation2/image1.png" alt="Capture BB-Rank situation 2" loading="lazy" />
+                <img src="SITUATION/img_situation/situation2/image2.png" alt="Capture BB-Rank situation 2" loading="lazy" />
+                <img src="SITUATION/img_situation/situation2/image3.png" alt="Capture BB-Rank situation 2" loading="lazy" />
+                <img src="SITUATION/img_situation/situation2/image4.png" alt="Capture BB-Rank situation 2" loading="lazy" />
+                <img src="SITUATION/img_situation/situation2/image5.png" alt="Capture BB-Rank situation 2" loading="lazy" />
+                <img src="SITUATION/img_situation/situation2/image6.png" alt="Capture BB-Rank situation 2" loading="lazy" />
               </div>
             </article>
-          </div>
 
-          <article class="card" style="margin-top: 20px;">
-            <h2>Captures — situation 2</h2>
-            <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 10px;">
-              <img src="SITUATION/img_situation/situation2/image1.png" alt="Capture BB-Rank situation 2" style="width:100%; height:160px; object-fit:cover; border-radius:10px;" loading="lazy" />
-              <img src="SITUATION/img_situation/situation2/image2.png" alt="Capture BB-Rank situation 2" style="width:100%; height:160px; object-fit:cover; border-radius:10px;" loading="lazy" />
-              <img src="SITUATION/img_situation/situation2/image3.png" alt="Capture BB-Rank situation 2" style="width:100%; height:160px; object-fit:cover; border-radius:10px;" loading="lazy" />
-              <img src="SITUATION/img_situation/situation2/image4.png" alt="Capture BB-Rank situation 2" style="width:100%; height:160px; object-fit:cover; border-radius:10px;" loading="lazy" />
-              <img src="SITUATION/img_situation/situation2/image5.png" alt="Capture BB-Rank situation 2" style="width:100%; height:160px; object-fit:cover; border-radius:10px;" loading="lazy" />
-              <img src="SITUATION/img_situation/situation2/image6.png" alt="Capture BB-Rank situation 2" style="width:100%; height:160px; object-fit:cover; border-radius:10px;" loading="lazy" />
+            <div class="project-grid-2">
+              <article class="project-panel">
+                <h2>Compétences mobilisées</h2>
+                <ul>
+                  <li>Analyse des besoins et modélisation (MCD, UML).</li>
+                  <li>Développement mobile Flutter (UI, état, navigation).</li>
+                  <li>Intégration Supabase (auth, données, RPC).</li>
+                  <li>Conception d'API et gestion PostgreSQL.</li>
+                  <li>Tests, documentation et présentation des situations E5/E6.</li>
+                </ul>
+              </article>
+              <article class="project-panel">
+                <h2>Livrables & liens</h2>
+                <p>Dossier professionnel : documents de situation et démo web du projet.</p>
+                <p class="project-actions">
+                  <a href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_1.pdf" class="btn btn-primary" target="_blank" rel="noreferrer noopener">Situation 1 (PDF)</a>
+                  <a href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_2.pdf" class="btn btn-primary" target="_blank" rel="noreferrer noopener">Situation 2 (PDF)</a>
+                  <a href="bb-rank/demo/index.html" class="btn btn-ghost" target="_blank" rel="noreferrer noopener">Démo web</a>
+                </p>
+              </article>
             </div>
-          </article>
+          </div>
         </div>
       </section>
     </main>

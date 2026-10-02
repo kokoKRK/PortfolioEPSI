@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Projet – Site de galerie d'art Oeil 2 Mata</title>
     <meta name="description" content="Projet client : site de galerie d'art Oeil 2 Mata — refonte, galerie dynamique, filtres et section cinéma." />
+        <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('gk-theme');
+          var dark = saved === 'dark' || (saved !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="project-themes.css" />
   </head>
@@ -13,59 +22,79 @@
       <div class="container header-inner">
         <a href="index.html#hero" class="brand" aria-label="Retour à l'accueil">GK</a>
         <nav class="nav" aria-label="Navigation">
+          <p class="deck-now">Lecture · <strong id="deck-now-label">Projet</strong></p>
+                    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Activer le mode sombre" title="Mode sombre">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M20 14.5A7.5 7.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" stroke-linejoin="round"/>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M17.2 6.8l1.6-1.6M5.2 18.8l1.6-1.6" stroke-linecap="round"/>
+            </svg>
+          </button>
           <a class="btn btn-ghost" href="index.html#projects">← Retour aux projets</a>
         </nav>
       </div>
+      <div class="deck-progress" aria-hidden="true"><span></span></div>
     </header>
 
     <main>
       <section class="section" id="project-detail">
         <div class="container">
-          <h1>Site de galerie d'art Oeil 2 Mata</h1>
-          <p class="subtitle">
-            Projet <strong>pour un client</strong> : refonte complète du site de l'artiste peintre <strong>Oeil 2 Mata</strong>,
-            avec galerie interactive, fiches œuvre, section cinéma et pages de présentation.
-          </p>
+          <header class="project-hero" data-stagger>
+            <p class="eyebrow project-type"><span class="cue-mark" aria-hidden="true"></span>Projet client</p>
+            <h1>Oeil 2 Mata — Galerie d'art</h1>
+            <p class="subtitle">
+              Projet <strong>pour un client</strong> : refonte complète du site de l'artiste peintre <strong>Oeil 2 Mata</strong>,
+              avec galerie interactive, fiches œuvre, section cinéma et pages de présentation.
+            </p>
+            <ul class="project-meta">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>JSON</li>
+            </ul>
+            <p class="project-actions">
+              <a class="btn btn-primary" href="siteMamanExpo/index.html" target="_blank" rel="noreferrer noopener">Voir le site</a>
+              <a class="btn btn-ghost" href="siteMamanExpo/galerie.html" target="_blank" rel="noreferrer noopener">Voir la galerie</a>
+            </p>
+          </header>
 
-          <p class="hero-actions project-demo-top">
-            <a class="btn btn-primary" href="siteMamanExpo/index.html" target="_blank" rel="noreferrer noopener">Voir le site</a>
-            <a class="btn btn-ghost" href="siteMamanExpo/galerie.html" target="_blank" rel="noreferrer noopener">Voir la galerie</a>
-          </p>
+          <figure class="project-cover" data-animate="mask">
+            <img src="siteMamanExpo/imgSiteMaman/grandTableauPanthere.jpg" alt="Aperçu du projet Oeil 2 Mata — grand tableau panthère" />
+            <figcaption>Œuvre mise en avant sur le site Oeil 2 Mata</figcaption>
+          </figure>
 
-          <div class="card" style="margin-bottom: 20px; overflow: hidden;">
-            <img src="siteMamanExpo/imgSiteMaman/grandTableauPanthere.jpg" alt="Aperçu du projet Oeil 2 Mata" style="width:100%; height:auto; display:block;">
-          </div>
+          <div class="project-sections" data-stagger>
+            <div class="project-grid-2">
+              <article class="project-panel">
+                <h2>Contexte & objectifs</h2>
+                <p>
+                  Ce projet a été réalisé <strong>pour un client</strong>, une artiste peintre (marque <strong>Oeil 2 Mata</strong>).
+                  L'objectif était de créer une présence en ligne élégante : mettre en valeur les œuvres, faciliter la navigation
+                  et proposer une expérience immersive fidèle à l'univers de l'artiste.
+                </p>
+                <ul>
+                  <li>Mettre en valeur les œuvres avec un rendu moderne et immersif.</li>
+                  <li>Permettre la recherche et le filtrage des tableaux.</li>
+                  <li>Ajouter une section cinéma en complément de la galerie.</li>
+                  <li>Structurer les données pour simplifier les évolutions du contenu.</li>
+                </ul>
+              </article>
+              <aside class="project-panel">
+                <h2>Stack technique</h2>
+                <ul>
+                  <li>Front : <strong>HTML, CSS, JavaScript</strong></li>
+                  <li>Données : <code>data/oeuvres.json</code>, <code>data/films.json</code></li>
+                  <li>Pages : accueil, galerie, œuvre, cinéma, à propos, contact</li>
+                  <li>Scripts : chargement dynamique via <code>fetch</code></li>
+                  <li>Refonte finalisée : structure modernisée et parcours utilisateur clarifié</li>
+                </ul>
+              </aside>
+            </div>
 
-          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
-            <article class="card">
-              <h2>Contexte & objectifs</h2>
-              <p>
-                Ce projet a été réalisé <strong>pour un client</strong>, une artiste peintre (marque <strong>Oeil 2 Mata</strong>).
-                L'objectif était de créer une présence en ligne élégante : mettre en valeur les œuvres, faciliter la navigation
-                et proposer une expérience immersive fidèle à l'univers de l'artiste.
-              </p>
-              <ul>
-                <li>Mettre en valeur les œuvres avec un rendu moderne et immersif.</li>
-                <li>Permettre la recherche et le filtrage des tableaux.</li>
-                <li>Ajouter une section cinéma en complément de la galerie.</li>
-                <li>Structurer les données pour simplifier les évolutions du contenu.</li>
-              </ul>
-            </article>
-            <aside class="card">
-              <h2>Stack & architecture</h2>
-              <ul>
-                <li>Front : <strong>HTML, CSS, JavaScript</strong></li>
-                <li>Données : <code>data/oeuvres.json</code>, <code>data/films.json</code></li>
-                <li>Pages : accueil, galerie, œuvre, cinéma, à propos, contact</li>
-                <li>Scripts : chargement dynamique via <code>fetch</code></li>
-                <li>Refonte finalisée : structure modernisée et parcours utilisateur clarifié</li>
-              </ul>
-            </aside>
-          </div>
-
-          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
-            <article class="card">
-              <h2>Fonctionnalités</h2>
+            <article class="project-panel">
+              <h2>Réalisations</h2>
               <ul>
                 <li>Galerie dynamique générée depuis JSON.</li>
                 <li>Recherche texte + filtres (taille et style).</li>
@@ -74,16 +103,27 @@
                 <li>Formulaire de contact avec pré-remplissage selon le contexte.</li>
               </ul>
             </article>
-            <article class="card">
-              <h2>Compétences mobilisées</h2>
-              <ul>
-                <li>Conception front-end modulaire en HTML/CSS/JS.</li>
-                <li>Structuration et exploitation de données JSON.</li>
-                <li>Logique de filtres et recherche côté client.</li>
-                <li>UX de navigation entre liste et fiche détail.</li>
-                <li>Refonte complète en lien avec les besoins du client.</li>
-              </ul>
-            </article>
+
+            <div class="project-grid-2">
+              <article class="project-panel">
+                <h2>Compétences mobilisées</h2>
+                <ul>
+                  <li>Conception front-end modulaire en HTML/CSS/JS.</li>
+                  <li>Structuration et exploitation de données JSON.</li>
+                  <li>Logique de filtres et recherche côté client.</li>
+                  <li>UX de navigation entre liste et fiche détail.</li>
+                  <li>Refonte complète en lien avec les besoins du client.</li>
+                </ul>
+              </article>
+              <article class="project-panel">
+                <h2>Livrables & liens</h2>
+                <p>Site de galerie complet consultable en local : accueil, galerie filtrable et section cinéma.</p>
+                <p class="project-actions">
+                  <a href="siteMamanExpo/index.html" class="btn btn-primary" target="_blank" rel="noreferrer noopener">Voir le site</a>
+                  <a href="siteMamanExpo/galerie.html" class="btn btn-ghost" target="_blank" rel="noreferrer noopener">Voir la galerie</a>
+                </p>
+              </article>
+            </div>
           </div>
         </div>
       </section>

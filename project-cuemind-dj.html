@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Projet – CueMind DJ</title>
     <meta name="description" content="CueMind DJ — application web de préparation DJ avec IA : bibliothèque, sets, B2B assisté et playlists intelligentes." />
+        <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('gk-theme');
+          var dark = saved === 'dark' || (saved !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="project-themes.css" />
   </head>
@@ -13,62 +22,106 @@
       <div class="container header-inner">
         <a href="index.html#hero" class="brand" aria-label="Retour à l'accueil">GK</a>
         <nav class="nav" aria-label="Navigation">
+          <p class="deck-now">Lecture · <strong id="deck-now-label">Projet</strong></p>
+                    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Activer le mode sombre" title="Mode sombre">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M20 14.5A7.5 7.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" stroke-linejoin="round"/>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M17.2 6.8l1.6-1.6M5.2 18.8l1.6-1.6" stroke-linecap="round"/>
+            </svg>
+          </button>
           <a class="btn btn-ghost" href="index.html#current">← Retour aux projets en cours</a>
         </nav>
       </div>
+      <div class="deck-progress" aria-hidden="true"><span></span></div>
     </header>
 
     <main>
       <section class="section" id="project-detail">
         <div class="container">
-          <p class="project-status-badge">En cours de développement</p>
-          <h1><span class="cuemind-brand-accent">CueMind</span> DJ</h1>
-          <p class="subtitle">
-            Application web pour DJs : bibliothèque musicale, génération de sets par IA, mode back-to-back (B2B)
-            assisté, playlists par style et préparation de transitions intelligentes.
-          </p>
+          <header class="project-hero" data-stagger>
+            <p class="eyebrow project-type"><span class="cue-mark" aria-hidden="true"></span>En cours</p>
+            <h1><span class="cuemind-brand-accent">CueMind</span> DJ</h1>
+            <p class="subtitle">
+              Application web pour DJs : bibliothèque musicale, génération de sets par IA, mode back-to-back (B2B)
+              assisté, playlists par style et préparation de transitions intelligentes.
+            </p>
+            <ul class="project-meta">
+              <li>Next.js</li>
+              <li>TypeScript</li>
+              <li>React</li>
+              <li>Tailwind CSS</li>
+              <li>IA</li>
+              <li>Analyse audio</li>
+            </ul>
+          </header>
 
-          <figure class="mockup-frame mockup-frame-featured project-demo-top">
+          <figure class="project-cover" data-animate="mask">
             <img src="assets/img/cuemind/maquette_visuel.png" alt="Maquette principale CueMind DJ — decks, mixer, storyboard IA et génération de sets" loading="lazy" />
             <figcaption>Interface principale — bibliothèque, decks A/B, mixer, storyboard IA et génération de sets</figcaption>
           </figure>
 
-          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
-            <article class="card">
-              <h2>Vision du projet</h2>
-              <p>
-                CueMind DJ aide les DJs à préparer leurs sets plus vite : import de morceaux, analyse BPM/clé/style,
-                génération de playlists et suggestions de enchaînements avec explications (jeux de mots, hooks communs, etc.).
-              </p>
+          <div class="project-sections" data-stagger>
+            <div class="project-grid-2">
+              <article class="project-panel">
+                <h2>Contexte & objectifs</h2>
+                <p>
+                  CueMind DJ aide les DJs à préparer leurs sets plus vite : import de morceaux, analyse BPM/clé/style,
+                  génération de playlists et suggestions d'enchaînements avec explications (jeux de mots, hooks communs, etc.).
+                </p>
+                <ul>
+                  <li>Importer et organiser une bibliothèque locale (MP3/WAV).</li>
+                  <li>Générer des sets via prompt IA avec filtres (BPM, style, durée).</li>
+                  <li>Mode B2B : l'IA propose 3 morceaux distincts avec note de transition.</li>
+                  <li>Playlists par style, tri Serato-like (clé, BPM).</li>
+                  <li>Profil DJ type portfolio (roadmap) : bio, remix, contact.</li>
+                </ul>
+              </article>
+              <aside class="project-panel">
+                <h2>Stack technique</h2>
+                <ul>
+                  <li><strong>Next.js</strong> (App Router) + TypeScript</li>
+                  <li><strong>React</strong>, Tailwind CSS, composants UI</li>
+                  <li>API Routes : upload, sets, B2B, classification IA</li>
+                  <li>Analyse audio & métadonnées (BPM, style, clé)</li>
+                  <li>Intégrations prévues : Spotify / Deezer</li>
+                </ul>
+              </aside>
+            </div>
+
+            <article class="project-panel">
+              <h2>Réalisations</h2>
+              <p>Avancement actuel du développement.</p>
               <ul>
-                <li>Importer et organiser une bibliothèque locale (MP3/WAV).</li>
-                <li>Générer des sets via prompt IA avec filtres (BPM, style, durée).</li>
-                <li>Mode B2B : l'IA propose 3 morceaux distincts avec note de transition.</li>
-                <li>Playlists par style, tri Serato-like (clé, BPM).</li>
-                <li>Profil DJ type portfolio (roadmap) : bio, remix, contact.</li>
+                <li>Parcours import, bibliothèque, playlists par style et découverte en ligne.</li>
+                <li>Générateur de set IA avec filtres et résultats structurés.</li>
+                <li>Panel B2B avec suggestions et notes de transition contextualisées.</li>
+                <li>Prochaines étapes : profil DJ public, liens playlists externes, tri avancé type Serato.</li>
               </ul>
             </article>
-            <aside class="card">
-              <h2>Stack & architecture</h2>
-              <ul>
-                <li><strong>Next.js</strong> (App Router) + TypeScript</li>
-                <li><strong>React</strong>, Tailwind CSS, composants UI</li>
-                <li>API Routes : upload, sets, B2B, classification IA</li>
-                <li>Analyse audio & métadonnées (BPM, style, clé)</li>
-                <li>Intégrations prévues : Spotify / Deezer</li>
-              </ul>
-            </aside>
-          </div>
 
-          <article class="card" style="margin-top: 24px;">
-            <h2>Avancement actuel</h2>
-            <ul>
-              <li>Parcours import, bibliothèque, playlists par style et découverte en ligne.</li>
-              <li>Générateur de set IA avec filtres et résultats structurés.</li>
-              <li>Panel B2B avec suggestions et notes de transition contextualisées.</li>
-              <li>Prochaines étapes : profil DJ public, liens playlists externes, tri avancé type Serato.</li>
-            </ul>
-          </article>
+            <div class="project-grid-2">
+              <article class="project-panel">
+                <h2>Compétences mobilisées</h2>
+                <ul>
+                  <li>Développement front-end Next.js / React / TypeScript.</li>
+                  <li>Conception d'interfaces métier (bibliothèque, decks, mixer).</li>
+                  <li>API Routes et orchestration de services IA.</li>
+                  <li>Analyse audio et structuration de métadonnées.</li>
+                  <li>UX de préparation de set (filtres, suggestions, explications).</li>
+                </ul>
+              </article>
+              <article class="project-panel">
+                <h2>Livrables & liens</h2>
+                <p>Projet en cours — maquettes et parcours principaux déjà en place.</p>
+                <p class="project-actions">
+                  <a href="index.html#current" class="btn btn-ghost">Retour aux projets en cours</a>
+                </p>
+              </article>
+            </div>
+          </div>
         </div>
       </section>
     </main>

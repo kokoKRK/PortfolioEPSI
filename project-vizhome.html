@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Projet – VizHome / ArchiVizAI</title>
     <meta name="description" content="VizHome, projet de groupe BTS SIO : rendus architecturaux par IA, aujourd'hui poursuivi sous ArchiVizAI par le chef d'équipe." />
+        <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('gk-theme');
+          var dark = saved === 'dark' || (saved !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="project-themes.css" />
   </head>
@@ -13,194 +22,115 @@
       <div class="container header-inner">
         <a href="index.html#hero" class="brand" aria-label="Retour à l'accueil">GK</a>
         <nav class="nav" aria-label="Navigation">
+          <p class="deck-now">Lecture · <strong id="deck-now-label">Projet</strong></p>
+                    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Activer le mode sombre" title="Mode sombre">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M20 14.5A7.5 7.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" stroke-linejoin="round"/>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M17.2 6.8l1.6-1.6M5.2 18.8l1.6-1.6" stroke-linecap="round"/>
+            </svg>
+          </button>
           <a class="btn btn-ghost" href="index.html#projects">← Retour aux projets</a>
         </nav>
       </div>
+      <div class="deck-progress" aria-hidden="true"><span></span></div>
     </header>
 
     <main>
       <section class="section" id="project-detail">
         <div class="container">
-          <h1>VizHome → ArchiVizAI</h1>
-          <p class="subtitle">Rendus architecturaux photoréalistes par intelligence artificielle.</p>
-
-          <p class="hero-actions project-demo-top">
-            <a class="btn btn-primary" href="https://www.archivizai.com/" target="_blank" rel="noreferrer noopener">Visiter ArchiVizAI</a>
-          </p>
-
-          <article class="card" style="margin-bottom: 24px; border-left: 4px solid var(--accent);">
-            <h2>Évolution du projet</h2>
-            <p>
-              <strong>VizHome</strong> était notre projet de groupe en BTS SIO : une application d'IA pour générer
-              des visualisations de maisons et d'intérieurs à partir de photos. Le projet a depuis été
-              <strong>repris et développé par le chef de notre groupe</strong>, qui l'a fait évoluer sous la marque
-              <strong><a href="https://www.archivizai.com/" target="_blank" rel="noreferrer noopener">ArchiVizAI</a></strong>.
+          <header class="project-hero" data-stagger>
+            <p class="eyebrow project-type"><span class="cue-mark" aria-hidden="true"></span>Formation · 2024–2026</p>
+            <h1>VizHome → ArchiVizAI</h1>
+            <p class="subtitle">
+              Rendus architecturaux photoréalistes par intelligence artificielle.
+              Projet de groupe en <strong>BTS SIO</strong>, repris et poursuivi par le chef d'équipe sous la marque <strong>ArchiVizAI</strong>.
             </p>
-            <p>
-              ArchiVizAI propose aujourd'hui des <strong>rendus architecturaux photoréalistes par IA</strong>,
-              orientés vers les professionnels de l'architecture et de l'immobilier. J'ai participé à la phase
-              initiale VizHome (conception, développement, travail en équipe) ; la suite produit est portée par le chef de projet.
+            <ul class="project-meta">
+              <li>React</li>
+              <li>Python</li>
+              <li>API REST</li>
+              <li>TensorFlow</li>
+              <li>OpenCV</li>
+              <li>IA générative</li>
+            </ul>
+            <p class="project-actions">
+              <a class="btn btn-primary" href="https://www.archivizai.com/" target="_blank" rel="noreferrer noopener">Visiter ArchiVizAI</a>
             </p>
-          </article>
+          </header>
 
-          <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 30px;">
-            <article class="card">
-              <h2>Synthèse (phase VizHome)</h2>
+          <figure class="project-cover" data-animate="mask">
+            <img src="assets/img/img_projets/vizhome.jpg" alt="ArchiVizAI — ex VizHome, rendus architecturaux par IA" />
+            <figcaption>ArchiVizAI (ex VizHome) — rendus architecturaux photoréalistes par IA</figcaption>
+          </figure>
+
+          <div class="project-sections" data-stagger>
+            <div class="project-grid-2">
+              <article class="project-panel">
+                <h2>Contexte & objectifs</h2>
+                <p>
+                  <strong>VizHome</strong> était notre projet de groupe en BTS SIO : une application d'IA pour générer
+                  des visualisations de maisons et d'intérieurs à partir de photos. Le projet a depuis été
+                  <strong>repris et développé par le chef de notre groupe</strong>, qui l'a fait évoluer sous la marque
+                  <strong><a href="https://www.archivizai.com/" target="_blank" rel="noreferrer noopener">ArchiVizAI</a></strong>.
+                </p>
+                <p>
+                  ArchiVizAI propose aujourd'hui des <strong>rendus architecturaux photoréalistes par IA</strong>,
+                  orientés vers les professionnels de l'architecture et de l'immobilier. J'ai participé à la phase
+                  initiale VizHome (conception, développement, travail en équipe) ; la suite produit est portée par le chef de projet.
+                </p>
+              </article>
+              <aside class="project-panel">
+                <h2>Stack technique</h2>
+                <ul>
+                  <li>Frontend : <strong>React</strong> (interface utilisateur)</li>
+                  <li>Backend : <strong>Python</strong>, API REST</li>
+                  <li>Modèles IA : <strong>TensorFlow</strong></li>
+                  <li>Traitement d'images : <strong>OpenCV</strong></li>
+                  <li><a href="https://www.archivizai.com/" target="_blank" rel="noreferrer noopener">ArchiVizAI (site actuel)</a></li>
+                </ul>
+              </aside>
+            </div>
+
+            <article class="project-panel">
+              <h2>Réalisations</h2>
               <p>
-                Pipeline d'intelligence artificielle pour générer des maisons de rêve à partir de photos.
+                Phase VizHome : pipeline d'intelligence artificielle pour générer des maisons de rêve à partir de photos.
                 L'application utilisait des modèles IA pour styliser et recomposer des intérieurs selon les
                 préférences de l'utilisateur, avec des visualisations réalistes et personnalisées.
               </p>
-            </article>
-            <aside class="card">
-              <h2>Stack & Liens</h2>
               <ul>
-                <li>Frontend React, API Python, modèles IA</li>
-                <li><a href="https://www.archivizai.com/" target="_blank" rel="noreferrer noopener">ArchiVizAI (site actuel)</a></li>
+                <li>Prototypage produit et UX autour de l'IA générative.</li>
+                <li>Cadrage de projet et travail en équipe.</li>
+                <li>Intégration web et présentation de démos.</li>
               </ul>
-            </aside>
+            </article>
+
+            <div class="project-grid-2">
+              <article class="project-panel">
+                <h2>Compétences mobilisées</h2>
+                <ul>
+                  <li>Machine learning et modèles IA (en apprentissage).</li>
+                  <li>Traitement d'images.</li>
+                  <li>Développement full-stack : React, Python, API REST.</li>
+                  <li>Prototypage produit et UX autour de l'IA générative.</li>
+                  <li>Travail en équipe et cadrage de projet.</li>
+                </ul>
+              </article>
+              <article class="project-panel">
+                <h2>Livrables & liens</h2>
+                <p>
+                  Le projet est aujourd'hui poursuivi par le chef d'équipe sous la marque
+                  <a href="https://www.archivizai.com/" target="_blank" rel="noreferrer noopener">ArchiVizAI</a>.
+                </p>
+                <p class="project-actions">
+                  <a href="https://www.archivizai.com/" class="btn btn-primary" target="_blank" rel="noreferrer noopener">Visiter ArchiVizAI</a>
+                </p>
+              </article>
+            </div>
           </div>
-
-          <!-- Logiciels & Technologies -->
-          <section class="section alt" style="margin-top: 40px;">
-            <div class="container">
-              <h2>Logiciels & Technologies utilisés</h2>
-              <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-                <article class="card tool">
-                  <div class="icon" aria-hidden="true">
-                    <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="React">
-                      <title>React</title>
-                      <defs>
-                        <linearGradient id="react-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stop-color="#61dafb"/>
-                          <stop offset="100%" stop-color="#21d4fd"/>
-                        </linearGradient>
-                      </defs>
-                      <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#react-grad)"/>
-                      <circle cx="24" cy="20" r="3" fill="white" opacity="0.9"/>
-                      <circle cx="18" cy="28" r="2" fill="white" opacity="0.8"/>
-                      <circle cx="30" cy="28" r="2" fill="white" opacity="0.8"/>
-                    </svg>
-                  </div>
-                  <h3>React</h3>
-                  <p>Interface utilisateur</p>
-                </article>
-                <article class="card tool">
-                  <div class="icon" aria-hidden="true">
-                    <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="Python">
-                      <title>Python</title>
-                      <defs>
-                        <linearGradient id="python-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stop-color="#3776ab"/>
-                          <stop offset="100%" stop-color="#306998"/>
-                        </linearGradient>
-                      </defs>
-                      <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#python-grad)"/>
-                      <path fill="white" d="M20 16h8v4h-8v-4zm0 6h8v4h-8v-4zm0 6h6v4h-6v-4z" opacity="0.9"/>
-                    </svg>
-                  </div>
-                  <h3>Python</h3>
-                  <p>Backend et API</p>
-                </article>
-                <article class="card tool">
-                  <div class="icon" aria-hidden="true">
-                    <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="TensorFlow">
-                      <title>TensorFlow</title>
-                      <defs>
-                        <linearGradient id="tf-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stop-color="#ff6f00"/>
-                          <stop offset="100%" stop-color="#e65100"/>
-                        </linearGradient>
-                      </defs>
-                      <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#tf-grad)"/>
-                      <path fill="white" d="M16 16h16v4H16v-4zm0 6h16v4H16v-4zm0 6h12v4H16v-4z" opacity="0.9"/>
-                    </svg>
-                  </div>
-                  <h3>TensorFlow</h3>
-                  <p>Modèles IA</p>
-                </article>
-                <article class="card tool">
-                  <div class="icon" aria-hidden="true">
-                    <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="OpenCV">
-                      <title>OpenCV</title>
-                      <defs>
-                        <linearGradient id="opencv-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stop-color="#5c3ee8"/>
-                          <stop offset="100%" stop-color="#4c2cdb"/>
-                        </linearGradient>
-                      </defs>
-                      <rect x="8" y="8" width="32" height="32" rx="4" fill="url(#opencv-grad)"/>
-                      <path fill="white" d="M20 16h8v4h-8v-4zm0 6h8v4h-8v-4zm0 6h6v4h-6v-4z" opacity="0.9"/>
-                    </svg>
-                  </div>
-                  <h3>OpenCV</h3>
-                  <p>Traitement d'images</p>
-                </article>
-              </div>
-            </div>
-          </section>
-
-          <!-- Compétences -->
-          <section class="section" style="margin-top: 40px;">
-            <div class="container">
-              <h2>Compétences développées</h2>
-              <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                <div class="skill-category">
-                  <h3>Intelligence Artificielle</h3>
-                  <ul class="skill-items">
-                    <li class="skill-item">
-                      <span class="skill-name">Machine Learning</span>
-                      <span class="skill-level working">En travail</span>
-                    </li>
-                    <li class="skill-item">
-                      <span class="skill-name">Traitement d'images</span>
-                      <span class="skill-level comfortable">À l'aise</span>
-                    </li>
-                    <li class="skill-item">
-                      <span class="skill-name">Modèles IA</span>
-                      <span class="skill-level working">En travail</span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="skill-category">
-                  <h3>Développement Full-Stack</h3>
-                  <ul class="skill-items">
-                    <li class="skill-item">
-                      <span class="skill-name">React</span>
-                      <span class="skill-level working">En travail</span>
-                    </li>
-                    <li class="skill-item">
-                      <span class="skill-name">Python</span>
-                      <span class="skill-level comfortable">À l'aise</span>
-                    </li>
-                    <li class="skill-item">
-                      <span class="skill-name">API REST</span>
-                      <span class="skill-level comfortable">À l'aise</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Compétences mobilisées -->
-          <section class="section alt" style="margin-top: 40px;">
-            <div class="container">
-              <h2>Compétences mobilisées</h2>
-              <div class="card">
-                <div class="card-body">
-                  <h3>VizHome → ArchiVizAI</h3>
-                  <p><strong>Période :</strong> 2024–2026</p>
-                  <ul>
-                    <li>Prototypage produit et UX autour de l'IA générative</li>
-                    <li>Travail en équipe et cadrage de projet</li>
-                    <li>Intégration web et présentation de démos</li>
-                  </ul>
-                  <p>Projet de groupe autour de l'IA générative appliquée à l'architecture et à la visualisation immobilière. Le projet a été poursuivi par le chef d'équipe sous la marque <a href="https://www.archivizai.com/" target="_blank" rel="noreferrer noopener">ArchiVizAI</a>.</p>
-                </div>
-              </div>
-            </div>
-          </section>
         </div>
       </section>
     </main>
@@ -212,4 +142,4 @@
     </footer>
     <script src="script.js"></script>
   </body>
-  </html>
+</html>

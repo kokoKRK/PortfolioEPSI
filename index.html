@@ -5,206 +5,241 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portfolio – Grinda Korto</title>
     <meta name="description" content="Portfolio de Grinda Korto – Développeur web & logiciel, diplômé BTS SIO option SLAM." />
+    <meta name="theme-color" content="#edeff3" />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('gk-theme');
+          var dark = saved === 'dark' || (saved !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="project-themes.css" />
   </head>
   <body>
-    <header class="site-header" data-animate>
+    <header class="site-header">
       <div class="container header-inner">
         <a href="#hero" class="brand" aria-label="Retour à l'accueil">GK</a>
         <nav class="nav" aria-label="Navigation principale">
-          <button class="nav-toggle" aria-expanded="false" aria-label="Ouvrir le menu">
+          <ul class="nav-list" id="nav-list">
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#parcours">Parcours</a></li>
+            <li><a href="#current">Projet</a></li>
+            <li><a href="#projects">Réalisations</a></li>
+            <li><a href="#experiences">Expériences</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#tools">Logiciels</a></li>
+            <li><a href="#veille">Veille</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <a class="header-cv" href="Korto_Grinda_CV.pdf" download="Korto_Grinda_CV.pdf" target="_blank" rel="noreferrer noopener" aria-label="Télécharger mon CV">
+            CV · Télécharger
+          </a>
+          <button type="button" class="theme-toggle" data-theme-toggle aria-label="Activer le mode sombre" title="Mode sombre">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M20 14.5A7.5 7.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" stroke-linejoin="round"/>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M17.2 6.8l1.6-1.6M5.2 18.8l1.6-1.6" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <a class="btn btn-primary btn-sm header-cta" href="#contact">Me contacter</a>
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Ouvrir le menu">
             <span class="nav-toggle-bar"></span>
             <span class="nav-toggle-bar"></span>
             <span class="nav-toggle-bar"></span>
           </button>
-          <ul class="nav-list">
-            <li><a href="#hero">Accueil</a></li>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#parcours">Parcours</a></li>
-            <li><a href="#current">Projet</a></li>
-            <li><a href="#experiences">Expériences</a></li>
-            <li><a href="#skills">Compétences</a></li>
-            <li><a href="#veille">Veille</a></li>
-            <li><a href="#tools">Logiciels</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
         </nav>
       </div>
+      <div class="deck-progress" aria-hidden="true"><span></span></div>
     </header>
 
     <main>
       <!-- Hero -->
-      <section id="hero" class="section hero section-animated">
-        <div class="container hero-grid">
-          <div class="hero-copy" data-animate>
-            <p class="eyebrow">Bienvenue</p>
-            <h1><span class="accent">Grinda Korto</span></h1>
-            <p class="subtitle">Développeur Web & Logiciel — Diplômé BTS SIO option SLAM</p>
-            <div class="hero-actions">
-              <a href="#current" class="btn btn-primary">Projet en cours</a>
-              <a href="#projects" class="btn btn-ghost">Voir mes projets</a>
-              <a href="#contact" class="btn btn-ghost">Me contacter</a>
+      <section id="hero" class="hero" data-cue="Accueil">
+        <div class="container hero-inner">
+          <p class="eyebrow hero-eyebrow hero-enter" data-delay="1">
+            <span class="cue-mark" aria-hidden="true"></span>
+            Développeur web &amp; logiciel · Montpellier
+          </p>
+          <h1 class="hero-title">
+            <span class="hero-line"><span>Grinda</span></span>
+            <span class="hero-line"><span>Korto</span></span>
+          </h1>
+          <div class="hero-row">
+            <p class="hero-lead hero-enter" data-delay="2">
+              Diplômé <strong>BTS SIO option SLAM</strong> (EPSI Montpellier, 2026). Je conçois des applications,
+              des sites et des outils orientés produit — du web au logiciel.
+            </p>
+            <div class="hero-side hero-enter" data-delay="3">
+              <div class="hero-actions">
+                <a href="#current" class="btn btn-accent">Projet en cours</a>
+                <a href="#projects" class="btn btn-ghost">Voir mes projets</a>
+                <a href="#contact" class="btn btn-ghost">Me contacter</a>
+              </div>
+              <div class="hero-socials">
+                <a class="mail" href="mailto:kortogrind@gmail.com" rel="noreferrer noopener" aria-label="Email">
+                  <svg class="social-icon social-icon-gmail" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3.5 6.8v10.4c0 .9.7 1.6 1.6 1.6h2.2V10.2L12 14.3l4.7-4.1v8.6h2.2c.9 0 1.6-.7 1.6-1.6V6.8c0-1.2-1.4-1.9-2.3-1.2L12 11.2 5.8 5.6c-.9-.7-2.3 0-2.3 1.2z" fill="#EA4335"/>
+                    <path d="M3.5 6.8c0-1.2 1.4-1.9 2.3-1.2L12 11.2V14.3L7.3 10.2V19H5.1c-.9 0-1.6-.7-1.6-1.6V6.8z" fill="#4285F4"/>
+                    <path d="M20.5 6.8v10.6c0 .9-.7 1.6-1.6 1.6h-2.2V10.2L12 14.3V11.2l6.2-5.6c.9-.7 2.3 0 2.3 1.2z" fill="#34A853"/>
+                    <path d="M7.3 19h9.4V10.2L12 14.3 7.3 10.2V19z" fill="#FBBC05"/>
+                  </svg>
+                </a>
+                <a class="linkedin" href="https://www.linkedin.com/in/korto-grinda-4b6a6433a/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
+                  <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="2.5" y="2.5" width="19" height="19" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <line x1="7" y1="10.5" x2="7" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="7.0" cy="7.5" r="1.3" fill="currentColor"/>
+                    <path d="M11 17v-4.2c0-1.6 1.3-2.8 2.8-2.8h0c1.6 0 2.7 1.2 2.7 2.8V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                  </svg>
+                </a>
+                <a class="github" href="https://github.com/kokoKRK" target="_blank" rel="noreferrer noopener" aria-label="GitHub">
+                  <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2.5c-5.2 0-9.5 4.3-9.5 9.5 0 4.2 2.7 7.7 6.5 9 .5.1.7-.2.7-.5v-2c-2.6.6-3.1-1.1-3.1-1.1-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.5 1.1 3.1.8.1-.7.4-1.1.7-1.4-2.1-.3-4.2-1.1-4.2-4.9 0-1.1.4-2 1-2.8-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1.1.8-.2 1.6-.3 2.5-.3s1.7.1 2.5.3c2-1.4 2.8-1.1 2.8-1.1.5 1.4.2 2.4.1 2.7.6.8 1 1.7 1 2.8 0 3.8-2.1 4.6-4.2 4.9.4.3.7.9.7 1.8v2.6c0 .3.2.6.7.5 3.8-1.3 6.5-4.9 6.5-9.1 0-5.2-4.3-9.5-9.5-9.5Z" fill="currentColor"/>
+                  </svg>
+                </a>
+                <a class="cv" href="Korto_Grinda_CV.pdf" download="Korto_Grinda_CV.pdf" target="_blank" rel="noreferrer noopener" aria-label="Télécharger le CV">
+                  <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 2.5h7l4.5 4.5V20a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 20V4A1.5 1.5 0 0 1 7 2.5z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                    <path d="M14 2.5V7h4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="M8.5 11h7M8.5 14h7M8.5 17h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </a>
+              </div>
             </div>
-          <div class="hero-socials">
-            <a class="instagram" href="mailto:kortogrind@gmail.com" rel="noreferrer noopener" aria-label="Email">
-              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
-                <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" fill="none"/>
-              </svg>
-            </a>
-            <a class="linkedin" href="https://www.linkedin.com/in/korto-grinda-4b6a6433a/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
-              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="2.5" y="2.5" width="19" height="19" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
-                <line x1="7" y1="10.5" x2="7" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="7.0" cy="7.5" r="1.3" fill="currentColor"/>
-                <path d="M11 17v-4.2c0-1.6 1.3-2.8 2.8-2.8h0c1.6 0 2.7 1.2 2.7 2.8V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
-              </svg>
-            </a>
-            <a class="github" href="https://github.com/kokoKRK" target="_blank" rel="noreferrer noopener" aria-label="GitHub">
-              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 2.5c-5.2 0-9.5 4.3-9.5 9.5 0 4.2 2.7 7.7 6.5 9 .5.1.7-.2.7-.5v-2c-2.6.6-3.1-1.1-3.1-1.1-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.5 1.1 3.1.8.1-.7.4-1.1.7-1.4-2.1-.3-4.2-1.1-4.2-4.9 0-1.1.4-2 1-2.8-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1.1.8-.2 1.6-.3 2.5-.3s1.7.1 2.5.3c2-1.4 2.8-1.1 2.8-1.1.5 1.4.2 2.4.1 2.7.6.8 1 1.7 1 2.8 0 3.8-2.1 4.6-4.2 4.9.4.3.7.9.7 1.8v2.6c0 .3.2.6.7.5 3.8-1.3 6.5-4.9 6.5-9.1 0-5.2-4.3-9.5-9.5-9.5Z" fill="currentColor"/>
-              </svg>
-            </a>
-            <a class="cv" href="Korto_Grinda_CV.pdf" target="_blank" rel="noreferrer noopener" aria-label="Télécharger le CV">
-              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 2.5h7l4.5 4.5V20a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 20V4A1.5 1.5 0 0 1 7 2.5z" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                <path d="M14 2.5V7h4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                <path d="M8.5 11h7M8.5 14h7M8.5 17h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              </svg>
-            </a>
           </div>
-          </div>
-          <div class="hero-visual" data-animate>
-            <div class="hero-avatar-wrap">
-              <svg viewBox="0 0 400 400" class="blob" aria-hidden="true">
-                <defs>
-                  <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stop-color="var(--accent)" />
-                    <stop offset="100%" stop-color="var(--accent-2)" />
-                  </linearGradient>
-                </defs>
-                <path fill="url(#grad)" d="M308.5,270.5Q267,341,184,329.5Q101,318,77,234Q53,150,132.5,101.5Q212,53,288,101.5Q364,150,308.5,270.5Z" />
-              </svg>
-              <img class="hero-avatar" src="assets/img/photo_profil_korto_grinda.png" alt="Portrait de Grinda Korto" width="400" height="400" />
-            </div>
-          </div>
+          <a class="hero-scroll hero-enter" href="#parcours" data-delay="4" aria-label="Aller à la section Parcours">
+            <span class="hero-scroll-line" aria-hidden="true"><span></span></span>
+            Piste suivante · Parcours
+          </a>
         </div>
+
       </section>
 
-      <!-- À propos -->
-      <section id="about" class="section">
-        <div class="container two-col">
-          <div class="col" data-animate>
-            <h2>À propos</h2>
-            <p>
-              Développeur web et logiciel, diplômé du BTS SIO (Services Informatiques aux Organisations), option SLAM (EPSI Montpellier).
-              Je conçois des applications, des sites et des outils orientés produit, avec un intérêt particulier
-              pour l'IA, la musique et les projets innovants.
-            </p>
-            <p>
-              En dehors de l'informatique, je fais de la musique (DJ) et du basketball.
-            </p>
+      <!-- Parcours + À propos (colonne droite) -->
+      <section id="parcours" class="section alt profile-band" data-cue="Parcours">
+        <div class="container profile-split">
+          <div class="profile-parcours">
+            <header class="section-head" data-animate>
+              <p class="eyebrow"><span class="cue-mark" aria-hidden="true"></span>2024 → 2029</p>
+              <h2>Parcours</h2>
+            </header>
+            <div class="track-wrap">
+              <div class="track-rail" aria-hidden="true"><span></span></div>
+              <ol class="track">
+                <li class="track-item">
+                  <time datetime="2024">2024</time>
+                  <h3>Diplôme BAC général – Spécialités Mathématiques &amp; NSI</h3>
+                  <p>Mention assez bien</p>
+                </li>
+                <li class="track-item">
+                  <time datetime="2024/2025">2024 – 2025</time>
+                  <h3>BTS SIO – 1ère année, option SLAM</h3>
+                  <p>Services Informatiques aux Organisations</p>
+                </li>
+                <li class="track-item">
+                  <time datetime="2025/2026">2025 – 2026</time>
+                  <h3>BTS SIO – 2ème année, option SLAM</h3>
+                  <p>Services Informatiques aux Organisations</p>
+                </li>
+                <li class="track-item">
+                  <time datetime="2026">2026</time>
+                  <h3>Diplôme BTS SIO – Option SLAM</h3>
+                  <p>Services Informatiques aux Organisations</p>
+                </li>
+                <li class="track-item track-item-future">
+                  <time datetime="2026/2029">2026 – 2029</time>
+                  <p class="track-label">Parcours futur envisagé</p>
+                  <h3>Master — Expert IA</h3>
+                  <p>3 ans</p>
+                </li>
+              </ol>
+            </div>
           </div>
-          <div class="col about-avatar" data-animate>
-            <figure class="avatar-wrap">
-              <img src="campus_montpellie.jpg" alt="Etablissement de formation EPSI Montpellier" loading="lazy" />
+
+          <aside id="about" class="profile-about" data-cue="À propos">
+            <figure class="profile-avatar">
+              <span class="profile-avatar-frame" aria-hidden="true"></span>
+              <div class="profile-avatar-disc">
+                <img src="assets/img/photo_profil_korto_grinda.png" alt="Portrait de Grinda Korto" width="280" height="280" loading="lazy" />
+              </div>
             </figure>
-          </div>
+            <div class="about-copy" data-animate="blur">
+              <header class="section-head">
+                <p class="eyebrow"><span class="cue-mark" aria-hidden="true"></span>Profil</p>
+                <h2>À propos</h2>
+              </header>
+              <p>
+                Développeur web et logiciel, diplômé du BTS SIO option SLAM (EPSI Montpellier).
+                Je conçois des applications, des sites et des outils orientés produit, avec un intérêt
+                pour l'IA et les projets innovants.
+              </p>
+              <p>
+                À l'école, je suis <strong>ambassadeur EPSI</strong> et <strong>membre du BDE</strong>.
+              </p>
+              <dl class="facts">
+                <dt>Formation</dt><dd>BTS SIO option SLAM — EPSI Montpellier, 2026</dd>
+                <dt>Engagement</dt><dd>Ambassadeur EPSI · Membre du BDE</dd>
+                <dt>En ce moment</dt><dd>CueMind DJ — app web Next.js + IA</dd>
+                <dt>Cap</dt><dd>Master Expert IA</dd>
+              </dl>
+            </div>
+          </aside>
         </div>
       </section>
 
-      <!-- Parcours -->
-      <section id="parcours" class="section alt">
+      <!-- Projet en cours — Deck A -->
+      <section id="current" class="section deck section-cuemind" data-cue="CueMind DJ">
         <div class="container">
-          <h2 data-animate>Parcours</h2>
-          <ul class="timeline" data-animate>
-            <li>
-              <div class="dot"></div>
-              <div class="content">
-                <h3>Diplôme BAC général – Spécialités Mathématiques & NSI</h3>
-                <p>2024 — Mention assez bien</p>
-              </div>
-            </li>
-            <li>
-              <div class="dot"></div>
-              <div class="content">
-                <h3>BTS SIO – 1ère année, option SLAM</h3>
-                <p>2024-2025 — Services Informatiques aux Organisations</p>
-              </div>
-            </li>
-            <li>
-              <div class="dot"></div>
-              <div class="content">
-                <h3>BTS SIO – 2ème année, option SLAM</h3>
-                <p>2025-2026 — Services Informatiques aux Organisations</p>
-              </div>
-            </li>
-            <li>
-              <div class="dot"></div>
-              <div class="content">
-                <h3>Diplôme BTS SIO – Option SLAM</h3>
-                <p>2026 — Services Informatiques aux Organisations</p>
-              </div>
-            </li>
-          </ul>
+          <header class="section-head" data-animate>
+            <p class="eyebrow"><span class="cue-mark" aria-hidden="true"></span>Deck A · En développement</p>
+            <h2>Projet en cours</h2>
+            <p class="section-lead">Ce sur quoi je travaille actuellement.</p>
+          </header>
 
-          <h3 class="parcours-future-heading" data-animate>Parcours futur envisagé</h3>
-          <ul class="timeline timeline-future" data-animate>
-            <li>
-              <div class="dot"></div>
-              <div class="content">
-                <h3>Master — Expert IA</h3>
-                <p>2026-2029 — 3 ans</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Projets en cours -->
-      <section id="current" class="section section-cuemind section-animated">
-        <div class="container">
-          <h2 data-animate>Projets en cours</h2>
-          <p data-animate class="section-lead">Ce sur quoi je travaille actuellement.</p>
-
-          <article class="card current-project" data-animate>
-            <div class="current-project-grid">
-              <div class="current-project-copy">
-                <span class="project-status-badge">En développement</span>
-                <h3><span class="cuemind-brand-accent">CueMind</span> DJ</h3>
-                <p>
-                  Application web pour DJs : bibliothèque musicale, génération de sets par IA, mode back-to-back assisté
-                  avec notes de transition, playlists par style et préparation de performances.
-                </p>
-                <p class="project-tech">
-                  <span>Next.js</span><span>TypeScript</span><span>React</span><span>IA</span><span>API REST</span>
-                </p>
-                <p class="hero-actions project-demo-top" style="margin-bottom: 0;">
-                  <a class="btn btn-primary" href="project-cuemind-dj.html">Voir le projet</a>
-                </p>
-              </div>
-              <div class="current-project-mockups">
-                <figure class="mockup-frame mockup-frame-featured">
-                  <img src="assets/img/cuemind/maquette_visuel.png" alt="Maquette principale CueMind DJ — interface decks, mixer et IA" loading="lazy" />
-                </figure>
-              </div>
+          <article class="deck-grid" data-animate="deck">
+            <div class="deck-copy">
+              <span class="project-status-badge">En développement</span>
+              <h3><span class="cuemind-brand-accent">CueMind</span> DJ</h3>
+              <p>
+                Application web pour DJs : bibliothèque musicale, génération de sets par IA, mode back-to-back assisté
+                avec notes de transition, playlists par style et préparation de performances.
+              </p>
+              <p class="project-tech">
+                <span>Next.js</span><span>TypeScript</span><span>React</span><span>IA</span><span>API REST</span>
+              </p>
+              <p class="hero-actions">
+                <a class="btn btn-primary" href="project-cuemind-dj.html">Voir le projet</a>
+              </p>
+            </div>
+            <div class="deck-visual">
+              <figure class="mockup-frame mockup-frame-featured">
+                <img src="assets/img/cuemind/maquette_visuel.png" alt="Maquette principale CueMind DJ — interface decks, mixer et IA" loading="lazy" />
+              </figure>
             </div>
           </article>
         </div>
       </section>
 
-      <!-- Projets -->
-      <section id="projects" class="section section-animated">
+      <!-- Projets réalisés -->
+      <section id="projects" class="section" data-cue="Projets">
         <div class="container">
-          <h2 data-animate>Projets réalisés</h2>
-          <p data-animate class="section-lead">Stages, projets clients, personnels et autres réalisations de formation.</p>
+          <header class="section-head" data-animate>
+            <p class="eyebrow"><span class="cue-mark" aria-hidden="true"></span>9 réalisations</p>
+            <h2>Projets réalisés</h2>
+            <p class="section-lead">Stages, projets clients, personnels et autres réalisations de formation.</p>
+          </header>
 
-          <div class="grid cards projects-grid" data-animate>
+          <div class="grid cards projects-grid" data-stagger>
             <article class="card project project-card-theme project-card-hotel-neptune">
               <a href="project-hotel-neptune.html" aria-label="Voir le projet Hotel Neptune">
-                <div class="thumb"><img src="assets/img/img_projets/hotel_neptune.jpg" alt="Hotel Neptune" loading="lazy" width="400" height="160" /></div>
+                <div class="thumb"><img src="assets/img/img_projets/hotel_neptune.jpg" alt="Hotel Neptune" loading="lazy" width="400" height="250" /></div>
                 <div class="card-body">
                   <h3>Hotel Neptune</h3>
                   <p>Projet scolaire web/app : site hôtelier avec réservation.</p>
@@ -214,7 +249,7 @@
             </article>
             <article class="card project project-card-theme project-card-prends-ma-photo">
               <a href="project-prends-ma-photo.html" aria-label="Voir le projet Prends Ma Photo">
-                <div class="thumb"><img src="assets/img/img_projets/prendsmaphoto.jpg" alt="Prends Ma Photo – 2025" loading="lazy" width="400" height="160" /></div>
+                <div class="thumb"><img src="assets/img/img_projets/prendsmaphoto.jpg" alt="Prends Ma Photo – 2025" loading="lazy" width="400" height="250" /></div>
                 <div class="card-body">
                   <h3>Stage – Prends Ma Photo (2025)</h3>
                   <p>Création site vitrine complet (design, SEO, formulaires, mise en ligne o2switch).</p>
@@ -224,7 +259,7 @@
             </article>
             <article class="card project project-card-theme project-card-fast-flash">
               <a href="project-fast-flash.html" aria-label="Voir le projet Fast Flash">
-                <div class="thumb"><img src="assets/img/img_projets/fastflash.jpg" alt="Fast Flash" loading="lazy" width="400" height="160" /></div>
+                <div class="thumb"><img src="assets/img/img_projets/fastflash.jpg" alt="Fast Flash" loading="lazy" width="400" height="250" /></div>
                 <div class="card-body">
                   <h3>Fast Flash</h3>
                   <p>Vitrine e-commerce de cocktails premium à Montpellier : catalogue, panier, offres et compte utilisateur.</p>
@@ -234,7 +269,7 @@
             </article>
             <article class="card project project-card-theme project-card-vizhome">
               <a href="project-vizhome.html" aria-label="Voir le projet VizHome / ArchiVizAI">
-                <div class="thumb"><img src="assets/img/img_projets/vizhome.jpg" alt="ArchiVizAI - ex VizHome" loading="lazy" width="400" height="160" /></div>
+                <div class="thumb"><img src="assets/img/img_projets/vizhome.jpg" alt="ArchiVizAI - ex VizHome" loading="lazy" width="400" height="250" /></div>
                 <div class="card-body">
                   <h3>VizHome → ArchiVizAI</h3>
                   <p>Rendus architecturaux photoréalistes par IA. Projet de groupe repris par le chef d'équipe sous <strong>ArchiVizAI</strong>.</p>
@@ -244,7 +279,7 @@
             </article>
             <article class="card project project-card-theme project-card-3dmap">
               <a href="project-3dmap-odoo.html" aria-label="Voir le stage 3Dmap Odoo">
-                <div class="thumb"><img src="assets/img/img_projets/stageOdoo.jpg" alt="Stage 3Dmap Odoo" loading="lazy" width="400" height="160" /></div>
+                <div class="thumb"><img src="assets/img/img_projets/stageOdoo.jpg" alt="Stage 3Dmap Odoo" loading="lazy" width="400" height="250" /></div>
                 <div class="card-body">
                   <h3>Stage – 3Dmap (2026)</h3>
                   <p>Migration ERP Odoo v17→v18, debug SQL PostgreSQL, stabilisation Linux et remise en production.</p>
@@ -254,7 +289,7 @@
             </article>
             <article class="card project project-card-theme project-card-oeil-2-mata">
               <a href="project-oeil-2-mata.html" aria-label="Voir le projet Oeil 2 Mata">
-                <div class="thumb"><img src="assets/img/img_projets/expoMaman.jpg" alt="Oeil 2 Mata" loading="lazy" width="400" height="160" /></div>
+                <div class="thumb"><img src="assets/img/img_projets/expoMaman.jpg" alt="Oeil 2 Mata" loading="lazy" width="400" height="250" /></div>
                 <div class="card-body">
                   <h3>Oeil 2 Mata – Galerie d'art</h3>
                   <p>Projet client : refonte du site d'une artiste, galerie dynamique et section cinéma.</p>
@@ -264,7 +299,7 @@
             </article>
             <article class="card project project-card-theme project-card-hazmat">
               <a href="project-hazmat-airsoft.html" aria-label="Voir le projet Hazmat Airsoft">
-                <div class="thumb"><img src="assets/img/img_projets/hazmatAirsoft.jpg" alt="Hazmat Airsoft" loading="lazy" width="400" height="160" /></div>
+                <div class="thumb"><img src="assets/img/img_projets/hazmatAirsoft.jpg" alt="Hazmat Airsoft" loading="lazy" width="400" height="250" /></div>
                 <div class="card-body">
                   <h3>Hazmat Airsoft</h3>
                   <p>Site vitrine : répliques airsoft inspirées du jeu Rust, identité visuelle immersive (sans backend actif).</p>
@@ -274,7 +309,7 @@
             </article>
             <article class="card project project-card-theme project-card-usb-espion">
               <a href="project-usb-espion.html" aria-label="Voir le projet USB Espion">
-                <div class="thumb"><img src="assets/img/img_projets/workshopEspion.jpg" alt="USB Espion" loading="lazy" width="400" height="160" /></div>
+                <div class="thumb"><img src="assets/img/img_projets/workshopEspion.jpg" alt="USB Espion" loading="lazy" width="400" height="250" /></div>
                 <div class="card-body">
                   <h3>USB Espion (Bad USB)</h3>
                   <p>Projet IoT/sécurité : exfiltration de données et dashboard de supervision web.</p>
@@ -284,7 +319,7 @@
             </article>
             <article class="card project project-card-theme project-card-pizzeria">
               <a href="project-pizzeria.html" aria-label="Voir le projet Pizzeria Flutter">
-                <div class="thumb"><img src="assets/img/img_projets/pizzeria.jpg" alt="Pizzeria Flutter" loading="lazy" width="400" height="160" /></div>
+                <div class="thumb"><img src="assets/img/img_projets/pizzeria.jpg" alt="Pizzeria Flutter" loading="lazy" width="400" height="250" /></div>
                 <div class="card-body">
                   <h3>Pizzeria (Flutter)</h3>
                   <p>Application mobile : catalogue, panier, commande et gestion de thème.</p>
@@ -296,97 +331,211 @@
         </div>
       </section>
 
-      <!-- Projet de fin de BTS -->
-      <section id="bts-project" class="section section-bbrank section-animated">
+      <!-- Projet de fin de BTS — Deck B -->
+      <section id="bts-project" class="section deck section-bbrank" data-cue="BB-Rank">
         <div class="container">
-          <h2 data-animate>Projet de fin de BTS</h2>
-          <p data-animate class="section-lead">
-            Projet principal de formation — <strong>BB-Rank</strong>, application de gestion de matchs de basketball,
-            porté sur mes deux situations professionnelles (épreuve E5/E6).
-          </p>
+          <header class="section-head" data-animate>
+            <p class="eyebrow"><span class="cue-mark" aria-hidden="true"></span>Deck B · Épreuve E5/E6</p>
+            <h2>Projet de fin de BTS</h2>
+            <p class="section-lead">
+              Projet principal de formation — <strong>BB-Rank</strong>, application de gestion de matchs de basketball,
+              porté sur mes deux situations professionnelles (épreuve E5/E6).
+            </p>
+          </header>
 
-          <article class="card current-project" data-animate>
-            <div class="current-project-grid">
-              <div class="current-project-copy">
-                <span class="project-status-badge">BTS SIO — SLAM · EPSI 2026</span>
-                <h3><span class="bbrank-brand-accent">BB-Rank</span></h3>
-                <p>
-                  Solution pour la mairie de Montpellier : faciliter l'organisation des matchs sur les city-stades,
-                  gérer les files d'attente, les équipes et le classement des joueurs. L'application mobile Flutter
-                  s'appuie sur un backend Supabase (API, données, statistiques).
-                </p>
-                <ul class="bts-situations-list">
-                  <li><strong>Situation 1</strong> — Application mobile : comptes, terrains, files d'attente, matchs et équipes.</li>
-                  <li><strong>Situation 2</strong> — Backend web : validation des résultats, classements et exploitation des données.</li>
-                </ul>
-                <p class="project-tech">
-                  <span>Flutter</span><span>Dart</span><span>Supabase</span><span>PostgreSQL</span><span>API REST</span>
-                </p>
-                <p class="hero-actions project-demo-top" style="margin-bottom: 0;">
-                  <a class="btn btn-primary" href="project-bb-rank.html">Voir le projet</a>
-                  <a class="btn btn-primary" href="bb-rank/demo/index.html" target="_blank" rel="noreferrer noopener">Démo web</a>
-                  <a class="btn btn-primary" href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_1.pdf" target="_blank" rel="noreferrer noopener">Situation 1 (PDF)</a>
-                  <a class="btn btn-primary" href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_2.pdf" target="_blank" rel="noreferrer noopener">Situation 2 (PDF)</a>
-                </p>
-              </div>
-              <div class="current-project-mockups">
-                <figure class="mockup-frame mockup-frame-featured">
-                  <img src="assets/img/bbrank/maquettes.png" alt="Maquettes BB-Rank — application mobile de gestion de matchs de basketball" loading="lazy" />
-                </figure>
-              </div>
+          <article class="deck-grid" data-animate="deck">
+            <div class="deck-copy">
+              <span class="project-status-badge">BTS SIO — SLAM · EPSI 2026</span>
+              <h3><span class="bbrank-brand-accent">BB-Rank</span></h3>
+              <p>
+                Solution pour la mairie de Montpellier : faciliter l'organisation des matchs sur les city-stades,
+                gérer les files d'attente, les équipes et le classement des joueurs. L'application mobile Flutter
+                s'appuie sur un backend Supabase (API, données, statistiques).
+              </p>
+              <ul class="bts-situations-list">
+                <li><strong>Situation 1</strong> — Application mobile : comptes, terrains, files d'attente, matchs et équipes.</li>
+                <li><strong>Situation 2</strong> — Backend web : validation des résultats, classements et exploitation des données.</li>
+              </ul>
+              <p class="project-tech">
+                <span>Flutter</span><span>Dart</span><span>Supabase</span><span>PostgreSQL</span><span>API REST</span>
+              </p>
+              <p class="hero-actions">
+                <a class="btn btn-primary" href="project-bb-rank.html">Voir le projet</a>
+                <a class="btn" href="bb-rank/demo/index.html" target="_blank" rel="noreferrer noopener">Démo web</a>
+                <a class="btn" href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_1.pdf" target="_blank" rel="noreferrer noopener">Situation 1 (PDF)</a>
+                <a class="btn" href="SITUATION/BTS_SIO_2026_EPSI_EPREUVE_E5_SITUATION_2.pdf" target="_blank" rel="noreferrer noopener">Situation 2 (PDF)</a>
+              </p>
+            </div>
+            <div class="deck-visual">
+              <figure class="mockup-frame mockup-frame-featured">
+                <img src="assets/img/bbrank/maquettes.png" alt="Maquettes BB-Rank — application mobile de gestion de matchs de basketball" loading="lazy" />
+              </figure>
             </div>
           </article>
         </div>
       </section>
 
       <!-- Expériences professionnelles -->
-      <section id="experiences" class="section section-animated">
+      <section id="experiences" class="section" data-cue="Expériences">
         <div class="container">
-          <h2 data-animate>Expériences professionnelles</h2>
-          <p data-animate class="section-lead">Stages en entreprise et missions concrètes.</p>
-          <div class="two-col" data-animate>
-            <div class="col">
+          <header class="section-head" data-animate>
+            <p class="eyebrow"><span class="cue-mark" aria-hidden="true"></span>Stages 2025 · 2026</p>
+            <h2>Expériences professionnelles</h2>
+            <p class="section-lead">Stages en entreprise et missions concrètes.</p>
+          </header>
+
+          <article class="xp" data-animate>
+            <div class="xp-head">
+              <time datetime="2025">2025</time>
               <h3>Prends Ma Photo – Stage 2025</h3>
-              <p>Site vitrine complet : design, intégration, formulaires, SEO et mise en ligne sur o2switch.</p>
-              <p class="hero-actions" style="margin-top: 0; flex-wrap: wrap;">
-                <a class="btn btn-primary" href="project-prends-ma-photo.html">Détails du projet</a>
-                <a class="btn btn-ghost" href="stageSN1/attestation_stage_GRINDA_KORTO_SN1.pdf" target="_blank" rel="noreferrer noopener" download>Attestation</a>
-                <a class="btn btn-ghost" href="stageSN1/Rapport_Stage_SN1.pdf" target="_blank" rel="noreferrer noopener" download>Rapport</a>
-              </p>
             </div>
-            <div class="col">
-              <ul class="timeline">
-                <li><div class="dot"></div><div class="content"><h4>Analyse des besoins</h4><p>Ateliers, cadrage des fonctionnalités et arborescence.</p></div></li>
-                <li><div class="dot"></div><div class="content"><h4>Développement</h4><p>Maquettes, pages, formulaires, hébergement.</p></div></li>
-                <li><div class="dot"></div><div class="content"><h4>Résultats</h4><p>Site en production, performances et SEO de base.</p></div></li>
+            <div class="xp-grid">
+              <div class="xp-copy">
+                <p>Site vitrine complet : design, intégration, formulaires, SEO et mise en ligne sur o2switch.</p>
+                <p class="hero-actions">
+                  <a class="btn btn-primary" href="project-prends-ma-photo.html">Détails du projet</a>
+                  <a class="btn btn-ghost" href="stageSN1/attestation_stage_GRINDA_KORTO_SN1.pdf" target="_blank" rel="noreferrer noopener" download>Attestation</a>
+                  <a class="btn btn-ghost" href="stageSN1/Rapport_Stage_SN1.pdf" target="_blank" rel="noreferrer noopener" download>Rapport</a>
+                </p>
+              </div>
+              <ol class="steps">
+                <li><h4>Analyse des besoins</h4><p>Ateliers, cadrage des fonctionnalités et arborescence.</p></li>
+                <li><h4>Développement</h4><p>Maquettes, pages, formulaires, hébergement.</p></li>
+                <li><h4>Résultats</h4><p>Site en production, performances et SEO de base.</p></li>
+              </ol>
+            </div>
+          </article>
+
+          <article class="xp" data-animate>
+            <div class="xp-head">
+              <time datetime="2026">2026</time>
+              <h3>3Dmap – Stage 2026</h3>
+            </div>
+            <div class="xp-grid">
+              <div class="xp-copy">
+                <p>
+                  Migration et stabilisation d'un ERP Odoo en production (v17 vers v18),
+                  avec correction d'erreurs SQL critiques, fiabilisation du serveur Linux
+                  et remise en ligne de l'instance publique.
+                </p>
+                <p>
+                  <strong>Environnement :</strong> Odoo 18, PostgreSQL, Python 3.12,
+                  VPS OVH (Linux), systemd, psql, modules custom 3dmap_* et OCA.
+                </p>
+                <p class="hero-actions">
+                  <a class="btn btn-primary" href="project-3dmap-odoo.html">Détails du projet</a>
+                  <a class="btn btn-ghost" href="stageSN2/attestation_stage_GRINDA_KORTO_SN2.pdf" target="_blank" rel="noreferrer noopener" download>Attestation</a>
+                  <a class="btn btn-ghost" href="stageSN2/Rapport_Stage_SN2.pdf" target="_blank" rel="noreferrer noopener" download>Rapport</a>
+                </p>
+              </div>
+              <ol class="steps">
+                <li><h4>Migration ERP</h4><p>Contrôle de la base, correction des manifests et ajustement de la logique OpenUpgrade.</p></li>
+                <li><h4>Debug SQL avancé</h4><p>Résolution des erreurs UndefinedColumn via alignement du schéma PostgreSQL.</p></li>
+                <li><h4>Stabilisation serveur</h4><p>Configuration systemd/Odoo, redémarrage propre et vérification des ports.</p></li>
+
+              </ol>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Compétences -->
+      <section id="skills" class="section alt" data-cue="Compétences">
+        <div class="container">
+          <header class="section-head" data-animate>
+            <p class="eyebrow"><span class="cue-mark" aria-hidden="true"></span>Niveaux : <span class="level-tag intermediate">intermédiaire</span> · <span class="level-tag beginner">débutant</span></p>
+            <h2>Compétences</h2>
+          </header>
+          <div class="skills-list" data-stagger>
+            <div class="skill-category">
+              <h3>Langages</h3>
+              <ul class="skill-items">
+                <li class="skill-item">
+                  <span class="skill-name">HTML / CSS</span>
+                  <span class="skill-level intermediate">Intermédiaire</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">JavaScript</span>
+                  <span class="skill-level intermediate">Intermédiaire</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">TypeScript</span>
+                  <span class="skill-level intermediate">Intermédiaire</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">PHP</span>
+                  <span class="skill-level beginner">Débutant</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Python</span>
+                  <span class="skill-level intermediate">Intermédiaire</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Dart</span>
+                  <span class="skill-level beginner">Débutant</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">C++</span>
+                  <span class="skill-level beginner">Débutant</span>
+                </li>
               </ul>
             </div>
-          </div>
 
-          <div class="two-col" data-animate style="margin-top: 40px;">
-            <div class="col">
-              <h3>3Dmap – Stage 2026</h3>
-              <p>
-                Migration et stabilisation d'un ERP Odoo en production (v17 vers v18),
-                avec correction d'erreurs SQL critiques, fiabilisation du serveur Linux
-                et remise en ligne de l'instance publique.
-              </p>
-              <p>
-                <strong>Environnement :</strong> Odoo 18, PostgreSQL, Python 3.12,
-                VPS OVH (Linux), systemd, psql, modules custom 3dmap_* et OCA.
-              </p>
-              <p class="hero-actions" style="margin-top: 0; flex-wrap: wrap;">
-                <a class="btn btn-primary" href="project-3dmap-odoo.html">Détails du projet</a>
-                <a class="btn btn-ghost" href="stageSN2/attestation_stage_GRINDA_KORTO_SN2.pdf" target="_blank" rel="noreferrer noopener" download>Attestation</a>
-                <a class="btn btn-ghost" href="stageSN2/Rapport_Stage_SN2.pdf" target="_blank" rel="noreferrer noopener" download>Rapport</a>
-              </p>
+            <div class="skill-category">
+              <h3>Frameworks &amp; mobile</h3>
+              <ul class="skill-items">
+                <li class="skill-item">
+                  <span class="skill-name">Symfony</span>
+                  <span class="skill-level intermediate">Intermédiaire</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Next.js / React</span>
+                  <span class="skill-level beginner">Débutant</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Vue.js</span>
+                  <span class="skill-level beginner">Débutant</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Flutter</span>
+                  <span class="skill-level beginner">Débutant</span>
+                </li>
+              </ul>
             </div>
-            <div class="col">
-              <ul class="timeline">
-                <li><div class="dot"></div><div class="content"><h4>Migration ERP</h4><p>Contrôle de la base, correction des manifests et ajustement de la logique OpenUpgrade.</p></div></li>
-                <li><div class="dot"></div><div class="content"><h4>Debug SQL avancé</h4><p>Résolution des erreurs UndefinedColumn via alignement du schéma PostgreSQL.</p></div></li>
-                <li><div class="dot"></div><div class="content"><h4>Stabilisation serveur</h4><p>Configuration systemd/Odoo, redémarrage propre et vérification des ports.</p></div></li>
-                <li><div class="dot"></div><div class="content"><h4>Mise en accessibilité</h4><p>Rétablissement de l'accès public sur dev.3dmap.fr:8070.</p></div></li>
+
+            <div class="skill-category">
+              <h3>Données &amp; backend</h3>
+              <ul class="skill-items">
+                <li class="skill-item">
+                  <span class="skill-name">SQL (MySQL, PostgreSQL)</span>
+                  <span class="skill-level intermediate">Intermédiaire</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Modélisation BDD</span>
+                  <span class="skill-level intermediate">Intermédiaire</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">API REST</span>
+                  <span class="skill-level intermediate">Intermédiaire</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Supabase</span>
+                  <span class="skill-level intermediate">Intermédiaire</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="skill-category">
+              <h3>Intelligence artificielle</h3>
+              <ul class="skill-items">
+                <li class="skill-item">
+                  <span class="skill-name">Outils IA / vibes coding</span>
+                  <span class="skill-level intermediate">Intermédiaire</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Machine Learning</span>
+                  <span class="skill-level beginner">Débutant</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -394,10 +543,13 @@
       </section>
 
       <!-- Logiciels & Technologies -->
-      <section id="tools" class="section alt">
+      <section id="tools" class="section" data-cue="Logiciels">
         <div class="container">
-          <h2 data-animate>Logiciels & Technologies</h2>
-          <div class="grid cards" data-animate>
+          <header class="section-head" data-animate>
+            <p class="eyebrow"><span class="cue-mark" aria-hidden="true"></span>Niveaux : <span class="level-tag intermediate">intermédiaire</span> · <span class="level-tag beginner">débutant</span></p>
+            <h2>Logiciels &amp; Technologies</h2>
+          </header>
+          <div class="grid cards rack" data-stagger>
             <article class="card tool">
               <div class="icon" aria-hidden="true">
                 <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="JetBrains Suite">
@@ -415,8 +567,10 @@
                   <rect x="18" y="31" width="10" height="1.6" rx="0.8" fill="#ffffff" opacity="0.9"/>
                 </svg>
               </div>
-              <h3>JetBrains (suite)</h3>
-              <p>Suite d'IDE JetBrains (PHPStorm, WebStorm, etc.).</p>
+              <div class="tool-body">
+                <div class="tool-head"><h3>JetBrains (suite)</h3><span class="skill-level intermediate">Intermédiaire</span></div>
+                <p>Suite d'IDE JetBrains (PHPStorm, WebStorm, etc.).</p>
+              </div>
             </article>
             <article class="card tool">
               <div class="icon" aria-hidden="true">
@@ -433,12 +587,14 @@
                   <circle cx="36" cy="12" r="4" fill="url(#git-grad)" class="git-node-2"/>
                   <circle cx="36" cy="36" r="4" fill="url(#git-grad)" class="git-node-3"/>
                   <path d="M16 24h16M36 16v16" stroke="url(#git-grad)" stroke-width="3" stroke-linecap="round" class="git-branch"/>
-                  <circle cx="24" cy="24" r="2" fill="#00d7ff" class="git-merge"/>
-                  <path d="M20 20l8 8M28 20l-8 8" stroke="#00d7ff" stroke-width="1.5" opacity="0.7" class="git-cross"/>
+                  <circle cx="24" cy="24" r="2" fill="#2b5cff" class="git-merge"/>
+                  <path d="M20 20l8 8M28 20l-8 8" stroke="#2b5cff" stroke-width="1.5" opacity="0.7" class="git-cross"/>
                 </svg>
               </div>
-              <h3>Git & GitHub Desktop</h3>
-              <p>Branches, PRs, issues, workflows.</p>
+              <div class="tool-body">
+                <div class="tool-head"><h3>Git &amp; GitHub Desktop</h3><span class="skill-level intermediate">Intermédiaire</span></div>
+                <p>Branches, PRs, issues, workflows.</p>
+              </div>
             </article>
             <article class="card tool">
               <div class="icon" aria-hidden="true">
@@ -451,8 +607,10 @@
                   <path d="M8 30h32c-2 6-8 8-16 8s-14-2-16-8z" fill="currentColor" opacity=".3"/>
                 </svg>
               </div>
-              <h3>Docker</h3>
-              <p>Conteneurs pour tests et déploiements.</p>
+              <div class="tool-body">
+                <div class="tool-head"><h3>Docker</h3><span class="skill-level beginner">Débutant</span></div>
+                <p>Conteneurs pour tests et déploiements.</p>
+              </div>
             </article>
             <article class="card tool">
               <div class="icon" aria-hidden="true">
@@ -464,20 +622,19 @@
                       <stop offset="100%" stop-color="#4a90e2"/>
                     </linearGradient>
                   </defs>
-                  <!-- Virtual layers -->
                   <rect x="8" y="8" width="16" height="16" rx="3" fill="url(#vmware-grad)" class="vm-layer-1" opacity="0.9"/>
                   <rect x="12" y="12" width="16" height="16" rx="3" fill="url(#vmware-grad)" class="vm-layer-2" opacity="0.7"/>
                   <rect x="16" y="16" width="16" height="16" rx="3" fill="url(#vmware-grad)" class="vm-layer-3" opacity="0.5"/>
-                  <!-- Connection lines -->
-                  <path d="M24 16h8M32 20v8M32 28h-8" stroke="#00d7ff" stroke-width="2" class="vm-connections"/>
-                  <!-- VM indicators -->
+                  <path d="M24 16h8M32 20v8M32 28h-8" stroke="#2b5cff" stroke-width="2" class="vm-connections"/>
                   <circle cx="16" cy="16" r="2" fill="#00ff88" class="vm-status-1"/>
                   <circle cx="20" cy="20" r="2" fill="#00ff88" class="vm-status-2"/>
                   <circle cx="24" cy="24" r="2" fill="#00ff88" class="vm-status-3"/>
                 </svg>
               </div>
-              <h3>VMware</h3>
-              <p>Machines virtuelles et snapshots.</p>
+              <div class="tool-body">
+                <div class="tool-head"><h3>VMware</h3><span class="skill-level intermediate">Intermédiaire</span></div>
+                <p>Machines virtuelles et snapshots.</p>
+              </div>
             </article>
             <article class="card tool">
               <div class="icon" aria-hidden="true">
@@ -489,24 +646,22 @@
                       <stop offset="100%" stop-color="#f7931e"/>
                     </linearGradient>
                   </defs>
-                  <!-- Server rack -->
                   <rect x="10" y="8" width="28" height="32" rx="4" fill="url(#o2switch-grad)" class="server-rack"/>
-                  <!-- Server slots -->
                   <rect x="12" y="12" width="24" height="4" rx="1" fill="white" opacity="0.9" class="server-slot-1"/>
                   <rect x="12" y="18" width="24" height="4" rx="1" fill="white" opacity="0.8" class="server-slot-2"/>
                   <rect x="12" y="24" width="24" height="4" rx="1" fill="white" opacity="0.7" class="server-slot-3"/>
                   <rect x="12" y="30" width="24" height="4" rx="1" fill="white" opacity="0.6" class="server-slot-4"/>
-                  <!-- Status lights -->
                   <circle cx="32" cy="14" r="1.5" fill="#00ff88" class="status-light-1"/>
                   <circle cx="32" cy="20" r="1.5" fill="#00ff88" class="status-light-2"/>
-                  <circle cx="32" cy="26" r="1.5" fill="#00d7ff" class="status-light-3"/>
+                  <circle cx="32" cy="26" r="1.5" fill="#2b5cff" class="status-light-3"/>
                   <circle cx="32" cy="32" r="1.5" fill="#ffd700" class="status-light-4"/>
-                  <!-- Data flow -->
-                  <path d="M6 24h4M38 24h4" stroke="#00d7ff" stroke-width="2" class="data-flow"/>
+                  <path d="M6 24h4M38 24h4" stroke="#2b5cff" stroke-width="2" class="data-flow"/>
                 </svg>
               </div>
-              <h3>o2switch</h3>
-              <p>Hébergement mutualisé, DNS, déploiement.</p>
+              <div class="tool-body">
+                <div class="tool-head"><h3>o2switch</h3><span class="skill-level intermediate">Intermédiaire</span></div>
+                <p>Hébergement mutualisé, DNS, déploiement.</p>
+              </div>
             </article>
             <article class="card tool">
               <div class="icon" aria-hidden="true">
@@ -525,8 +680,10 @@
                   <circle cx="18" cy="26" r="1.5" fill="#ffffff" opacity="0.7"/>
                 </svg>
               </div>
-              <h3>Netlify</h3>
-              <p>Hébergement statique, déploiement continu et previews.</p>
+              <div class="tool-body">
+                <div class="tool-head"><h3>Netlify</h3><span class="skill-level intermediate">Intermédiaire</span></div>
+                <p>Hébergement statique, déploiement continu et previews.</p>
+              </div>
             </article>
             <article class="card tool">
               <div class="icon" aria-hidden="true">
@@ -538,30 +695,21 @@
                       <stop offset="50%" stop-color="#4a5568"/>
                       <stop offset="100%" stop-color="#2d3748"/>
                     </linearGradient>
-                    <filter id="glow">
-                      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                      <feMerge> 
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                      </feMerge>
-                    </filter>
                   </defs>
-                  <!-- Cursor arrow -->
                   <path d="M12 8l20 15-8 2-2 8L12 8z" fill="url(#cursor-grad)" class="cursor-arrow"/>
-                  <!-- AI brain/neural network -->
-                  <circle cx="32" cy="16" r="3" fill="#00d7ff" class="ai-node-1" filter="url(#glow)"/>
-                  <circle cx="28" cy="12" r="1.5" fill="#00d7ff" class="ai-node-2" opacity="0.8"/>
-                  <circle cx="36" cy="12" r="1.5" fill="#00d7ff" class="ai-node-3" opacity="0.8"/>
-                  <circle cx="30" cy="20" r="1.5" fill="#00d7ff" class="ai-node-4" opacity="0.8"/>
-                  <circle cx="34" cy="20" r="1.5" fill="#00d7ff" class="ai-node-5" opacity="0.8"/>
-                  <!-- Neural connections -->
-                  <path d="M30 14l2 2M34 14l-2 2M30 18l2-2M34 18l-2-2" stroke="#00d7ff" stroke-width="1" opacity="0.6" class="ai-connections"/>
-                  <!-- Sparkles -->
-                  <path d="M38 8l2 2-2 2-2-2 2-2zM26 6l1 1-1 1-1-1 1-1z" fill="#ffd700" class="ai-sparkles"/>
+                  <circle cx="32" cy="16" r="3" fill="#2b5cff" class="ai-node-1"/>
+                  <circle cx="28" cy="12" r="1.5" fill="#2b5cff" class="ai-node-2" opacity="0.8"/>
+                  <circle cx="36" cy="12" r="1.5" fill="#2b5cff" class="ai-node-3" opacity="0.8"/>
+                  <circle cx="30" cy="20" r="1.5" fill="#2b5cff" class="ai-node-4" opacity="0.8"/>
+                  <circle cx="34" cy="20" r="1.5" fill="#2b5cff" class="ai-node-5" opacity="0.8"/>
+                  <path d="M30 14l2 2M34 14l-2 2M30 18l2-2M34 18l-2-2" stroke="#2b5cff" stroke-width="1" opacity="0.6" class="ai-connections"/>
+                  <path d="M38 8l2 2-2 2-2-2 2-2zM26 6l1 1-1 1-1-1 1-1z" fill="#ff7a1a" class="ai-sparkles"/>
                 </svg>
               </div>
-              <h3>Cursor</h3>
-              <p>Éditeur IA pour développement assisté.</p>
+              <div class="tool-body">
+                <div class="tool-head"><h3>Cursor</h3><span class="skill-level intermediate">Intermédiaire</span></div>
+                <p>Éditeur IA pour développement assisté.</p>
+              </div>
             </article>
             <article class="card tool">
               <div class="icon" aria-hidden="true">
@@ -573,22 +721,20 @@
                       <stop offset="100%" stop-color="#37352f"/>
                     </linearGradient>
                   </defs>
-                  <!-- Main page -->
                   <rect x="8" y="6" width="24" height="32" rx="3" fill="url(#notion-grad)" class="notion-page-1"/>
-                  <!-- Stacked pages -->
                   <rect x="10" y="8" width="24" height="32" rx="3" fill="url(#notion-grad)" class="notion-page-2" opacity="0.8"/>
                   <rect x="12" y="10" width="24" height="32" rx="3" fill="url(#notion-grad)" class="notion-page-3" opacity="0.6"/>
-                  <!-- Content lines -->
                   <rect x="16" y="16" width="16" height="2" rx="1" fill="white" opacity="0.9" class="notion-line-1"/>
                   <rect x="16" y="20" width="12" height="2" rx="1" fill="white" opacity="0.7" class="notion-line-2"/>
                   <rect x="16" y="24" width="14" height="2" rx="1" fill="white" opacity="0.8" class="notion-line-3"/>
                   <rect x="16" y="28" width="10" height="2" rx="1" fill="white" opacity="0.6" class="notion-line-4"/>
-                  <!-- Notion logo accent -->
                   <path d="M20 12l8 4-8 4z" fill="#ff6b6b" class="notion-accent"/>
                 </svg>
               </div>
-              <h3>Notion</h3>
-              <p>Documentation et organisation projets.</p>
+              <div class="tool-body">
+                <div class="tool-head"><h3>Notion</h3><span class="skill-level intermediate">Intermédiaire</span></div>
+                <p>Documentation et organisation projets.</p>
+              </div>
             </article>
             <article class="card tool">
               <div class="icon" aria-hidden="true">
@@ -608,8 +754,10 @@
                   <path d="M21.6 22.6l2.8-1.8M26.4 22.6l2.8 1.8" stroke="#6b4f66" stroke-width="1.6" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h3>Odoo ERP</h3>
-              <p>Gestion ERP, modules metier et administration.</p>
+              <div class="tool-body">
+                <div class="tool-head"><h3>Odoo ERP</h3><span class="skill-level beginner">Débutant</span></div>
+                <p>Gestion ERP, modules metier et administration.</p>
+              </div>
             </article>
             <article class="card tool">
               <div class="icon" aria-hidden="true">
@@ -626,8 +774,10 @@
                   <circle cx="34" cy="14" r="2" fill="#3ecf8e" opacity="0.7"/>
                 </svg>
               </div>
-              <h3>Supabase</h3>
-              <p>Backend BaaS : PostgreSQL, Auth, API REST et stockage.</p>
+              <div class="tool-body">
+                <div class="tool-head"><h3>Supabase</h3><span class="skill-level intermediate">Intermédiaire</span></div>
+                <p>Backend BaaS : PostgreSQL, Auth, API REST et stockage.</p>
+              </div>
             </article>
             <article class="card tool">
               <div class="icon" aria-hidden="true">
@@ -647,115 +797,23 @@
                   <rect x="12" y="34" width="24" height="4" rx="2" fill="url(#gcloud-grad)" opacity="0.85"/>
                 </svg>
               </div>
-              <h3>Google Auth & Cloud</h3>
-              <p>Connexion Google (OAuth) et services cloud sur les sites web.</p>
+              <div class="tool-body">
+                <div class="tool-head"><h3>Google Auth &amp; Cloud</h3><span class="skill-level beginner">Débutant</span></div>
+                <p>Connexion Google (OAuth) et services cloud sur les sites web.</p>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- Compétences -->
-      <section id="skills" class="section alt">
-        <div class="container">
-          <h2 data-animate>Compétences</h2>
-          <div class="skills-list" data-animate>
-            <div class="skill-category">
-              <h3>Développement Web</h3>
-              <ul class="skill-items">
-                <li class="skill-item">
-                  <span class="skill-name">HTML / CSS</span>
-                  <span class="skill-level mastered">Maîtrisé</span>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">JavaScript</span>
-                  <span class="skill-level comfortable">À l'aise</span>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">TypeScript</span>
-                  <span class="skill-level comfortable">À l'aise</span>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">PHP</span>
-                  <span class="skill-level working">En travail</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div class="skill-category">
-              <h3>Bases de données</h3>
-              <ul class="skill-items">
-                <li class="skill-item">
-                  <span class="skill-name">SQL (MySQL, PostgreSQL)</span>
-                  <span class="skill-level comfortable">À l'aise</span>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">Modélisation BDD</span>
-                  <span class="skill-level comfortable">À l'aise</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div class="skill-category">
-              <h3>Programmation</h3>
-              <ul class="skill-items">
-                <li class="skill-item">
-                  <span class="skill-name">Python</span>
-                  <span class="skill-level comfortable">À l'aise</span>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">C++</span>
-                  <span class="skill-level working">En travail</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div class="skill-category">
-              <h3>Intelligence Artificielle</h3>
-              <ul class="skill-items">
-                <li class="skill-item">
-                  <span class="skill-name">Outils IA</span>
-                  <span class="skill-level mastered">Maîtrisé</span>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">Vibes Coding</span>
-                  <span class="skill-level mastered">Maîtrisé</span>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">Machine Learning</span>
-                  <span class="skill-level working">En travail</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div class="skill-category">
-              <h3>Frameworks</h3>
-              <ul class="skill-items">
-                <li class="skill-item">
-                  <span class="skill-name">Next.js / React</span>
-                  <span class="skill-level working">En travail</span>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">Symfony</span>
-                  <span class="skill-level comfortable">À l'aise</span>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">Vue.js</span>
-                  <span class="skill-level working">En travail</span>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">Flutter</span>
-                  <span class="skill-level working">En travail</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!-- Veille -->
-      <section id="veille" class="section section-animated">
+      <section id="veille" class="section alt" data-cue="Veille">
         <div class="container">
-          <h2 data-animate>Veille technologique</h2>
+          <header class="section-head" data-animate>
+            <p class="eyebrow"><span class="cue-mark" aria-hidden="true"></span>Janvier 2025 → mai 2026</p>
+            <h2>Veille technologique</h2>
+          </header>
           <div class="faq" data-animate>
             <details class="faq-item" open>
               <summary>Qu'est ce que la veille technologique ?</summary>
@@ -785,9 +843,8 @@
             <details class="faq-item">
               <summary>Quel a été le sujet de ma veille technologique ?</summary>
               <div class="answer">
-                <p>Trois veilles complémentaires suivies de janvier 2025 à mai 2026, avec actualités datées et sources vérifiables :</p>
+                <p>Deux veilles complémentaires suivies de janvier 2025 à mai 2026, avec actualités datées et sources vérifiables :</p>
                 <ul>
-                  <li><strong>IA dans la musique</strong> — Suno, Udio, procès des majors, licences et clonage vocal.</li>
                   <li><strong>IA dans la génération</strong> — multimodalité (texte, image, vidéo), ChatGPT Images 2.0, Veo 3.1.</li>
                   <li><strong>L'IA remplace-t-elle les métiers ?</strong> — WEF 2025, marché de l'emploi FR, évolution du métier de développeur.</li>
                 </ul>
@@ -797,8 +854,7 @@
               <summary>Quelles sont les différentes thématiques abordées ?</summary>
               <div class="answer">
                 <ul>
-                  <li>Droits d'auteur, fair use et accords de licence (musique et contenus générés)</li>
-                  <li>Modèles génératifs : audio, image, vidéo, code et agents</li>
+                  <li>Modèles génératifs : image, vidéo, code et agents</li>
                   <li>Sorties de produits (OpenAI, Google DeepMind) et impact sur les workflows</li>
                   <li>Marché du travail, upskilling et évolution du métier de développeur</li>
                   <li>Éthique, fiabilité des sorties et usage responsable en entreprise</li>
@@ -807,44 +863,23 @@
               </div>
             </details>
           </div>
-          <div class="grid cards veille-grid" data-animate>
-            <article class="card tool veille veille-card-has-doc">
-              <a href="veille-musique.html" aria-label="Voir la veille: IA dans la musique">
-              <div class="icon" aria-hidden="true">
-                <svg class="svg-icon anim-pulse" viewBox="0 0 48 48" aria-label="IA Musique">
-                  <defs>
-                    <linearGradient id="v-musique" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="#08b6d4"/>
-                      <stop offset="100%" stop-color="#22c55e"/>
-                    </linearGradient>
-                  </defs>
-                  <circle cx="24" cy="24" r="16" fill="url(#v-musique)" opacity="0.9"/>
-                  <path d="M20 16v14a4 4 0 1 0 2 3.46V22h8v6a4 4 0 1 0 2 3.46V16h-12z" fill="white"/>
-                </svg>
-              </div>
-              <h3>IA dans la musique</h3>
-              <p>Suno, Udio, procès des majors, licences 2025–2026 — veille détaillée avec actualités sourcées.</p>
-              </a>
-              <p class="veille-card-download">
-                <a class="btn btn-primary btn-sm" href="Veille/Veille_Technologique_1.pdf" download>Télécharger la veille (PDF)</a>
-              </p>
-            </article>
+          <div class="grid cards veille-grid" data-stagger>
             <article class="card tool veille veille-card-has-doc">
               <a href="veille-generation.html" aria-label="Voir la veille: IA dans la génération">
-              <div class="icon" aria-hidden="true">
-                <svg class="svg-icon anim-gen" viewBox="0 0 48 48" aria-label="IA Génération">
-                  <defs>
-                    <linearGradient id="v-gen" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="#08b6d4"/>
-                      <stop offset="100%" stop-color="#22c55e"/>
-                    </linearGradient>
-                  </defs>
-                  <rect x="10" y="10" width="28" height="28" rx="6" class="gen-bg" fill="url(#v-gen)"/>
-                  <path d="M18 24h12M24 18v12" class="gen-plus"/>
-                </svg>
-              </div>
-              <h3>IA dans la génération</h3>
-              <p>Images 2.0, Veo 3.1, multimodalité — modèles, usages pro et limites (2025–2026).</p>
+                <div class="icon" aria-hidden="true">
+                  <svg class="svg-icon anim-gen" viewBox="0 0 48 48" aria-label="IA Génération">
+                    <defs>
+                      <linearGradient id="v-gen" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#2b5cff"/>
+                        <stop offset="100%" stop-color="#ff7a1a"/>
+                      </linearGradient>
+                    </defs>
+                    <rect x="10" y="10" width="28" height="28" rx="6" class="gen-bg" fill="url(#v-gen)"/>
+                    <path d="M18 24h12M24 18v12" class="gen-plus"/>
+                  </svg>
+                </div>
+                <h3>IA dans la génération</h3>
+                <p>Images 2.0, Veo 3.1, multimodalité — modèles, usages pro et limites (2025–2026).</p>
               </a>
               <p class="veille-card-download">
                 <a class="btn btn-primary btn-sm" href="Veille/Veille_Technologique_2.pdf" download>Télécharger la veille (PDF)</a>
@@ -852,21 +887,21 @@
             </article>
             <article class="card tool veille veille-card-has-doc">
               <a href="veille-metiers.html" aria-label="Voir la veille: L’IA remplace les métiers ?">
-              <div class="icon" aria-hidden="true">
-                <svg class="svg-icon anim-wiggle" viewBox="0 0 48 48" aria-label="IA & Métiers">
-                  <defs>
-                    <linearGradient id="v-metiers" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="#08b6d4"/>
-                      <stop offset="100%" stop-color="#22c55e"/>
-                    </linearGradient>
-                  </defs>
-                  <path d="M8 20h32v16a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V20z" fill="url(#v-metiers)"/>
-                  <path d="M16 20v-2a8 8 0 0 1 16 0v2" fill="url(#v-metiers)"/>
-                  <circle cx="24" cy="26" r="4" fill="white"/>
-                </svg>
-              </div>
-              <h3>L’IA remplace les métiers ?</h3>
-              <p>WEF 2025, marché FR, développeur augmenté — données et analyse du métier SLAM.</p>
+                <div class="icon" aria-hidden="true">
+                  <svg class="svg-icon anim-wiggle" viewBox="0 0 48 48" aria-label="IA & Métiers">
+                    <defs>
+                      <linearGradient id="v-metiers" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#2b5cff"/>
+                        <stop offset="100%" stop-color="#ff7a1a"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M8 20h32v16a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V20z" fill="url(#v-metiers)"/>
+                    <path d="M16 20v-2a8 8 0 0 1 16 0v2" fill="url(#v-metiers)"/>
+                    <circle cx="24" cy="26" r="4" fill="white"/>
+                  </svg>
+                </div>
+                <h3>L’IA remplace les métiers ?</h3>
+                <p>WEF 2025, marché FR, développeur augmenté — données et analyse du métier SLAM.</p>
               </a>
               <p class="veille-card-download">
                 <a class="btn btn-primary btn-sm" href="Veille/Veille_Technologique_3.pdf" download>Télécharger la veille (PDF)</a>
@@ -876,17 +911,25 @@
         </div>
       </section>
 
+      
+
       <!-- Contact -->
-      <section id="contact" class="section">
-        <div class="container two-col">
-          <div class="col" data-animate>
-            <h2>Contact</h2>
+      <section id="contact" class="section" data-cue="Contact">
+        <div class="container contact-grid">
+          <div class="contact-copy" data-animate>
+            <header class="section-head">
+              <p class="eyebrow"><span class="cue-mark" aria-hidden="true"></span>Emploi · Alternance · Freelance</p>
+              <h2>Contact</h2>
+            </header>
             <p>N’hésitez pas à me contacter pour une mission, une alternance, du freelance ou un projet.</p>
+            <a class="contact-mail" href="mailto:kortogrind@gmail.com">kortogrind@gmail.com</a>
             <div class="hero-socials">
-              <a class="instagram" href="mailto:kortogrind@gmail.com" rel="noreferrer noopener" aria-label="Email">
-                <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
-                  <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" fill="none"/>
+              <a class="mail" href="mailto:kortogrind@gmail.com" rel="noreferrer noopener" aria-label="Email">
+                <svg class="social-icon social-icon-gmail" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3.5 6.8v10.4c0 .9.7 1.6 1.6 1.6h2.2V10.2L12 14.3l4.7-4.1v8.6h2.2c.9 0 1.6-.7 1.6-1.6V6.8c0-1.2-1.4-1.9-2.3-1.2L12 11.2 5.8 5.6c-.9-.7-2.3 0-2.3 1.2z" fill="#EA4335"/>
+                  <path d="M3.5 6.8c0-1.2 1.4-1.9 2.3-1.2L12 11.2V14.3L7.3 10.2V19H5.1c-.9 0-1.6-.7-1.6-1.6V6.8z" fill="#4285F4"/>
+                  <path d="M20.5 6.8v10.6c0 .9-.7 1.6-1.6 1.6h-2.2V10.2L12 14.3V11.2l6.2-5.6c.9-.7 2.3 0 2.3 1.2z" fill="#34A853"/>
+                  <path d="M7.3 19h9.4V10.2L12 14.3 7.3 10.2V19z" fill="#FBBC05"/>
                 </svg>
               </a>
               <a class="linkedin" href="https://www.linkedin.com/in/korto-grinda-4b6a6433a/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
@@ -902,7 +945,7 @@
                   <path d="M12 2.5c-5.2 0-9.5 4.3-9.5 9.5 0 4.2 2.7 7.7 6.5 9 .5.1.7-.2.7-.5v-2c-2.6.6-3.1-1.1-3.1-1.1-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.5 1.1 3.1.8.1-.7.4-1.1.7-1.4-2.1-.3-4.2-1.1-4.2-4.9 0-1.1.4-2 1-2.8-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1.1.8-.2 1.6-.3 2.5-.3s1.7.1 2.5.3c2-1.4 2.8-1.1 2.8-1.1.5 1.4.2 2.4.1 2.7.6.8 1 1.7 1 2.8 0 3.8-2.1 4.6-4.2 4.9.4.3.7.9.7 1.8v2.6c0 .3.2.6.7.5 3.8-1.3 6.5-4.9 6.5-9.1 0-5.2-4.3-9.5-9.5-9.5Z" fill="currentColor"/>
                 </svg>
               </a>
-              <a class="cv" href="Korto_Grinda_CV.pdf" target="_blank" rel="noreferrer noopener" aria-label="Télécharger le CV">
+              <a class="cv" href="Korto_Grinda_CV.pdf" download="Korto_Grinda_CV.pdf" target="_blank" rel="noreferrer noopener" aria-label="Télécharger le CV">
                 <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M7 2.5h7l4.5 4.5V20a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 20V4A1.5 1.5 0 0 1 7 2.5z" fill="none" stroke="currentColor" stroke-width="1.8"/>
                   <path d="M14 2.5V7h4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
@@ -915,10 +958,11 @@
                 <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 5l-7 7m7-7l7 7M12 5v14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
+                Revenir au début
               </button>
             </div>
           </div>
-          <div class="col" data-animate>
+          <div data-animate>
             <form id="contact-form" class="card form" novalidate>
               <div class="field">
                 <label for="name">Nom</label>
@@ -945,7 +989,7 @@
                 <small class="error" aria-live="polite"></small>
               </div>
               <button class="btn btn-primary" type="submit">Envoyer</button>
-              <p class="form-note">Ce formulaire est une démo locale. Aucun envoi réel.</p>
+              <p class="form-note">Ce formulaire ouvre votre client mail avec le message pré-rempli. Aucun envoi serveur.</p>
             </form>
           </div>
         </div>
@@ -955,15 +999,12 @@
     <footer class="site-footer">
       <div class="container">
         <p>© <span id="year"></span> Grinda Korto. Tous droits réservés.</p>
+        <p class="footer-meta">Développeur web &amp; logiciel · BTS SIO SLAM · Montpellier</p>
       </div>
     </footer>
-
-    
 
     <div id="toast" role="status" aria-live="polite" class="toast" hidden></div>
 
     <script src="script.js"></script>
   </body>
-  </html>
-
-
+</html>
